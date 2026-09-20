@@ -1,0 +1,7 @@
+# robots.txt — SwtFrontend Landing Page
+# https://redclaw.github.io/SwtFrontend/
+
+User-agent: *
+Allow: /
+
+Sitemap: https://redclaw.github.io/SwtFrontend/sitemap.xml

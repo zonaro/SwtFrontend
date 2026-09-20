@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark" data-accent="cyan">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title data-i18n="meta.title">SwtFrontend — Your Retro Games, Beautifully Organized</title>
+  <meta name="description" data-i18n="meta.description" data-i18n-attr="content" content="Turn your Android into a stunning retro game console. Play NES, SNES, Genesis, DS and more with beautiful cover art, achievements, and a Switch-inspired design. Free and open-source.">
+  <meta name="theme-color" content="#2D2D2D">
+  <link rel="canonical" href="https://redclaw.github.io/SwtFrontend/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://redclaw.github.io/SwtFrontend/">
+  <meta property="og:title" data-i18n="meta.title" data-i18n-attr="content" content="SwtFrontend — Your Retro Games, Beautifully Organized">
+  <meta property="og:description" data-i18n="meta.description" data-i18n-attr="content" content="Turn your Android into a stunning retro game console. Play NES, SNES, Genesis, DS and more with beautiful cover art, achievements, and a Switch-inspired design. Free and open-source.">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:locale:alternate" content="pt_BR">
+  <meta property="og:locale:alternate" content="es_ES">
+  <meta property="og:site_name" content="SwtFrontend">
+  <meta property="og:image" content="https://redclaw.github.io/SwtFrontend/og-image.png">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" data-i18n="meta.title" data-i18n-attr="content" content="SwtFrontend — Your Retro Games, Beautifully Organized">
+  <meta name="twitter:description" data-i18n="meta.description" data-i18n-attr="content" content="Turn your Android into a stunning retro game console. Free and open-source.">
+
+  <!-- JSON-LD SoftwareApplication -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "SwtFrontend",
+    "operatingSystem": "Android",
+    "applicationCategory": "GameApplication",
+    "description": "A retro game launcher for Android with a Nintendo Switch-inspired design. Supports NES, SNES, Genesis, Game Boy, Nintendo DS and many more systems. Features automatic cover art, RetroAchievements, dual-screen DS support, and a built-in dashboard.",
+    "license": "https://www.gnu.org/licenses/gpl-3.0.html",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "USD"
+    },
+    "screenshot": "https://redclaw.github.io/SwtFrontend/og-image.png",
+    "softwareVersion": "1.0.0",
+    "fileSize": "40MB",
+    "downloadUrl": "https://redclaw.github.io/SwtFrontend/",
+    "softwareHelp": {
+      "@type": "CreativeWork",
+      "url": "https://github.com/redclaw/SwtFrontend"
+    }
+  }
+  </script>
+
+  <!-- Favicon SVG inline -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%232D2D2D'/%3E%3Ctext x='16' y='22' text-anchor='middle' font-family='system-ui' font-weight='800' font-size='18' fill='%2300BCD4'%3ES%3C/text%3E%3C/svg%3E">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Skip Link -->
+  <a href="#main" class="skip-link" data-i18n="nav.home">Home</a>
+
+  <!-- Navigation -->
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <a href="#" class="nav-logo" aria-label="SwtFrontend Home">
+      <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <rect x="2" y="6" width="28" height="20" rx="4"/>
+        <circle cx="10" cy="16" r="3"/>
+        <circle cx="22" cy="16" r="3"/>
+      </svg>
+      SwtFrontend
+    </a>
+
+    <div class="nav-links">
+      <a href="#features" data-i18n="nav.features">Features</a>
+      <a href="#how" data-i18n="nav.how">How It Works</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+    </div>
+
+    <div class="nav-right">
+      <!-- Language Switcher (header buttons) -->
+      <div class="lang-switcher" role="radiogroup" aria-label="Language">
+        <button class="lang-btn is-active" data-lang-btn="en" role="radio" aria-pressed="true" aria-label="English">EN</button>
+        <button class="lang-btn" data-lang-btn="pt-BR" role="radio" aria-pressed="false" aria-label="Portugues">PT</button>
+        <button class="lang-btn" data-lang-btn="es" role="radio" aria-pressed="false" aria-label="Espanol">ES</button>
+      </div>
+
+      <!-- Theme Toggle -->
+      <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark/light theme">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
+        </svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="display:none">
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
+        </svg>
+      </button>
+
+      <!-- Mobile Nav Button -->
+      <button class="nav-mobile-btn" id="mobile-nav-btn" aria-label="Open navigation menu">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Mobile Nav Overlay -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-label="Navigation menu">
+    <button class="mobile-nav-close" id="mobile-nav-close" aria-label="Close navigation menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/>
+      </svg>
+    </button>
+    <a href="#features" data-i18n="nav.features" class="mobile-nav-link">Features</a>
+    <a href="#how" data-i18n="nav.how" class="mobile-nav-link">How It Works</a>
+    <a href="#faq" data-i18n="nav.faq" class="mobile-nav-link">FAQ</a>
+    <a href="#download" class="btn btn-primary mobile-nav-link" data-i18n="nav.download">Download APK</a>
+  </div>
+
+  <!-- Main Content -->
+  <main id="main">
+
+    <!-- HERO -->
+    <section class="hero" id="hero">
+      <span class="hero-badge" data-i18n="hero.badge">Free &amp; Open Source</span>
+      <h1 class="hero-headline" data-i18n="hero.headline">Your Retro Games, Beautifully Organized</h1>
+      <p class="hero-sub" data-i18n="hero.sub">Turn your Android phone or tablet into the ultimate retro gaming console.</p>
+
+      <div class="hero-ctas">
+        <a href="#download" class="btn btn-primary" id="cta-download">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          <span data-i18n="hero.cta.download">Download APK</span>
+        </a>
+        <a href="#how" class="btn btn-secondary">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+          <span data-i18n="hero.cta.watch">See How It Works</span>
+        </a>
+      </div>
+
+      <!-- Switch Mockup (CSS only) -->
+      <div class="switch-mockup" aria-hidden="true">
+        <div class="switch-screen">
+          <div class="switch-game-card"></div>
+          <div class="switch-game-card"></div>
+          <div class="switch-game-card"></div>
+          <div class="switch-game-card"></div>
+          <div class="switch-game-card"></div>
+          <div class="switch-game-card"></div>
+        </div>
+      </div>
+      <div class="switch-dock" aria-hidden="true">
+        <div class="switch-dock-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+        </div>
+        <div class="switch-dock-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/></svg>
+        </div>
+        <div class="switch-dock-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+        </div>
+        <div class="switch-dock-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+        </div>
+        <div class="switch-dock-circle">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- STATS -->
+    <section class="stats animate-in" aria-label="Statistics">
+      <div class="stat-item">
+        <span class="stat-number" data-i18n="stats.downloads">Downloads</span>
+        <span class="stat-label" data-i18n="stats.downloads">Downloads</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">500+</span>
+        <span class="stat-label" data-i18n="stats.games">Games Supported</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">30+</span>
+        <span class="stat-label" data-i18n="stats.systems">Consoles</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-number">4.8</span>
+        <span class="stat-label" data-i18n="stats.rating">User Rating</span>
+      </div>
+    </section>
+
+    <!-- FEATURES -->
+    <section class="section section-alt" id="features">
+      <div class="section-inner">
+        <div class="animate-in">
+          <span class="section-badge" data-i18n="features.badge">Everything You Need</span>
+          <h2 class="section-title" data-i18n="features.title">A Console Experience on Your Phone</h2>
+          <p class="section-subtitle" data-i18n="features.subtitle">Everything a retro gamer wants, nothing they don't.</p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card animate-in delay-1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.0.title">Modern Console Look</h3>
+            <p class="feature-desc" data-i18n="features.grid.0.desc">A sleek interface inspired by the Nintendo Switch.</p>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card animate-in delay-2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.1.title">Play Instantly</h3>
+            <p class="feature-desc" data-i18n="features.grid.1.desc">No complicated setup. No BIOS files needed.</p>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card animate-in delay-3">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.2.title">Beautiful Cover Art</h3>
+            <p class="feature-desc" data-i18n="features.grid.2.desc">Game covers are fetched automatically.</p>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card animate-in delay-4">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.3.title">Smart Library</h3>
+            <p class="feature-desc" data-i18n="features.grid.3.desc">Your games organize themselves.</p>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card animate-in delay-1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="1" y="4" width="22" height="16" rx="2"/><line x1="1" y1="10" x2="23" y2="10"/><circle cx="7" cy="15" r="1"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.4.title">Play Your Way</h3>
+            <p class="feature-desc" data-i18n="features.grid.4.desc">Touch controls, Bluetooth gamepad, or TV.</p>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card animate-in delay-2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M19 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v11a2 2 0 0 1-2 2z"/><polyline points="17 21 17 13 7 13 7 21"/><polyline points="7 3 7 8 15 8"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.5.title">Never Lose Progress</h3>
+            <p class="feature-desc" data-i18n="features.grid.5.desc">Your game saves are automatic.</p>
+          </div>
+
+          <!-- Feature 7 -->
+          <div class="feature-card animate-in delay-3">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/><rect x="5" y="19" width="14" height="5" rx="1"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.6.title">Dual Screen Mode</h3>
+            <p class="feature-desc" data-i18n="features.grid.6.desc">Nintendo DS games with second screen on another display.</p>
+          </div>
+
+          <!-- Feature 8 -->
+          <div class="feature-card animate-in delay-4">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.7.title">Achievements &amp; Trophies</h3>
+            <p class="feature-desc" data-i18n="features.grid.7.desc">Earn achievements and compete with friends.</p>
+          </div>
+
+          <!-- Feature 9 -->
+          <div class="feature-card animate-in delay-1">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.8.title">Manage from Your PC</h3>
+            <p class="feature-desc" data-i18n="features.grid.8.desc">Built-in dashboard, no cables needed.</p>
+          </div>
+
+          <!-- Feature 10 -->
+          <div class="feature-card animate-in delay-2">
+            <div class="feature-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="feature-title" data-i18n="features.grid.9.title">Games &amp; Apps Together</h3>
+            <p class="feature-desc" data-i18n="features.grid.9.desc">Completely free and open source.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="section" id="how">
+      <div class="section-inner">
+        <div class="animate-in">
+          <span class="section-badge" data-i18n="how.badge">3 Simple Steps</span>
+          <h2 class="section-title" data-i18n="how.title">Start Playing in Minutes</h2>
+          <p class="section-subtitle" data-i18n="how.subtitle">Getting started is incredibly easy.</p>
+        </div>
+
+        <div class="steps">
+          <div class="step animate-in delay-1">
+            <div class="step-number" aria-hidden="true">1</div>
+            <div class="step-content">
+              <h3 class="step-title" data-i18n="how.step.1.title">Copy Your Games</h3>
+              <p class="step-desc" data-i18n="how.step.1.desc">Transfer your ROM files to your phone using any file manager or USB cable.</p>
+            </div>
+          </div>
+          <div class="step animate-in delay-2">
+            <div class="step-number" aria-hidden="true">2</div>
+            <div class="step-content">
+              <h3 class="step-title" data-i18n="how.step.2.title">Open SwtFrontend</h3>
+              <p class="step-desc" data-i18n="how.step.2.desc">Launch the app and point it to your game folder. It finds everything automatically.</p>
+            </div>
+          </div>
+          <div class="step animate-in delay-3">
+            <div class="step-number" aria-hidden="true">3</div>
+            <div class="step-content">
+              <h3 class="step-title" data-i18n="how.step.3.title">Play!</h3>
+              <p class="step-desc" data-i18n="how.step.3.desc">Your library is ready. Tap any game and start playing instantly.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section section-alt" id="faq">
+      <div class="section-inner">
+        <div class="animate-in">
+          <span class="section-badge" data-i18n="faq.badge">Got Questions?</span>
+          <h2 class="section-title" data-i18n="faq.title">Frequently Asked Questions</h2>
+          <p class="section-subtitle" data-i18n="faq.subtitle">Everything you need to know.</p>
+        </div>
+
+        <div class="faq-list animate-in">
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q1.q">Is it really free?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q1.a">Yes! SwtFrontend is completely free with no ads, no subscriptions, and no hidden costs.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q2.q">Do I need BIOS files?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q2.a">No! Unlike some other emulators, SwtFrontend doesn't require any BIOS files.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q3.q">Where do I put my ROMs?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q3.a">Anywhere on your phone! Internal storage, SD card, or any folder.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q4.q">Will it work on my phone or TV?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q4.a">Works on Android phones, tablets, and TV boxes running Android 7.0+.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q5.q">Do Bluetooth controllers work?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q5.a">Yes! Any Bluetooth gamepad that works with Android is supported.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" aria-expanded="false">
+              <span data-i18n="faq.q6.q">What about achievements?</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer" role="region">
+              <p data-i18n="faq.q6.a">Built-in RetroAchievements support. Earn trophies and compete with friends!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DOWNLOAD CTA -->
+    <section class="section" id="download">
+      <div class="section-inner" style="text-align:center">
+        <div class="animate-in">
+          <span class="section-badge" data-i18n="hero.badge">Free &amp; Open Source</span>
+          <h2 class="section-title" data-i18n="hero.headline" style="margin-bottom:var(--space-md)">Your Retro Games, Beautifully Organized</h2>
+          <p class="section-subtitle" style="margin:0 auto var(--space-xl)" data-i18n="hero.sub">Turn your Android phone or tablet into the ultimate retro gaming console.</p>
+          <a href="#" class="btn btn-primary" style="font-size:var(--text-lg);padding:18px 36px">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" style="width:24px;height:24px"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            <span data-i18n="hero.cta.download">Download APK</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer-inner">
+      <div class="footer-links">
+        <a href="https://github.com/redclaw/SwtFrontend" data-i18n="footer.github" target="_blank" rel="noopener noreferrer">View on GitHub</a>
+        <a href="https://www.gnu.org/licenses/gpl-3.0.html" data-i18n="footer.license" target="_blank" rel="noopener noreferrer">Released under the GPLv3 License</a>
+      </div>
+      <p class="footer-disclaimer" data-i18n="footer.disclaimer">SwtFrontend is a game launcher. It does not include any games.</p>
+      <p class="footer-copy">&copy; 2025 <span data-i18n="footer.copyright">SwtFrontend Contributors</span></p>
+
+      <!-- Settings Bar: Accent + Theme + Language -->
+      <div class="settings-bar" role="group" aria-label="Appearance settings">
+        <div class="settings-group">
+          <span class="settings-label" data-i18n="accent.label">Accent Color</span>
+          <div class="accent-swatches" role="radiogroup" aria-label="Accent color">
+            <button class="accent-swatch is-active" data-c="cyan" data-accent-btn="cyan" role="radio" aria-pressed="true" aria-label="Cyan"></button>
+            <button class="accent-swatch" data-c="green_light" data-accent-btn="green_light" role="radio" aria-pressed="false" aria-label="Green Light"></button>
+            <button class="accent-swatch" data-c="green_dark" data-accent-btn="green_dark" role="radio" aria-pressed="false" aria-label="Green Dark"></button>
+            <button class="accent-swatch" data-c="blue" data-accent-btn="blue" role="radio" aria-pressed="false" aria-label="Blue"></button>
+            <button class="accent-swatch" data-c="yellow" data-accent-btn="yellow" role="radio" aria-pressed="false" aria-label="Yellow"></button>
+            <button class="accent-swatch" data-c="pink" data-accent-btn="pink" role="radio" aria-pressed="false" aria-label="Pink"></button>
+            <button class="accent-swatch" data-c="red" data-accent-btn="red" role="radio" aria-pressed="false" aria-label="Red"></button>
+            <button class="accent-swatch" data-c="violet" data-accent-btn="violet" role="radio" aria-pressed="false" aria-label="Violet"></button>
+            <button class="accent-swatch" data-c="teal" data-accent-btn="teal" role="radio" aria-pressed="false" aria-label="Teal"></button>
+            <button class="accent-swatch" data-c="orange" data-accent-btn="orange" role="radio" aria-pressed="false" aria-label="Orange"></button>
+            <button class="accent-swatch" data-c="purple" data-accent-btn="purple" role="radio" aria-pressed="false" aria-label="Purple"></button>
+            <button class="accent-swatch" data-c="indigo" data-accent-btn="indigo" role="radio" aria-pressed="false" aria-label="Indigo"></button>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <span class="settings-label" data-i18n="theme.label">Theme</span>
+          <div style="display:flex;gap:4px">
+            <button class="lang-btn is-active" data-theme-btn="dark" aria-label="Dark theme" data-i18n="theme.dark">Dark</button>
+            <button class="lang-btn" data-theme-btn="light" aria-label="Light theme" data-i18n="theme.light">Light</button>
+          </div>
+        </div>
+
+        <div class="settings-group">
+          <span class="settings-label" data-i18n="lang.label">Language</span>
+          <select id="lang-select" class="footer-select" aria-label="Select language">
+            <option value="en">English</option>
+            <option value="pt-BR">Portugues (BR)</option>
+            <option value="es">Espanol</option>
+          </select>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="i18n.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

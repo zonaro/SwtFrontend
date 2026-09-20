@@ -1,0 +1,35 @@
+# LLMS.txt — SwtFrontend
+
+> SwtFrontend is a free, open-source retro game launcher for Android.
+> It turns your phone or tablet into a Nintendo Switch-styled console for playing classic games.
+
+## What it does
+
+- Launches retro games from ROM files stored on your Android device
+- Automatically downloads and displays game cover art
+- Organizes your library with search, collections, and recently played
+- Supports touch controls, Bluetooth gamepads, and TV output
+- Provides automatic save states so you never lose progress
+- Supports Nintendo DS dual-screen mode on external displays
+- Integrates with RetroAchievements for trophies and leaderboards
+- Includes a built-in web dashboard for managing your library from a PC
+- Supports Android apps alongside games
+- 12 accent color themes with dark/light mode
+
+## Supported systems
+
+NES, SNES, Game Boy, Game Boy Color, Game Boy Advance, Sega Genesis, Sega Master System, Nintendo DS, PlayStation, Nintendo 64, and many more through libretro cores.
+
+## License
+
+GNU General Public License v3.0 (GPLv3)
+
+## Links
+
+- Source code: https://github.com/redclaw/SwtFrontend
+- Landing page: https://redclaw.github.io/SwtFrontend/
+- License: https://www.gnu.org/licenses/gpl-3.0.html
+
+## Note
+
+SwtFrontend does not include any games. Users must provide their own ROM files.
