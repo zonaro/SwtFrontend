@@ -1,0 +1,26 @@
+# Android / Gradle
+.gradle/
+build/
+*/build/
+local.properties
+*.iml
+.idea/
+*.hprof
+
+# NDK / CMake
+.externalNativeBuild/
+cxx/
+
+# Keystore
+*.jks
+*.keystore
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Opencode / agents scratch
+.omo/.cache/
+
+# Python
+__pycache__/

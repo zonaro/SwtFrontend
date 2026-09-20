@@ -1,0 +1,16 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24"
+    android:tint="#FFFFFF">
+    <!-- Trophy cup glyph for the "RetroAchievements" dock entry.
+         Outline style, 2px stroke, round caps/joins, consistent with the dock set. -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#FF000000"
+        android:strokeWidth="2"
+        android:strokeLineCap="round"
+        android:strokeLineJoin="round"
+        android:pathData="M6,4 h12 v4 c0,3 -2.5,5 -6,5 c-3.5,0 -6,-2 -6,-5 z M6,5 C3,5 3,9 6,9 M18,5 C21,5 21,9 18,9 M12,13 v3 M9,16 h6 v2.5 a1,1 0 0 1 -1,1 h-4 a1,1 0 0 1 -1,-1 z" />
+</vector>

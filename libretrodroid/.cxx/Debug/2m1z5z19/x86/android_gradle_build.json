@@ -1,0 +1,47 @@
+{
+  "buildFiles": [
+    "/mnt/GIT/SwtFrontend/libretrodroid/src/main/cpp/CMakeLists.txt",
+    "/mnt/GIT/SwtFrontend/libretrodroid/src/main/cpp/oboe/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/kaizonaro/android-setup/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/mnt/GIT/SwtFrontend/libretrodroid/.cxx/Debug/2m1z5z19/x86",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/kaizonaro/android-setup/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/mnt/GIT/SwtFrontend/libretrodroid/.cxx/Debug/2m1z5z19/x86",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "libretrodroid::@6890427a1f51a3e7e1df": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "libretrodroid",
+      "output": "/mnt/GIT/SwtFrontend/libretrodroid/build/intermediates/cxx/Debug/2m1z5z19/obj/x86/liblibretrodroid.so",
+      "runtimeFiles": []
+    },
+    "oboe::@0db0cf03f2959f768628": {
+      "toolchain": "toolchain",
+      "abi": "x86",
+      "artifactName": "oboe",
+      "output": "/mnt/GIT/SwtFrontend/libretrodroid/.cxx/Debug/2m1z5z19/x86/oboe/liboboe.a"
+    }
+  },
+  "toolchains": {
+    "toolchain": {
+      "cCompilerExecutable": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang.lld",
+      "cppCompilerExecutable": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang++.lld"
+    }
+  },
+  "cFileExtensions": [
+    "c"
+  ],
+  "cppFileExtensions": [
+    "cpp"
+  ]
+}

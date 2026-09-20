@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Game card for the "Todos os Jogos" grid. Square cover art with a title label
+     beneath. Tinted focus border is applied at runtime via AccentManager. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:gravity="center_horizontal"
+    android:background="@drawable/shape_game_card"
+    android:padding="6dp"
+    android:focusable="true"
+    android:clickable="true">
+
+    <!-- Cover art image (square aspect ratio). -->
+    <ImageView
+        android:id="@+id/game_cover"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        android:background="@color/color_cover_background"
+        android:contentDescription="@null"
+        tools:src="@android:drawable/sym_def_app_icon" />
+
+    <!-- Game title. -->
+    <TextView
+        android:id="@+id/game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:textColor="@color/switch_text_primary"
+        android:textSize="@dimen/switch_hint_text"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:gravity="center"
+        tools:text="Super Mario Bros." />
+
+    <!-- System/platform badge. -->
+    <TextView
+        android:id="@+id/game_system"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="2dp"
+        android:textColor="@color/switch_text_secondary"
+        android:textSize="10sp"
+        android:maxLines="1"
+        android:ellipsize="end"
+        tools:text="NES" />
+</LinearLayout>

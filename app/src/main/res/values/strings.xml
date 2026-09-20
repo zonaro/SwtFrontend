@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Swt Frontend</string>
+
+    <!-- InternalSimpleBrowser -->
+    <string name="browser_title">Browser</string>
+    <string name="browser_url_hint">Digite uma URL…</string>
+    <string name="browser_go">Ir</string>
+    <string name="browser_disclaimer_title">Navegador Interno</string>
+    <string name="browser_disclaimer_text">Selecione um site abaixo ou digite uma URL para buscar capas e imagens de jogos.</string>
+    <string name="browser_downloading">Baixando…</string>
+    <string name="browser_invalid_extension">Extensão não suportada: %1$s</string>
+    <string name="browser_confirm_download">Deseja baixar esta imagem como capa?</string>
+    <string name="browser_image_saved">Imagem salva com sucesso</string>
+    <string name="browser_image_failed">Falha ao salvar a imagem</string>
+    <string name="browser_choose_provider">Selecione um site ou digite uma URL</string>
+
+    <!-- Accent color labels (display names for the 12 accent options). -->
+    <string name="accent_cyan">Ciano</string>
+    <string name="accent_green_light">Verde Claro</string>
+    <string name="accent_green_dark">Verde Escuro</string>
+    <string name="accent_blue">Azul</string>
+    <string name="accent_yellow">Amarelo</string>
+    <string name="accent_pink">Rosa</string>
+    <string name="accent_red">Vermelho</string>
+    <string name="accent_violet">Violeta</string>
+    <string name="accent_teal">Turquesa</string>
+    <string name="accent_orange">Laranja</string>
+    <string name="accent_purple">Roxo</string>
+    <string name="accent_indigo">Indigo</string>
+
+    <!-- Game Grid (Todos os Jogos) -->
+    <string name="all_games">Todos os Jogos</string>
+    <string name="grid_search_hint">Buscar jogos…</string>
+    <string name="grid_sort_button">Ordenar</string>
+    <string name="grid_sort_alpha">Alfabético</string>
+    <string name="grid_sort_last_played">Jogados recentemente</string>
+    <string name="grid_sort_recent">Adicionados recentemente</string>
+    <string name="grid_no_results">Nenhum resultado encontrado</string>
+    <string name="grid_empty">Nenhum jogo instalado</string>
+
+    <!-- Apps -->
+    <string name="apps_title">Aplicativos</string>
+    <string name="apps_empty">Nenhum aplicativo encontrado</string>
+    <string name="app_category_games">Jogos</string>
+    <string name="app_category_social">Social</string>
+    <string name="app_category_video">Video</string>
+    <string name="app_category_audio">Audio</string>
+    <string name="app_category_image">Imagem</string>
+    <string name="app_category_maps">Mapas</string>
+    <string name="app_category_news">Noticias</string>
+    <string name="app_category_productivity">Produtividade</string>
+    <string name="app_category_tools">Ferramentas</string>
+    <string name="app_category_other">Outros</string>
+    <string name="app_category_unknown">Sem categoria</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Configurações</string>
+    <string name="settings_section_roms">Pastas de ROMs</string>
+    <string name="settings_section_appearance">Aparência</string>
+    <string name="settings_section_providers">Providers de Capa</string>
+    <string name="settings_section_ra">RetroAchievements</string>
+    <string name="settings_section_dashboard">Dashboard</string>
+    <string name="settings_roms_desc">Selecione as pastas onde seus jogos estão armazenados.</string>
+    <string name="settings_roms_add">Adicionar pasta</string>
+    <string name="settings_roms_empty">Nenhuma pasta adicionada</string>
+    <string name="settings_accent_label">Cor de destaque</string>
+    <string name="settings_theme_label">Tema</string>
+    <string name="settings_theme_dark">Escuro</string>
+    <string name="settings_theme_light">Claro</string>
+    <string name="settings_igdb_client_id">IGDB Client ID</string>
+    <string name="settings_igdb_client_secret">IGDB Client Secret</string>
+    <string name="settings_tgdb_api_key">TheGamesDB API Key</string>
+    <string name="settings_sgdb_api_key">SteamGridDB API Key</string>
+    <string name="settings_ra_username">Usuário</string>
+    <string name="settings_ra_password">Senha</string>
+    <string name="settings_ra_login">Entrar</string>
+    <string name="settings_ra_logout">Sair</string>
+    <string name="settings_ra_status_logged_in">Conectado como %1$s</string>
+    <string name="settings_ra_status_not_logged_in">Não conectado</string>
+    <string name="settings_dashboard_enabled">Dashboard habilitado</string>
+    <string name="settings_dashboard_port">Porta do servidor</string>
+    <string name="settings_dashboard_open">Abrir dashboard</string>
+    <string name="settings_colors_download">Cores de download</string>
+    <string name="settings_save">Salvar</string>
+
+    <!-- Dashboard / SelfHosted -->
+    <string name="dashboard_channel_name">Dashboard</string>
+    <string name="dashboard_channel_desc">Servidor self-hosted ativo</string>
+    <string name="dashboard_notif_title">Swt Dashboard</string>
+    <string name="dashboard_notif_active">Dashboard ativo em %1$s</string>
+    <string name="dashboard_notif_stop">Parar</string>
+
+    <!-- Generic -->
+    <!-- Library / HOME screen (Phase 2B) -->
+    <string name="library_empty">Nenhum jogo instalado.\nVisite a Loja para começar.</string>
+    <string name="library_focused_placeholder">Selecione um jogo</string>
+
+    <!-- Dock labels -->
+    <string name="dock_jogos">Jogos</string>
+    <string name="dock_apps">Apps</string>
+    <string name="dock_conquistas">Conquistas</string>
+    <string name="dock_perfil">Perfil</string>
+    <string name="dock_config">Config</string>
+
+    <!-- Library card labels -->
+    <string name="library_card_collections">Coleções</string>
+    <string name="library_card_all_games">Todos os Jogos</string>
+    <string name="library_card_apps">Apps</string>
+    <string name="library_card_dashboard">Dashboard</string>
+
+    <!-- Home row -->
+    <string name="home_row_all_games">Todos os Jogos</string>
+
+    <!-- RetroAchievements -->
+    <string name="ra_not_logged_in">Não conectado ao RetroAchievements</string>
+    <string name="ra_login_in_settings">Faça login nas Configurações → RetroAchievements</string>
+    <string name="ra_profile_loading">Carregando perfil…</string>
+    <string name="ra_profile_loaded">Perfil carregado</string>
+    <string name="ra_profile_error">Erro ao carregar perfil: %1$s</string>
+    <string name="ra_achievements_title">Conquistas</string>
+    <string name="ra_achievements_empty">Nenhuma conquista para este jogo</string>
+    <string name="ra_achievements_locked">Bloqueada</string>
+    <string name="ra_achievements_unlocked">Desbloqueada</string>
+    <string name="ra_achievements_hardcore">Hardcore</string>
+    <string name="ra_overlay_unlocked">Conquista desbloqueada!</string>
+
+    <!-- Generic -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancelar</string>
+</resources>

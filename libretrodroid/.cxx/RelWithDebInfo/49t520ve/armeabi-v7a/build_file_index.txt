@@ -1,0 +1,2 @@
+/mnt/GIT/HylianBox/libretrodroid/src/main/cpp/CMakeLists.txt
+/mnt/GIT/HylianBox/libretrodroid/src/main/cpp/oboe/CMakeLists.txt

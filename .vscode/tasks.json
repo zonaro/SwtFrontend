@@ -1,0 +1,49 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Swt: Build Debug",
+      "type": "shell",
+      "command": "./gradlew :app:assembleDebug --console=plain",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": false },
+      "presentation": { "reveal": "always", "panel": "shared", "focus": false },
+      "problemMatcher": "$gradle"
+    },
+    {
+      "label": "Swt: Install via ADB (script)",
+      "type": "shell",
+      "command": "./install.sh --install-only",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    },
+    {
+      "label": "Swt: Build & Install (adb)",
+      "type": "shell",
+      "command": "./install.sh",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": { "kind": "build", "isDefault": true },
+      "presentation": { "reveal": "always", "panel": "shared", "focus": true },
+      "problemMatcher": "$gradle",
+      "dependsOrder": "sequence"
+    },
+    {
+      "label": "Swt: Build & Install & Launch",
+      "type": "shell",
+      "command": "./install.sh --launch",
+      "options": { "cwd": "${workspaceFolder}" },
+      "group": "build",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": "$gradle"
+    },
+    {
+      "label": "Swt: adb devices",
+      "type": "shell",
+      "command": "adb devices -l; echo \"---\"; adb --version | head -1",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "problemMatcher": []
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SwtFrontend Dashboard</title>
+    <link rel="stylesheet" href="/dashboard/style.css">
+    <link rel="icon" href="/dashboard/favicon.svg" type="image/svg+xml">
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <h1>SwtFrontend</h1>
+            <nav>
+                <a href="/" class="nav-link active" data-page="home">Home</a>
+                <a href="/?page=library" class="nav-link" data-page="library">Biblioteca</a>
+                <a href="/?page=settings" class="nav-link" data-page="settings">Configurações</a>
+            </nav>
+            <div class="user-info">
+                <span id="user-display"></span>
+                <button id="btn-logout" class="btn-small">Sair</button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home -->
+        <section id="page-home" class="page active">
+            <h2>Dashboard</h2>
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-roms">0</div>
+                    <div class="stat-label">ROMs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-platforms">0</div>
+                    <div class="stat-label">Plataformas</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-storage">--</div>
+                    <div class="stat-label">Armazenamento livre</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value" id="stat-port">--</div>
+                    <div class="stat-label">Porta do servidor</div>
+                </div>
+            </div>
+            <div class="card">
+                <h3>Acesso rápido</h3>
+                <p>Use este dashboard para gerenciar sua biblioteca de ROMs pela rede.</p>
+                <p>Escaneie o QR code abaixo ou acesse diretamente pelo navegador:</p>
+                <div id="qr-container" class="qr-container"></div>
+                <p class="url-display" id="server-url"></p>
+            </div>
+        </section>
+
+        <!-- Library -->
+        <section id="page-library" class="page">
+            <h2>Biblioteca</h2>
+            <div class="toolbar">
+                <button id="btn-upload" class="btn-primary">Upload ROM</button>
+                <input type="file" id="file-input" accept=".nes,.sfc,.smc,.gba,.gb,.gbc,.n64,.nds,.gen,.md,.sms,.gg,.iso,.bin,.cue,.pce,.lnx,.ws,.wsc,.ngp,.rom,.a26,.a78,.col,.int,.z64,.v64,.fig,.swc,.fds,.agb,.dsi,.sgx,.sg,.pbp,.bin,.cue" style="display:none" multiple>
+                <div class="search-box">
+                    <input type="text" id="rom-search" placeholder="Buscar ROMs...">
+                </div>
+            </div>
+            <div id="rom-list" class="rom-grid"></div>
+        </section>
+
+        <!-- Settings -->
+        <section id="page-settings" class="page">
+            <h2>Configurações</h2>
+            <div class="card">
+                <h3>Servidor</h3>
+                <div class="setting-row">
+                    <label>Porta:</label>
+                    <span id="setting-port">--</span>
+                </div>
+                <div class="setting-row">
+                    <label>Diretório de ROMs:</label>
+                    <span id="setting-roms-dir">--</span>
+                </div>
+                <div class="setting-row">
+                    <label>Diretório de Capas:</label>
+                    <span id="setting-covers-dir">--</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ROM Detail Modal -->
+        <div id="rom-modal" class="modal hidden">
+            <div class="modal-content">
+                <button class="modal-close" id="modal-close">&times;</button>
+                <h3 id="modal-rom-name"></h3>
+                <div class="modal-body">
+                    <div class="rom-cover-section">
+                        <img id="modal-cover" class="rom-cover" src="" alt="Capa">
+                        <div class="cover-actions">
+                            <label class="btn-small">Upload Capa
+                                <input type="file" id="cover-input" accept="image/*" style="display:none">
+                            </label>
+                            <button id="btn-clear-cover" class="btn-small btn-danger">Remover</button>
+                        </div>
+                    </div>
+                    <div class="rom-details">
+                        <div class="detail-row"><strong>Plataforma:</strong> <span id="modal-platform"></span></div>
+                        <div class="detail-row"><strong>Extensão:</strong> <span id="modal-extension"></span></div>
+                        <div class="detail-row"><strong>Tamanho:</strong> <span id="modal-size"></span></div>
+                    </div>
+                    <div class="rom-actions">
+                        <a id="btn-download" class="btn-primary" download>Download</a>
+                        <button id="btn-delete-rom" class="btn-danger">Excluir</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/dashboard/app.js"></script>
+</body>
+</html>

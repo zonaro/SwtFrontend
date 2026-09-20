@@ -1,0 +1,27 @@
+{
+  "buildFiles": [
+    "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/kaizonaro/android-setup/sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/kaizonaro/android-setup/sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "ra_jni::@6890427a1f51a3e7e1df": {
+      "artifactName": "ra_jni",
+      "abi": "x86_64",
+      "output": "/mnt/GIT/SwtFrontend/rcheevos/build/intermediates/cxx/Debug/6n5e6w6v/obj/x86_64/libra_jni.so",
+      "runtimeFiles": []
+    }
+  }
+}

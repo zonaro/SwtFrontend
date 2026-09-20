@@ -1,0 +1,1 @@
+/mnt/GIT/HylianBox/libretrodroid/build/intermediates/cxx/RelWithDebInfo/49t520ve/obj/x86

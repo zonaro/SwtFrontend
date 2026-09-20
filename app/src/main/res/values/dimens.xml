@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="gamepad_padding_vertical">20dp</dimen>
+
+    <!-- Shared shape dimensions (Nintendo Switch UI) -->
+    <dimen name="card_radius">24dp</dimen>
+    <dimen name="sheet_radius">28dp</dimen>
+    <dimen name="icon_button_size">44dp</dimen>
+    <dimen name="card_elevation">4dp</dimen>
+    <dimen name="card_elevation_high">8dp</dimen>
+    <dimen name="pill_horizontal_padding">24dp</dimen>
+    <dimen name="input_horizontal_padding">16dp</dimen>
+    <dimen name="input_vertical_padding">12dp</dimen>
+    <dimen name="section_spacing">16dp</dimen>
+    <dimen name="header_padding">20dp</dimen>
+
+    <!-- In-game grid menu -->
+    <dimen name="menu_cell_margin">8dp</dimen>
+    <dimen name="menu_cell_min_height">76dp</dimen>
+    <dimen name="menu_cell_padding">12dp</dimen>
+    <dimen name="menu_icon_size">28dp</dimen>
+    <dimen name="menu_icon_margin_bottom">8dp</dimen>
+    <dimen name="menu_label_text_size">13sp</dimen>
+    <dimen name="menu_header_top_margin">16dp</dimen>
+    <dimen name="menu_header_bottom_margin">8dp</dimen>
+    <dimen name="menu_header_text_size">13sp</dimen>
+    <dimen name="dialog_menu_max_width">560dp</dimen>
+    <dimen name="dialog_menu_padding_vertical">20dp</dimen>
+    <dimen name="dialog_menu_vertical_inset">16dp</dimen>
+
+    <!-- Physical-controller key badge -->
+    <dimen name="menu_badge_text_size">10sp</dimen>
+    <dimen name="menu_badge_padding_horizontal">6dp</dimen>
+    <dimen name="menu_badge_padding_vertical">2dp</dimen>
+    <dimen name="menu_badge_margin">4dp</dimen>
+
+    <!-- ===== Nintendo Switch UI spacing / type scale ===== -->
+    <dimen name="switch_focus_border_width">3dp</dimen>
+    <dimen name="switch_card_corner_radius">5dp</dimen>
+    <dimen name="switch_dialog_corner_radius">14dp</dimen>
+    <dimen name="switch_card_size_home">220dp</dimen>
+    <dimen name="switch_card_size_grid">170dp</dimen>
+    <dimen name="switch_dock_button_size">50dp</dimen>
+    <dimen name="switch_dock_gap">14dp</dimen>
+    <dimen name="switch_home_card_gap">16dp</dimen>
+    <dimen name="switch_screen_margin">22dp</dimen>
+    <dimen name="switch_home_row_top_spacing">96dp</dimen>
+    <dimen name="switch_grid_padding">16dp</dimen>
+    <dimen name="switch_grid_card_gap">16dp</dimen>
+    <dimen name="switch_label_focused_text">18sp</dimen>
+    <dimen name="switch_title_text">20sp</dimen>
+    <dimen name="switch_row_text">17sp</dimen>
+    <dimen name="switch_hint_text">12sp</dimen>
+    <dimen name="switch_suffix_text">14sp</dimen>
+    <dimen name="switch_side_panel_min_width">320dp</dimen>
+    <dimen name="switch_side_panel_row_height">60dp</dimen>
+</resources>

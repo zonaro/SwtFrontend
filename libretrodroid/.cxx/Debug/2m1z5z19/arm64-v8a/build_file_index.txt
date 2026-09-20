@@ -1,0 +1,2 @@
+/mnt/GIT/SwtFrontend/libretrodroid/src/main/cpp/CMakeLists.txt
+/mnt/GIT/SwtFrontend/libretrodroid/src/main/cpp/oboe/CMakeLists.txt

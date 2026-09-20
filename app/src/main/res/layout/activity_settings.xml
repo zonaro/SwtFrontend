@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Settings screen for SwtFrontend: ROM folders, appearance (accent/theme),
+     provider API keys, RetroAchievements, dashboard toggle. Switch-style UI. -->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/settings_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/switch_bg"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="32dp">
+
+        <!-- Header: back button + icon + title. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="@dimen/switch_screen_margin">
+
+            <ImageButton
+                android:id="@+id/settings_back"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:background="@drawable/bg_icon_button"
+                android:src="@android:drawable/ic_menu_revert"
+                android:tint="@color/switch_text_primary"
+                android:contentDescription="@string/dialog_cancel"
+                android:scaleType="centerInside" />
+
+            <ImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="12dp"
+                android:src="@drawable/ic_dock_settings"
+                android:tint="?attr/colorPrimary"
+                android:contentDescription="@string/settings_title" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="12dp"
+                android:text="@string/settings_title"
+                android:textColor="@color/switch_text_primary"
+                android:textSize="@dimen/switch_title_text"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Thin separator. -->
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/switch_text_secondary" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: Pastas de ROMs
+             ═══════════════════════════════════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/settings_section_roms"
+            style="SwitchSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:paddingTop="20dp"
+            android:paddingBottom="8dp"
+            android:text="@string/settings_section_roms" />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:text="@string/settings_roms_desc"
+            android:textColor="@color/switch_text_secondary"
+            android:textSize="@dimen/switch_hint_text"
+            android:layout_marginBottom="8dp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/settings_rom_folders_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:nestedScrollingEnabled="false"
+            android:visibility="gone"
+            tools:listitem="@layout/item_rom_folder" />
+
+        <TextView
+            android:id="@+id/settings_roms_empty"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:text="@string/settings_roms_empty"
+            android:textColor="@color/switch_text_secondary"
+            android:textSize="@dimen/switch_hint_text" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_roms_add"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/settings_roms_add" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: Aparência
+             ═══════════════════════════════════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/settings_section_appearance"
+            style="SwitchSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:text="@string/settings_section_appearance" />
+
+        <!-- Theme toggle (Dark/Light). -->
+        <LinearLayout
+            style="@style/Widget.Swt.SettingRow.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Widget.Swt.SettingLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings_theme_label" />
+
+            <TextView
+                android:id="@+id/settings_theme_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/switch_text_secondary"
+                android:textSize="@dimen/switch_suffix_text"
+                tools:text="Escuro" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_theme_toggle"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/settings_theme_label" />
+
+        <!-- Accent color picker. -->
+        <LinearLayout
+            style="@style/Widget.Swt.SettingRow.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Widget.Swt.SettingLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings_accent_label" />
+
+            <TextView
+                android:id="@+id/settings_accent_value"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/switch_text_secondary"
+                android:textSize="@dimen/switch_suffix_text"
+                tools:text="Ciano" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_accent_picker"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="@string/settings_accent_label" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: Providers de Capa (IGDB / TheGamesDB / SteamGridDB)
+             ═══════════════════════════════════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/settings_section_providers"
+            style="SwitchSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:text="@string/settings_section_providers" />
+
+        <!-- IGDB -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:hint="@string/settings_igdb_client_id">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_igdb_client_id"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:layout_marginTop="8dp"
+            android:hint="@string/settings_igdb_client_secret">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_igdb_client_secret"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- TheGamesDB -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:layout_marginTop="12dp"
+            android:hint="@string/settings_tgdb_api_key">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_tgdb_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <!-- SteamGridDB -->
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:layout_marginTop="12dp"
+            android:hint="@string/settings_sgdb_api_key">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_sgdb_key"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_providers_save"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="12dp"
+            android:text="@string/settings_save" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: RetroAchievements
+             ═══════════════════════════════════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/settings_section_ra"
+            style="SwitchSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:text="@string/settings_section_ra" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:hint="@string/settings_ra_username">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_ra_username"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textEmailAddress"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            style="@style/SwitchTextField"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/switch_screen_margin"
+            android:layout_marginEnd="@dimen/switch_screen_margin"
+            android:layout_marginTop="8dp"
+            android:hint="@string/settings_ra_password">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/settings_ra_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:importantForAutofill="no"
+                android:singleLine="true" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center"
+            android:layout_marginTop="8dp"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/settings_ra_login"
+                style="@style/SwitchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/settings_ra_login" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/settings_ra_logout"
+                style="@style/SwitchButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/settings_ra_logout" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/settings_ra_status"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="@dimen/switch_screen_margin"
+            android:textColor="@color/switch_text_secondary"
+            android:textSize="@dimen/switch_hint_text"
+            tools:text="Não conectado" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: Dashboard
+             ═══════════════════════════════════════════════════════════════════ -->
+        <TextView
+            android:id="@+id/settings_section_dashboard"
+            style="SwitchSectionHeader"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingStart="@dimen/switch_screen_margin"
+            android:paddingEnd="@dimen/switch_screen_margin"
+            android:paddingTop="24dp"
+            android:paddingBottom="8dp"
+            android:text="@string/settings_section_dashboard" />
+
+        <!-- Dashboard enabled toggle. -->
+        <LinearLayout
+            style="@style/Widget.Swt.SettingRow.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Widget.Swt.SettingLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings_dashboard_enabled" />
+
+            <com.google.android.material.switchmaterial.SwitchMaterial
+                android:id="@+id/settings_dashboard_switch"
+                style="@style/SwitchSwitch"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+        </LinearLayout>
+
+        <!-- Dashboard port. -->
+        <LinearLayout
+            style="@style/Widget.Swt.SettingRow.Horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                style="@style/Widget.Swt.SettingLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/settings_dashboard_port" />
+
+            <EditText
+                android:id="@+id/settings_dashboard_port"
+                android:layout_width="80dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_search_field"
+                android:padding="8dp"
+                android:inputType="number"
+                android:textColor="@color/switch_text_primary"
+                android:textSize="@dimen/switch_suffix_text"
+                android:gravity="center"
+                android:maxLines="1"
+                android:importantForAutofill="no"
+                tools:text="7120" />
+        </LinearLayout>
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_dashboard_open"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="8dp"
+            android:text="@string/settings_dashboard_open" />
+
+        <!-- ═══════════════════════════════════════════════════════════════════
+             SECTION: Cores de Download
+             ═══════════════════════════════════════════════════════════════════ -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/settings_colors_download"
+            style="@style/SwitchButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="24dp"
+            android:text="@string/settings_colors_download" />
+
+    </LinearLayout>
+</ScrollView>

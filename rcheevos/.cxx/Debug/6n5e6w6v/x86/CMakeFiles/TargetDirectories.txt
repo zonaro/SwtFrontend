@@ -1,0 +1,3 @@
+/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86/CMakeFiles/ra_jni.dir
+/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86/CMakeFiles/edit_cache.dir
+/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86/CMakeFiles/rebuild_cache.dir

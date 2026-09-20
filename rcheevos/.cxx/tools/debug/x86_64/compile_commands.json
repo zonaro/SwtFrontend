@@ -1,0 +1,167 @@
+[
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/ra_jni.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/ra_jni.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/ra_jni.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rapi/rc_api_common.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_common.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_common.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rapi/rc_api_editor.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_editor.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_editor.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rapi/rc_api_info.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_info.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_info.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rapi/rc_api_runtime.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_runtime.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_runtime.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rapi/rc_api_user.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_user.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rapi/rc_api_user.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/aes.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/aes.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/aes.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/cdreader.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/cdreader.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/cdreader.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/hash.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/hash_disc.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_disc.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_disc.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/hash_encrypted.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_encrypted.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_encrypted.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/hash_rom.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_rom.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_rom.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/hash_zip.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_zip.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/hash_zip.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rhash/md5.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/md5.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rhash/md5.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/alloc.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/alloc.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/alloc.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/condition.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/condition.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/condition.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/condset.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/condset.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/condset.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/consoleinfo.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/consoleinfo.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/consoleinfo.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/format.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/format.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/format.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/lboard.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/lboard.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/lboard.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/memref.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/memref.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/memref.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/operand.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/operand.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/operand.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/rc_validate.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/rc_validate.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/rc_validate.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/richpresence.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/richpresence.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/richpresence.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/runtime.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/runtime.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/runtime.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/runtime_progress.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/runtime_progress.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/runtime_progress.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/trigger.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/trigger.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/trigger.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rcheevos/value.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/value.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rcheevos/value.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rc_client.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_client.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_client.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rc_client_external.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_client_external.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_client_external.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rc_compat.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_compat.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_compat.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rc_util.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_util.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_util.c"
+},
+{
+  "directory": "/mnt/GIT/SwtFrontend/rcheevos/.cxx/Debug/6n5e6w6v/x86_64",
+  "command": "/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/bin/clang --target=x86_64-none-linux-android24 --sysroot=/home/kaizonaro/android-setup/sdk/ndk/27.0.12077973/toolchains/llvm/prebuilt/linux-x86_64/sysroot -DRC_CLIENT_SUPPORTS_HASH -DRC_DISABLE_LUA=1 -Dra_jni_EXPORTS -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/include -I/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src -g -DANDROID -fdata-sections -ffunction-sections -funwind-tables -fstack-protector-strong -no-canonical-prefixes -D_FORTIFY_SOURCE=2 -Wformat -Werror=format-security  -fno-limit-debug-info  -fPIC -Wall -o CMakeFiles/ra_jni.dir/rcheevos/src/rc_version.c.o -c /mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_version.c",
+  "file": "/mnt/GIT/SwtFrontend/rcheevos/src/main/cpp/rcheevos/src/rc_version.c"
+}
+]

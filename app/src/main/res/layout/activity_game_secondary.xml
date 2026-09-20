@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_game_secondary.xml
+
+    Copyright (C) 2026 RedClaw Studio
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000">
+
+    <!-- For secondary display: placeholder that shows "Bottom Screen" label.
+         The actual GLRetroView for DS bottom screen is rendered via Presentation
+         or by the core's dual-screen layout option (melonds_screen_layout1 / desmume_screens_layout).
+         This layout is inflated by SecondaryDisplayActivity on external displays. -->
+    <TextView
+        android:id="@+id/secondary_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="DS Bottom Screen"
+        android:textColor="#88FFFFFF"
+        android:textSize="18sp" />
+
+</FrameLayout>

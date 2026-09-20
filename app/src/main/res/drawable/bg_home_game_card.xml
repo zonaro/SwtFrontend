@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Cover placeholder background for home-row game cards. -->
+    <solid android:color="@color/switch_panel" />
+    <corners android:radius="@dimen/switch_card_corner_radius" />
+</shape>

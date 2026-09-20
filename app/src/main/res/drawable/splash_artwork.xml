@@ -1,0 +1,102 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:aapt="http://schemas.android.com/aapt"
+    android:width="1080dp"
+    android:height="1920dp"
+    android:viewportWidth="1080"
+    android:viewportHeight="1920">
+    <!-- Swt Frontend splash artwork (original, no Nintendo IP).
+         Deep dark gradient field with teal accent glow,
+         ornamental abstractions flanking a central safe area reserved for the
+         wordmark overlay ("SWT"), which the app draws as a TextView
+         on top of this drawable for crisp typography.
+         Composition is aspect-safe (9:16 to 21:9). -->
+
+    <!-- Background: deep dark vertical gradient -->
+    <path android:pathData="M0,0 H1080 V1920 H0 Z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="linear"
+                android:startX="0"
+                android:startY="0"
+                android:endX="0"
+                android:endY="1920">
+                <item android:name="c0" android:offset="0" android:color="#0D1117" />
+                <item android:name="c1" android:offset="0.55" android:color="#161B22" />
+                <item android:name="c2" android:offset="1" android:color="#0D1117" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Subtle radial teal glow behind the logo safe area -->
+    <path android:pathData="M540,960 m-470,0 a470,470 0 1 0 940,0 a470,470 0 1 0 -940,0 z">
+        <aapt:attr name="android:fillColor">
+            <gradient
+                android:type="radial"
+                android:centerX="540"
+                android:centerY="960"
+                android:gradientRadius="470">
+                <item android:name="g0" android:offset="0" android:color="#1A00BCD4" />
+                <item android:name="g1" android:offset="1" android:color="#0000BCD4" />
+            </gradient>
+        </aapt:attr>
+    </path>
+
+    <!-- Inner frame (thin, low-alpha border) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#4000BCD4"
+        android:strokeWidth="3"
+        android:pathData="M60,60 H1020 V1860 H60 Z" />
+
+    <!-- LEFT ornamental shape (teal geometric: diamond + chevrons + accent dots) -->
+    <group>
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#8000BCD4"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M270,700 L330,960 L270,1220 L210,960 Z M270,820 L300,960 L270,1100 L240,960 Z M330,780 L392,820 L330,860 M330,920 L392,960 L330,1000 M330,1060 L392,1100 L330,1140" />
+        <path
+            android:fillColor="#00BCD4"
+            android:strokeColor="#00000000"
+            android:strokeWidth="0"
+            android:pathData="M261,700 a9,9 0 1 0 18,0 a9,9 0 1 0 -18,0 z M261,1220 a9,9 0 1 0 18,0 a9,9 0 1 0 -18,0 z" />
+    </group>
+
+    <!-- RIGHT ornamental shape (mirror of left about x=540) -->
+    <group android:translateX="1080" android:scaleX="-1">
+        <path
+            android:fillColor="#00000000"
+            android:strokeColor="#8000BCD4"
+            android:strokeWidth="6"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round"
+            android:pathData="M270,700 L330,960 L270,1220 L210,960 Z M270,820 L300,960 L270,1100 L240,960 Z M330,780 L392,820 L330,860 M330,920 L392,960 L330,1000 M330,1060 L392,1100 L330,1140" />
+        <path
+            android:fillColor="#00BCD4"
+            android:strokeColor="#00000000"
+            android:strokeWidth="0"
+            android:pathData="M261,700 a9,9 0 1 0 18,0 a9,9 0 1 0 -18,0 z M261,1220 a9,9 0 1 0 18,0 a9,9 0 1 0 -18,0 z" />
+    </group>
+
+    <!-- CENTRAL crest above the wordmark safe area (original abstract teal mark) -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#00BCD4"
+        android:strokeWidth="5"
+        android:strokeLineJoin="round"
+        android:pathData="M540,690 L582,760 L540,830 L498,760 Z" />
+    <path
+        android:fillColor="#00BCD4"
+        android:strokeColor="#00000000"
+        android:strokeWidth="0"
+        android:pathData="M540,722 L562,760 L540,798 L518,760 Z" />
+    <!-- Thin anchor divider beneath the wordmark zone -->
+    <path
+        android:fillColor="#00000000"
+        android:strokeColor="#4000BCD4"
+        android:strokeWidth="3"
+        android:strokeLineCap="round"
+        android:pathData="M400,1200 H680" />
+</vector>

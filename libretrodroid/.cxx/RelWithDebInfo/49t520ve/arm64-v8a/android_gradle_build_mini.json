@@ -1,0 +1,34 @@
+{
+  "buildFiles": [
+    "/mnt/GIT/HylianBox/libretrodroid/src/main/cpp/CMakeLists.txt",
+    "/mnt/GIT/HylianBox/libretrodroid/src/main/cpp/oboe/CMakeLists.txt"
+  ],
+  "cleanCommandsComponents": [
+    [
+      "/home/kaizonaro/Android/Sdk/cmake/3.22.1/bin/ninja",
+      "-C",
+      "/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/arm64-v8a",
+      "clean"
+    ]
+  ],
+  "buildTargetsCommandComponents": [
+    "/home/kaizonaro/Android/Sdk/cmake/3.22.1/bin/ninja",
+    "-C",
+    "/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/arm64-v8a",
+    "{LIST_OF_TARGETS_TO_BUILD}"
+  ],
+  "libraries": {
+    "oboe::@0db0cf03f2959f768628": {
+      "artifactName": "oboe",
+      "abi": "arm64-v8a",
+      "output": "/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/arm64-v8a/oboe/liboboe.a",
+      "runtimeFiles": []
+    },
+    "libretrodroid::@6890427a1f51a3e7e1df": {
+      "artifactName": "libretrodroid",
+      "abi": "arm64-v8a",
+      "output": "/mnt/GIT/HylianBox/libretrodroid/build/intermediates/cxx/RelWithDebInfo/49t520ve/obj/arm64-v8a/liblibretrodroid.so",
+      "runtimeFiles": []
+    }
+  }
+}

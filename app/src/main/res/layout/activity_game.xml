@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    activity_game.xml
+
+    Copyright (C) 2026 RedClaw Studio
+
+    This program is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program. If not, see <https://www.gnu.org/licenses/>.
+-->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/game_container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FF000000">
+
+    <!-- GLRetroView is added programmatically here -->
+    <FrameLayout
+        android:id="@+id/retro_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <!-- Touch control overlay (on-screen d-pad, buttons, shoulders) -->
+    <br.com.redclaw.swt.game.GameTouchOverlay
+        android:id="@+id/touch_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="gone" />
+
+    <!-- In-game menu overlay -->
+    <LinearLayout
+        android:id="@+id/menu_overlay"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#CC000000"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:visibility="gone"
+        android:padding="32dp">
+
+        <TextView
+            android:id="@+id/menu_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Menu"
+            android:textColor="#FFFFFF"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="24dp" />
+
+        <Button
+            android:id="@+id/menu_resume"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="Resume" />
+
+        <Button
+            android:id="@+id/menu_save_state"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="Save State" />
+
+        <Button
+            android:id="@+id/menu_load_state"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="Load State" />
+
+        <Button
+            android:id="@+id/menu_reset"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="Reset" />
+
+        <Button
+            android:id="@+id/menu_restart"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="Restart Game" />
+
+        <Button
+            android:id="@+id/menu_secondary_display"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="12dp"
+            android:text="DS Bottom Screen"
+            android:visibility="gone" />
+
+        <Button
+            android:id="@+id/menu_quit"
+            android:layout_width="240dp"
+            android:layout_height="48dp"
+            android:text="Quit"
+            android:textColor="#FF4444" />
+
+    </LinearLayout>
+
+</FrameLayout>

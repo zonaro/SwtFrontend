@@ -1,0 +1,14 @@
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/libretrodroid.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/edit_cache.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/rebuild_cache.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/list_install_components.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/install.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/install/local.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/CMakeFiles/install/strip.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/oboe.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/edit_cache.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/rebuild_cache.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/list_install_components.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/install.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/install/local.dir
+/mnt/GIT/HylianBox/libretrodroid/.cxx/RelWithDebInfo/49t520ve/x86_64/oboe/CMakeFiles/install/strip.dir

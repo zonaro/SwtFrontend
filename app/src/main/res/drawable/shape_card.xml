@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Card shape used for ghost placeholders in the game grid. -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="@color/switch_panel" />
+    <corners android:radius="@dimen/switch_card_corner_radius" />
+</shape>

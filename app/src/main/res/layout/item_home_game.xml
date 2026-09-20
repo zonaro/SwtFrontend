@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Switch-style home row game card: landscape cover image + title below.
+     Width is set programmatically to switch_card_size_home (220dp);
+     height uses the cover aspect ratio (COVER_ASPECT_RATIO) via
+     HomeGamesAdapter. The card is focusable and shows a round accent
+     focus border when D-pad-selected. -->
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="@dimen/switch_card_size_home"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_home_game_card"
+    android:clipChildren="false"
+    android:clipToPadding="false"
+    android:focusable="true"
+    android:focusableInTouchMode="true"
+    android:padding="0dp">
+
+    <ImageView
+        android:id="@+id/home_game_cover"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_gravity="top|start"
+        android:scaleType="centerCrop"
+        android:src="@drawable/bg_home_game_card"
+        app:tint="@null" />
+
+    <!-- Fallback icon shown when no cover image is available. -->
+    <ImageView
+        android:id="@+id/home_game_icon"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:layout_gravity="center"
+        android:src="@drawable/ic_launcher_foreground"
+        android:tint="@color/switch_text_secondary"
+        app:tint="@color/switch_text_secondary"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/home_game_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|start"
+        android:background="@color/switch_card_dim"
+        android:ellipsize="end"
+        android:maxLines="1"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp"
+        android:paddingTop="4dp"
+        android:paddingBottom="6dp"
+        android:textColor="@color/switch_text_primary"
+        android:textSize="@dimen/switch_hint_text" />
+
+    <!-- Round accent focus border, shown only when focused. -->
+    <View
+        android:id="@+id/home_game_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/switch_focus_border_round"
+        android:visibility="gone" />
+
+</FrameLayout>

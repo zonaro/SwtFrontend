@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Nintendo Switch HOME-style library screen.
+     Structure: top spacer, focused-game label, home row (RecyclerView), library cards
+     grid (RecyclerView), then a bottom dock of 5 circular buttons. The flexible spacer
+     pushes the dock to the bottom. -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/switch_bg"
+    android:orientation="vertical">
+
+    <!-- Top spacing to match the Switch HOME menu layout. -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/switch_home_row_top_spacing" />
+
+    <!-- Focused-game label (updates when D-pad moves across the home row). -->
+    <TextView
+        android:id="@+id/library_focused_label"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/switch_screen_margin"
+        android:layout_marginEnd="@dimen/switch_screen_margin"
+        android:layout_marginBottom="8dp"
+        android:textColor="?attr/colorPrimary"
+        android:textSize="@dimen/switch_label_focused_text"
+        android:textStyle="bold"
+        android:singleLine="true"
+        android:ellipsize="end" />
+
+    <!-- Home row: horizontal RecyclerView of landscape game cards. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/library_home_row"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:clipToPadding="false"
+        android:focusable="false"
+        android:overScrollMode="never"
+        android:scrollbars="none" />
+
+    <!-- Library cards grid: Coleções, Todos os Jogos, Apps, Dashboard. -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/library_cards_grid"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="@dimen/switch_screen_margin"
+        android:layout_marginEnd="@dimen/switch_screen_margin"
+        android:focusable="false"
+        android:overScrollMode="never" />
+
+    <!-- Flexible spacer pushes the dock to the bottom. -->
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+    <!-- Bottom dock: 5 circular icon buttons. -->
+    <LinearLayout
+        android:id="@+id/library_dock"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="center"
+        android:orientation="horizontal" />
+
+</LinearLayout>
