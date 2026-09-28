@@ -50,6 +50,24 @@ O módulo HylianBox será responsável por:
 - ligação do rcheevos à memória do core e hash da ROM final;
 - toda UI exibida durante gameplay.
 
+### ADR-005 — Captura e galeria são capacidades do host
+
+Screenshot, gravação de tela, armazenamento de mídia, visualização, compartilhamento e exclusão
+pertencem ao SwtFrontend. Essas capacidades não podem ficar presas ao HylianBox porque qualquer
+jogo interno ou APK-companheiro deve produzir mídia na mesma galeria.
+
+Há dois adaptadores de captura, com o mesmo destino:
+
+- jogos libretro executados dentro do host usam leitura do framebuffer/encoder EGL, sem capturar
+  HUD ou outras janelas e sem pedir MediaProjection;
+- módulos APK e aplicativos externos usam MediaProjection com consentimento explícito do Android,
+  `ForegroundService` do tipo `mediaProjection`, H.264/MP4 e ação persistente para parar.
+
+Módulos só podem abrir as actions públicas `br.com.redclaw.swt.capture.SCREENSHOT`,
+`br.com.redclaw.swt.capture.RECORDING` e `br.com.redclaw.swt.capture.GALLERY`. As Activities são
+protegidas pela permission `signature` do SDK. O token MediaProjection e os caminhos privados nunca
+são entregues ao módulo.
+
 ## 3. Estado atual e lacunas
 
 O SwtFrontend ainda depende diretamente de `:libretrodroid` e `:rcheevos`, baixa cores por `CoreUpdaterImpl` e executa jogos em `GameActivity`. Portanto, ainda não é agnóstico.
@@ -63,6 +81,7 @@ Há sobreposição em LibretroDroid, rcheevos, UI Switch, dashboard, player e st
 ```text
 SwtFrontend/
 ├── app/                    # host; sem emulador no estado final
+│   └── capture/            # captura global, gravação, storage, galeria e viewer
 ├── module-api/             # modelos portáveis de catálogo/launch
 ├── module-sdk/             # contratos Android: discovery, Binder e Intents
 ├── patching/               # BPS, IPS e xdelta genéricos
@@ -118,6 +137,25 @@ O módulo retorna `LaunchResult` com motivo da saída, tempo jogado, save altera
 
 Ferramentas têm ID, título localizado, ícone, condição de disponibilidade e ação explícita/PendingIntent. Menus de gameplay permanecem na Activity do HylianBox; o host apenas lista e aciona pontos autorizados.
 
+### 5.7 Captura compartilhada
+
+O identificador opcional da origem usa o ID global `<moduleId>:<moduleGameId>` e é sanitizado antes
+de entrar no nome do arquivo. Capturas ficam em `files/captures` do host com os contratos:
+
+- `screenshot_<sourceId>_<epochMillis>.png`;
+- `recording_<sourceId>_<epochMillis>.mp4`.
+
+O host valida que todo item aberto/excluído pertence canonicamente ao diretório de capturas e
+compartilha arquivos apenas por `FileProvider`. A galeria não solicita acesso geral às fotos do
+dispositivo. Em uma fase posterior, exportação opcional ao MediaStore deve copiar o arquivo, nunca
+transferir sua propriedade.
+
+O ciclo MediaProjection é: consentimento do sistema → início imediato do foreground service →
+registro do callback → criação de um único VirtualDisplay → captura/encoder → liberação de
+VirtualDisplay, ImageReader/MediaRecorder, projection e thread. Cancelamento ou falha remove saída
+incompleta. Gravação global começa sem áudio; áudio interno/microfone só será habilitado depois de
+política explícita, permissões e testes por versão do Android.
+
 ## 6. Distribuição e instalação
 
 O host consumirá um índice HTTPS `modules-v1.json` com package, versão, URL/tamanho/SHA-256 do APK, certificado, APIs compatíveis, ABIs, capacidades, changelog e licenças.
@@ -141,6 +179,10 @@ modules/<moduleId>/games/<globalGameId>/{rom,patches,sram,states,captures}
 ```
 
 Requisitos: escrita atômica; manifest com versão/tamanho/hashes; nenhuma colisão entre hacks; streaming; limites de extração; saves preservados ao remover módulo; backups legíveis sem módulo.
+
+Fisicamente, capturas são uma coleção transversal do host. O namespace acima é metadata lógica:
+arquivos permanecem em `files/captures` e guardam `sourceId`, permitindo filtrar por módulo/jogo sem
+dar acesso direto ao filesystem para APKs-companheiros.
 
 O package do HylianBox será preservado na primeira conversão para manter seus dados privados. Depois, um `MigrationProvider` de uso único transfere base ROMs cadastradas, hacks, patches, saves, states, capas e preferências. A migração usa journal idempotente, hashes e rollback; reexecução não duplica dados.
 
@@ -173,6 +215,17 @@ Aceite: clone limpo contém fontes necessárias; o commit original é pai histó
 Entregáveis: `:module-api`, `:module-sdk`, discovery/assinatura, Service Hylian e remoção do launcher.
 
 Aceite: host distingue ausente/instalado/incompatível/assinatura errada; HylianBox não aparece no launcher; host funciona sem ele.
+
+### F2.1 — Captura, gravação e galeria compartilhadas
+
+Entregáveis: `capture/` no host; armazenamento único; viewer/share/delete; item de Galeria no dock;
+captura e gravação no menu do player interno; MediaProjection para módulos; actions protegidas por
+assinatura; remoção das Activities/classes de galeria do HylianBox.
+
+Aceite: screenshot PNG e vídeo MP4 aparecem na galeria do host; arquivos incluem origem e timestamp;
+um HylianBox assinado abre consentimento/galeria do host; app não assinado é bloqueado; cancelar
+consentimento não cria arquivo; parar pela notificação finaliza MP4; rotação, Android 24 e 35 são
+testados em dispositivo/emulador.
 
 ### F3 — Patching, archives e catálogo
 
@@ -230,6 +283,8 @@ Gate obrigatório antes de apagar `zonaro/hylianbox`:
 - segurança: APK/hash inválido, ZIP Slip/bomb, archive truncado, URI expirada, segredo em log, patch com checksum incorreto;
 - funcional: módulo ausente/instalação/update, importação legal, patch sintético, sessão, SRAM/states, tools, RA online/offline, backup sem módulo;
 - manifests: um launcher apenas; serviços explicitamente exportados/protegidos;
+- captura: consentimento negado, screenshot one-shot, gravação/stop, arquivo incompleto, sourceId
+  host e módulo, canonical-path traversal, share URI e exclusão;
 - APKs: uma implementação de LibretroDroid/rcheevos por processo e ABI.
 
 Comandos mínimos durante a transição:
@@ -258,6 +313,7 @@ Usar feature flags para registry/launch; preservar o standalone até F7; migrar 
 
 - host opera sem emulador embutido;
 - HylianBox é instalado/atualizado/descoberto como módulo assinado;
+- captura, gravação e galeria têm implementação e storage únicos no host;
 - host possui biblioteca, browser, downloads, patches, archives, saves, backup e perfil RA;
 - módulo possui core, gameplay, Tracker, Auto Ocarina, overlay, modos e runtime RA;
 - não há launcher/UI central duplicada no HylianBox;
@@ -275,10 +331,12 @@ Usar feature flags para registry/launch; preservar o standalone até F7; migrar 
 - [x] `:module-api` e testes iniciais implementados;
 - [x] `:module-sdk`, discovery e validação de assinatura implementados;
 - [x] HylianBox convertido em companion sem launcher;
-- [ ] baseline completo dos dois APKs;
+- [x] baseline completo dos dois APKs;
+- [x] captura, gravação e galeria movidas para o host;
+- [x] HylianBox delega captura e galeria pelas actions protegidas;
 - [ ] patching/archives extraídos;
 - [ ] sessão host → módulo;
 - [ ] tools e RetroAchievements migrados;
 - [ ] emulação removida do host;
-- [ ] publicação e clone limpo validados;
-- [ ] repositório remoto antigo excluído.
+- [x] publicação e clone limpo validados;
+- [x] repositório remoto antigo excluído (bundle de recuperação preservado).

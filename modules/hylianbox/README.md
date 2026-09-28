@@ -28,9 +28,9 @@ The app **never** embeds, downloads, or distributes base ROMs. Users must legall
 - **i18n** (pt-BR default, English, Spanish) — all user-facing strings are externalized to `strings.xml` (pt-BR in `values/`, en in `values-en/`, es in `values-es/`), with zero hardcoded strings in Kotlin/XML layouts.
 
 - **Screen Capture, Recording & Gallery**
-  *What it does:* Capturing screen (always 2 images: with/without overlay of controls), recording screen (video; includes or not the overlay according to the "Include controls in recording" toggle in Settings), and Gallery (view, share, and delete captures).
-  *How to use:* Via emulator menu (press Back button to open menu → "Captura" section); the Gallery is in the dock of the main screen (5th circular button); the toggle "Include controls in recording" is in Settings → Captura.
-  *Technical notes:* Media saved locally on the device only (no upload or telemetry), recording permissions (MediaProjection) requested from the user the first time, compatible with Android API 24+.
+  *What it does:* Delegates screenshots, global screen recording, viewing, sharing and deletion to the SwtFrontend host, giving every module/game one gallery.
+  *How to use:* Use the in-game "Captura" section or the Gallery dock button. Recording is stopped from the persistent host notification.
+  *Technical notes:* The host owns MediaProjection consent and private media storage; HylianBox receives neither projection tokens nor file paths.
 
 ---
 

@@ -46,6 +46,7 @@ android {
 }
 
 dependencies {
+    testImplementation("junit:junit:4.13.2")
     implementation(project(":module-api"))
     implementation(project(":module-sdk"))
     implementation(project(":libretrodroid"))

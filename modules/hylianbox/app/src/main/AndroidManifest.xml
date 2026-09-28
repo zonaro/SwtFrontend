@@ -13,6 +13,14 @@
     <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
+    <uses-permission android:name="br.com.redclaw.swt.permission.BIND_MODULE" />
+
+    <queries>
+        <package android:name="br.com.redclaw.swt" />
+        <intent><action android:name="br.com.redclaw.swt.capture.SCREENSHOT" /></intent>
+        <intent><action android:name="br.com.redclaw.swt.capture.RECORDING" /></intent>
+        <intent><action android:name="br.com.redclaw.swt.capture.GALLERY" /></intent>
+    </queries>
 
     <application
         android:name=".HylianBoxApp"
@@ -106,16 +114,6 @@
             android:exported="false"
             android:screenOrientation="sensorLandscape"
             android:parentActivityName=".views.LibraryActivity" />
-        <activity
-            android:name=".gallery.GalleryActivity"
-            android:exported="false"
-            android:screenOrientation="sensorLandscape"
-            android:parentActivityName=".views.LibraryActivity" />
-        <activity
-            android:name=".gallery.CaptureViewerActivity"
-            android:exported="false"
-            android:screenOrientation="sensorLandscape"
-            android:parentActivityName=".gallery.GalleryActivity" />
         <activity
             android:name=".store.ui.WebViewDownloadActivity"
             android:exported="false"

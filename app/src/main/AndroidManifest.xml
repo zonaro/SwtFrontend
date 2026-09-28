@@ -5,6 +5,7 @@
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE" />
     <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MEDIA_PROJECTION" />
     <uses-permission android:name="br.com.redclaw.swt.permission.BIND_MODULE" />
 
     <queries>
@@ -95,10 +96,55 @@
             android:screenOrientation="unspecified"
             android:theme="@style/Theme.Swt" />
 
+        <activity
+            android:name=".capture.GalleryActivity"
+            android:exported="true"
+            android:permission="br.com.redclaw.swt.permission.BIND_MODULE"
+            android:theme="@style/Theme.Swt">
+            <intent-filter>
+                <action android:name="br.com.redclaw.swt.capture.GALLERY" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
+        <activity
+            android:name=".capture.CaptureViewerActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Swt" />
+
+        <activity
+            android:name=".capture.CaptureProjectionActivity"
+            android:exported="true"
+            android:permission="br.com.redclaw.swt.permission.BIND_MODULE"
+            android:excludeFromRecents="true"
+            android:theme="@style/Theme.Swt">
+            <intent-filter>
+                <action android:name="br.com.redclaw.swt.capture.SCREENSHOT" />
+                <action android:name="br.com.redclaw.swt.capture.RECORDING" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+
         <service
             android:name=".dashboard.DashboardService"
             android:exported="false"
             android:foregroundServiceType="dataSync" />
+
+        <service
+            android:name=".capture.CaptureProjectionService"
+            android:exported="false"
+            android:foregroundServiceType="mediaProjection" />
+
+        <provider
+            android:name=".capture.CaptureFileProvider"
+            android:authorities="br.com.redclaw.swt.capture.files"
+            android:exported="false"
+            android:grantUriPermissions="true">
+            <meta-data
+                android:name="android.support.FILE_PROVIDER_PATHS"
+                android:resource="@xml/capture_filepaths" />
+        </provider>
+
     </application>
 
 </manifest>

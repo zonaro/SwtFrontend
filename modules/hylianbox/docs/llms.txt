@@ -55,9 +55,9 @@
 - CC0/synthesized sound effects (focus-move, select, back, panel open/close)
 
 ### Screen Capture, Recording & Gallery
-- Screenshots via PixelCopy (with/without overlay)
-- Video recording via MediaProjection (MP4, toggle for including controls)
-- Switch-style gallery to view, share, delete captures
+- Delegated by signature-protected intents to the SwtFrontend host
+- Global MediaProjection recording supports HylianBox and future modules
+- One host-owned gallery to view, share and delete captures
 - Media stored locally only (no upload/telemetry)
 
 ### Internationalization

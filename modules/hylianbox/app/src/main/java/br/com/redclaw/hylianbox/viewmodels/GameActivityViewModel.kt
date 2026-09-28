@@ -570,8 +570,8 @@ class GameActivityViewModel(application: Application) : AndroidViewModel(applica
                 if (toolsItems.isNotEmpty()) {
                     MenuSection(R.string.menu_category_tools, toolsItems)
                 } else null
-        /* Screen capture / recording controls. Both are taken directly from
-        the emulator GL framebuffer, excluding Android overlay Views. */
+        /* Capture is host-owned. The signature-protected SwtFrontend activity requests
+        MediaProjection consent, so the same gallery works for every current/future module. */
         val capture =
                 MenuSection(
                         R.string.menu_category_capture,
@@ -586,10 +586,6 @@ class GameActivityViewModel(application: Application) : AndroidViewModel(applica
                                         "record",
                                         R.string.menu_record_start,
                                         R.drawable.ic_record,
-                                        R.drawable.ic_stop,
-                                        isToggle = true,
-                                        isActive = { _isRecording.value == true },
-                                        activeLabelRes = R.string.menu_record_stop,
                                         badgeRes = R.string.badge_rb
                                 ) { toggleRecording() }
                         )
@@ -1648,106 +1644,34 @@ class GameActivityViewModel(application: Application) : AndroidViewModel(applica
         raOverlay = overlay
     }
 
-    /** Capture the current emulator framebuffer as a single PNG in the gallery. */
+    /** Ask the SwtFrontend host to capture the current module window. */
     private fun captureScreenshotAction() {
-        val context = activityContext ?: return
-        val emulator =
-                retroView
-                        ?: run {
-                            Toast.makeText(context, R.string.capture_failed, Toast.LENGTH_SHORT)
-                                    .show()
-                            return
-                        }
-        val hackId = currentHackId ?: return
-        val output = Storage.getInstance(context).screenshotFile(hackId, System.currentTimeMillis())
-        emulator.captureScreenshot { bitmap ->
-            viewModelScope.launch(Dispatchers.IO) {
-                val saved =
-                        bitmap?.let { frame ->
-                            runCatching {
-                                output.outputStream().use { stream ->
-                                    frame.compress(
-                                            android.graphics.Bitmap.CompressFormat.PNG,
-                                            100,
-                                            stream
-                                    )
-                                }
-                            }
-                                    .getOrDefault(false)
-                                    .also { frame.recycle() }
-                        }
-                                ?: false
-                withContext(Dispatchers.Main) {
-                    Toast.makeText(
-                                    context,
-                                    if (saved) R.string.capture_saved else R.string.capture_failed,
-                                    Toast.LENGTH_SHORT
-                            )
-                            .show()
-                }
-            }
-        }
+        launchHostCapture("br.com.redclaw.swt.capture.SCREENSHOT")
     }
 
-    /** Toggle an emulator-only recording; no system screen-capture consent is needed. */
+    /** Start host-owned recording. Stop remains available in the persistent notification. */
     private fun toggleRecording() {
-        val context = activityContext ?: return
-        if (_isRecording.value == true) {
-            stopRecording()
-            return
-        }
-        val hackId = currentHackId ?: return
-        val emulator =
-                retroView
-                        ?: run {
-                            Toast.makeText(context, R.string.capture_failed, Toast.LENGTH_SHORT)
-                                    .show()
-                            return
-                        }
-        val outputFile =
-                Storage.getInstance(context).recordingFile(hackId, System.currentTimeMillis())
-        val includeMicrophone = CorePrefs.getCaptureIncludeMicrophone(context)
-        if (includeMicrophone &&
-                        ContextCompat.checkSelfPermission(
-                                context,
-                                android.Manifest.permission.RECORD_AUDIO
-                        ) != android.content.pm.PackageManager.PERMISSION_GRANTED
-        ) {
-            ActivityCompat.requestPermissions(
-                    context,
-                    arrayOf(android.Manifest.permission.RECORD_AUDIO),
-                    CAPTURE_MICROPHONE_PERMISSION_REQUEST
-            )
-            Toast.makeText(
-                            context,
-                            R.string.capture_microphone_permission_required,
-                            Toast.LENGTH_SHORT
-                    )
-                    .show()
-            return
-        }
-        emulator.startVideoRecording(outputFile, includeMicrophone) { started ->
-            _isRecording.value = started
-            Toast.makeText(
-                            context,
-                            if (started) R.string.recording_started else R.string.capture_failed,
-                            Toast.LENGTH_SHORT
-                    )
-                    .show()
-        }
+        launchHostCapture("br.com.redclaw.swt.capture.RECORDING")
     }
 
-    /** Stop the emulator-only recording and reset the toggle state. */
+    /** Kept for lifecycle compatibility; recording now belongs to the host service. */
     fun stopRecording() {
-        // Do nothing if no recording is active — avoids the "Gravação parada"
-        // toast when simply leaving emulation without a live capture.
-        if (_isRecording.value != true) return
+        _isRecording.value = false
+    }
+
+    private fun launchHostCapture(action: String) {
         val context = activityContext ?: return
-        retroView?.stopVideoRecording {
-            _isRecording.value = false
-            Toast.makeText(context, R.string.recording_stopped, Toast.LENGTH_SHORT).show()
+        val sourceId = "br.com.redclaw.hylianbox:${currentHackId ?: "unknown"}"
+        val launched = runCatching {
+            context.startActivity(
+                    android.content.Intent(action)
+                            .setPackage("br.com.redclaw.swt")
+                            .putExtra("capture_source_id", sourceId)
+            )
+        }.isSuccess
+        if (!launched) {
+            Toast.makeText(context, R.string.capture_failed, Toast.LENGTH_SHORT).show()
         }
-                ?: run { _isRecording.value = false }
     }
 
     /**

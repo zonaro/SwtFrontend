@@ -28,7 +28,6 @@ import androidx.lifecycle.lifecycleScope
 import br.com.redclaw.hylianbox.HylianBoxApp
 import br.com.redclaw.hylianbox.R
 import br.com.redclaw.hylianbox.databinding.ActivityLibraryBinding
-import br.com.redclaw.hylianbox.gallery.GalleryActivity
 import br.com.redclaw.hylianbox.retroachievements.ui.AchievementsActivity
 import br.com.redclaw.hylianbox.retroachievements.ui.RaProfileActivity
 import br.com.redclaw.hylianbox.settings.ui.SettingsActivity
@@ -158,7 +157,21 @@ class LibraryActivity : ScaledAppCompatActivity() {
                                 R.drawable.ic_gallery,
                                 R.color.switch_dock_gallery,
                                 R.string.dock_gallery,
-                                { startActivity(Intent(this, GalleryActivity::class.java)) }
+                                {
+                                    runCatching {
+                                        startActivity(
+                                                Intent("br.com.redclaw.swt.capture.GALLERY")
+                                                        .setPackage("br.com.redclaw.swt")
+                                        )
+                                    }.onFailure {
+                                        Toast.makeText(
+                                                        this,
+                                                        R.string.capture_failed,
+                                                        Toast.LENGTH_SHORT
+                                                )
+                                                .show()
+                                    }
+                                }
                         ),
                         SwitchDock.DockItem(
                                 R.drawable.ic_trophy,

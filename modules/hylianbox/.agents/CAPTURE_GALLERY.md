@@ -1,43 +1,34 @@
-# Capture & Gallery — Screenshots, Recording, Local Gallery
+# Capture & Gallery — delegated to SwtFrontend
 
 ## Overview
-HylianBox lets users capture their gameplay: take screenshots (with or without the on-screen overlay), record gameplay video via MediaProjection, and browse/manage captures in a local Gallery. All captures are stored on-device (no cloud upload).
 
-## What It Does
-1. **Screenshots (2 modes):**
-   - **With overlay:** captures the full `GLRetroView` including HUD/RadialGamePad/achievement overlays (standard `PixelCopy` of the SurfaceView).
-   - **Without overlay:** captures only the emulated frame (core render) — hides overlays before `PixelCopy`, restores after. Useful for clean ROM-hack showcase shots.
-2. **Recording:** `MediaProjection` captures the screen to an MP4 (H.264) in `Movies/HylianBox/`. Started/stopped from the in-game menu.
-3. **Gallery:** A local grid (`SwitchGridScreen`-style) lists all captures (images + videos) with thumbnail, date, game; supports **view** (open in viewer/player), **share** (Intent share), **delete**.
+Capture, recording and gallery are host capabilities. HylianBox contains no gallery Activity and
+does not own new capture files. Its in-game menu and dock delegate to signature-protected
+SwtFrontend actions so every module/game uses the same local collection.
 
-## How to Use
-- **In-game menu → "Captura"** (Capture) submenu:
-  - "Screenshot (com HUD)" / "Screenshot (sem HUD)"
-  - "Gravar tela" (start recording) / "Parar gravação" (stop)
-- **Dock:** The 5th dock button (Gallery icon, Dolfi asset) opens the Gallery from Library Home.
-- **Settings toggle:** "Salvar capturas na galeria do sistema" (also add to system MediaStore) — default ON.
+## Delegated actions
 
-## Package (`capture/` + `gallery/`)
-```
-capture/
-├── CaptureManager.kt        # Orchestrates PixelCopy (with/without overlay), MediaProjection lifecycle
-├── ScreenshotTask.kt        # Async PixelCopy + save to filesDir/captures/ + MediaStore insert
-├── ScreenRecorder.kt        # MediaProjection + MediaRecorder wrapper; start/stop; filename by timestamp
-└── CapturePermissions.kt    # READ_MEDIA_IMAGES / READ_MEDIA_VIDEO / POST_NOTIFICATIONS checks
-gallery/
-├── GalleryActivity.kt       # SwitchGridScreen list of captures
-├── GalleryAdapter.kt        # RecyclerView adapter (image/video thumbnails via Coil)
-├── CaptureViewerActivity.kt # Fullscreen view/play; share + delete actions
-└── GalleryRepository.kt     # Scans filesDir/captures/ + MediaStore; models CaptureItem
-```
+- `br.com.redclaw.swt.capture.SCREENSHOT`
+- `br.com.redclaw.swt.capture.RECORDING`
+- `br.com.redclaw.swt.capture.GALLERY`
 
-## Permissions
-- `android.permission.READ_MEDIA_IMAGES` (API 33+) / `READ_EXTERNAL_STORAGE` (legacy) — browse system gallery
-- `android.permission.READ_MEDIA_VIDEO` (API 33+) / `READ_EXTERNAL_STORAGE` (legacy) — browse videos
-- `android.permission.POST_NOTIFICATIONS` (API 33+) — capture-complete notification
-- `android.permission.FOREGROUND_SERVICE` + `MEDIA_PROJECTION` service type — recording foreground service
-- **MediaProjection** consent dialog shown at recording start (system).
+All intents target package `br.com.redclaw.swt`. The screenshot/recording actions include
+`capture_source_id=br.com.redclaw.hylianbox:<hackId>`. Android's MediaProjection consent is owned
+by the host, and recording is stopped from the host foreground-service notification.
 
-## Notes
-- No base ROM content is captured in "without overlay" mode beyond the emulated frame (which is user's own ROM + patch) — compliant with Hard Rules 1–2 (no distribution of base ROMs; captures are user-local).
-- i18n: all menu labels in `strings.xml` (pt-BR/en/es).
+## Security boundary
+
+The actions are exported only with `br.com.redclaw.swt.permission.BIND_MODULE` (`signature`). The
+module never receives a projection token, capture path or FileProvider URI. Media is private to the
+host until the user explicitly chooses Share.
+
+## Ownership
+
+Implementation lives in `SwtFrontend/app/src/main/java/br/com/redclaw/swt/capture`. The removed
+HylianBox `gallery/` package must not be recreated. Legacy private HylianBox media may be imported by
+the future journaled data migration, but new files always belong to the host.
+
+## Compatibility fallback
+
+If the host action cannot be resolved, HylianBox shows `capture_failed` and continues gameplay. It
+must not silently fall back to module-private recording, because that would reintroduce two owners.

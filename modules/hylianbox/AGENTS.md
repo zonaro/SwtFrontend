@@ -31,7 +31,7 @@
 | [`.agents/RETROACHIEVEMENTS.md`](.agents/RETROACHIEVEMENTS.md) | RA deep dive: rcheevos/JNI, package structure, threading, data model, phases B1–B5, risk register                              |
 | [`.agents/AUTO_OCARINA.md`](.agents/AUTO_OCARINA.md)           | Auto-Ocarina HUD: song catalog, game detection, coroutine sequencer                                                            |
 | [`.agents/VANILLA_GAMES.md`](.agents/VANILLA_GAMES.md)         | Vanilla base-ROM tiles in Library, `vanilla_<crc32>` IDs, family badges, RA lazy hash                                          |
-| [`.agents/CAPTURE_GALLERY.md`](.agents/CAPTURE_GALLERY.md)     | Screenshot/recording (MediaProjection) + local Gallery                                                                         |
+| [`.agents/CAPTURE_GALLERY.md`](.agents/CAPTURE_GALLERY.md)     | Host-delegated screenshot/recording + shared SwtFrontend Gallery                                                               |
 | [`.agents/STORE.md`](.agents/STORE.md)                         | Hack Store, multi-store (Picks + Hylian Modding), catalog formats, cross-catalog dedupe via `canonicalId`, base ROM management |
 | [`.agents/PATCHER.md`](.agents/PATCHER.md)                     | Pure-Kotlin BPS/IPS patcher, N64 normalization, triple CRC32 validation, clean-room spec                                       |
 | [`.agents/BUILD.md`](.agents/BUILD.md)                         | Build requirements, Gradle, native (CMake + rcheevos), core fetch, release                                                     |
