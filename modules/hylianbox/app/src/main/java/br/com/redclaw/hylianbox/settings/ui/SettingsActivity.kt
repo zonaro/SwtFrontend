@@ -1215,7 +1215,7 @@ class SettingsActivity : ScaledAppCompatActivity() {
         binding.settingsAboutVersion.text = getString(R.string.settings_about_version, versionName)
         binding.settingsAboutRepo.setOnClickListener {
             sfx?.select()
-            openLink("https://github.com/zonaro/hylianbox")
+            openLink("https://github.com/zonaro/SwtFrontend")
         }
         binding.settingsAboutCatalog.setOnClickListener {
             sfx?.select()

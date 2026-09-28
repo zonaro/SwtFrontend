@@ -32,7 +32,7 @@ from urllib.request import Request, urlopen
 
 
 BASE_URL = "https://hylianmodding.com/"
-USER_AGENT = "HylianBoxCatalogImporter/1.0 (+https://github.com/zonaro/hylianbox)"
+USER_AGENT = "HylianBoxCatalogImporter/1.0 (+https://github.com/zonaro/SwtFrontend)"
 # Every extension the Android app can download + install: bare patches plus
 # archives it extracts automatically (ZIP via java.util.zip, 7Z via
 # commons-compress, RAR via junrar). Anything else becomes an external link.
@@ -50,7 +50,7 @@ SKIP_IDS: set[str] = {
 
 # Known developer sites for curated Main Store entries that have no Hylian Modding counterpart.
 # This ensures catalog.json always has useful developerLinks even for hand-curated records.
-# NOTE: never point these at zonaro/hylianbox — every patch must come from its
+# NOTE: never point these at the project repository — every patch must come from its
 # original upstream source (Hylian Modding, romhacking.net, developer site).
 CURATED_DEVELOPER_LINKS: dict[str, list[dict[str, str]]] = {
     "ocarina_of_time_dx": [{"label": "GitHub", "url": "https://github.com/N64DX/oot-dx"}],
@@ -493,7 +493,7 @@ def infer_developer_links(entry: dict[str, Any]) -> list[dict[str, str]]:
         host = urlparse(url).netloc.lower()
         if "hylianmodding.com" in host:
             return
-        if "zonaro/hylianbox" in url:
+        if "zonaro/SwtFrontend" in url:
             return
         if is_youtube_url(url):
             return
@@ -516,7 +516,7 @@ def infer_developer_links(entry: dict[str, Any]) -> list[dict[str, str]]:
     patch = entry.get("patch")
     if isinstance(patch, dict) and isinstance(patch.get("url"), str):
         url = patch["url"]
-        if "github.com" in url and "zonaro/hylianbox" not in url:
+        if "github.com" in url and "zonaro/SwtFrontend" not in url:
             m = re.match(r'(https?://github\.com/[^/]+/[^/]+)', url)
             if m:
                 add(m.group(1))
@@ -536,7 +536,7 @@ def merge_catalog(catalog: dict[str, Any], imported: list[dict[str, Any]]) -> tu
         raise ImportError("catalog has no hacks array")
 
     incoming = {entry["id"]: entry for entry in imported}
-    # Guard: the dead zonaro/hylianbox patch mirror must never come back
+    # Guard: a project-owned patch mirror must never be introduced
     # through an import. Drop any incoming record that points at it.
     for stale_id in [
         entry_id

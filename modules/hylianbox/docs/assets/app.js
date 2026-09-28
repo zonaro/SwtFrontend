@@ -151,8 +151,8 @@ const I18N = {
 
 const FEATURE_KEYS = ["store", "retro", "tracker", "ocarina", "controls", "gamepad", "capture", "dashboard", "saves", "library", "import", "extras"];
 const FEATURE_ICONS = { store: "a", retro: "f", tracker: "o", ocarina: "e", controls: "j", gamepad: "k", capture: "m", dashboard: "n", saves: "p", library: "i", import: "q", extras: "r" };
-const LIVE_CATALOG_URL = "https://cdn.jsdelivr.net/gh/zonaro/hylianbox@main/catalog/catalog.json";
-const FALLBACK_CATALOG_URL = "https://raw.githubusercontent.com/zonaro/hylianbox/main/catalog/catalog.json";
+const LIVE_CATALOG_URL = "https://cdn.jsdelivr.net/gh/zonaro/SwtFrontend@master/modules/hylianbox/catalog/catalog.json";
+const FALLBACK_CATALOG_URL = "https://raw.githubusercontent.com/zonaro/SwtFrontend/master/modules/hylianbox/catalog/catalog.json";
 let currentLang = "pt";
 
 function detectLang() {
@@ -416,7 +416,7 @@ async function fetchJson(url) { var response = await fetch(url, { cache: "no-sto
 async function loadCatalog() { showCatalogLoading(); try { renderCatalog(await fetchJson(LIVE_CATALOG_URL)); } catch (error) { try { renderCatalog(await fetchJson(FALLBACK_CATALOG_URL)); } catch (fallbackError) { showCatalogError(); } } }
 function fetchLatestRelease() {
   var version = document.getElementById("download-version"); var date = document.getElementById("download-date"); if (!version) return;
-  fetch("https://api.github.com/repos/zonaro/hylianbox/releases/latest", { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("Latest release unavailable"); return response.json(); }).then(function (release) {
+  fetch("https://api.github.com/repos/zonaro/SwtFrontend/releases/latest", { cache: "no-store" }).then(function (response) { if (!response.ok) throw new Error("Latest release unavailable"); return response.json(); }).then(function (release) {
     if (!release || !release.tag_name) return; version.textContent = release.tag_name;
     if (date && release.published_at) { var published = new Date(release.published_at); if (!isNaN(published)) date.textContent = "(" + published.toISOString().slice(0, 10) + ")"; }
   }).catch(function () { /* Keep the bundled version when offline. */ });

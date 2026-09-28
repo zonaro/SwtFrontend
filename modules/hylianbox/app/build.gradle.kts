@@ -141,7 +141,7 @@ val prepareCore by
                                                         listOf(
                                                                 CoreCandidate(
                                                                         url =
-                                                                                "https://github.com/zonaro/hylianbox/releases/download/parallel-n64-latest/parallel_n64_libretro_android_{abi}.so",
+                                                                                "https://github.com/zonaro/SwtFrontend/releases/download/parallel-n64-latest/parallel_n64_libretro_android_{abi}.so",
                                                                         isZip = false,
                                                                         label =
                                                                                 "self-built rolling release"
@@ -267,6 +267,7 @@ tasks.withType<Test>().configureEach {
 }
 
 dependencies {
+    implementation(project(":module-sdk"))
     implementation("org.jetbrains.kotlin:kotlin-stdlib:2.1.20")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.7.3")
 

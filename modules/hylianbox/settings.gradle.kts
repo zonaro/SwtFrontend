@@ -18,3 +18,5 @@ dependencyResolutionManagement {
 rootProject.name = "HylianBox"
 include(":app")
 include(":libretrodroid")
+include(":module-sdk")
+project(":module-sdk").projectDir = file("../../module-sdk")

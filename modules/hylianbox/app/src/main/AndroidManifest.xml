@@ -2,6 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <permission
+        android:name="br.com.redclaw.swt.permission.BIND_MODULE"
+        android:protectionLevel="signature" />
+
     <uses-feature android:glEsVersion="0x00030000" />
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -29,13 +33,21 @@
             android:name=".views.SplashActivity"
             android:exported="true"
             android:screenOrientation="sensorLandscape"
-            android:theme="@style/Theme.HylianBox.Splash">
+            android:theme="@style/Theme.HylianBox.Splash" />
+        <service
+            android:name=".module.HylianBoxModuleService"
+            android:exported="true"
+            android:permission="br.com.redclaw.swt.permission.BIND_MODULE">
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-                <category android:name="android.intent.category.LAUNCHER" />
-                <category android:name="android.intent.category.GAME" />
+                <action android:name="br.com.redclaw.swt.module.BIND" />
             </intent-filter>
-        </activity>
+            <meta-data
+                android:name="br.com.redclaw.swt.module.ID"
+                android:value="br.com.redclaw.hylianbox" />
+            <meta-data
+                android:name="br.com.redclaw.swt.module.API_VERSION"
+                android:value="1" />
+        </service>
         <activity
             android:name=".views.LibraryActivity"
             android:exported="false"

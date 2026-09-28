@@ -39,8 +39,8 @@ The app **never** embeds, downloads, or distributes base ROMs. Users must legall
 **Requirements:** Android Studio (latest), JDK 17, Android SDK 34.
 
 ```bash
-git clone https://github.com/zonaro/hylianbox.git
-cd hylianbox
+git clone https://github.com/zonaro/SwtFrontend.git
+cd SwtFrontend/modules/hylianbox
 ./gradlew assembleDebug
 ```
 

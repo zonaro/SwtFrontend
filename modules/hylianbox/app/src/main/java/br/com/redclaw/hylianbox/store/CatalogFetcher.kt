@@ -232,6 +232,6 @@ class CatalogFetcher(
 
     companion object {
         const val DEFAULT_CATALOG_URL =
-                "https://raw.githubusercontent.com/zonaro/hylianbox/main/catalog/catalog.json"
+                "https://raw.githubusercontent.com/zonaro/SwtFrontend/master/modules/hylianbox/catalog/catalog.json"
     }
 }

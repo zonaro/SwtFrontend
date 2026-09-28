@@ -9,7 +9,7 @@
       "description": "Quality-of-life overhaul of Ocarina of Time: widescreen support, restored content, difficulty options, alternative dungeon layouts and many gameplay enhancements.",
       "author": "Admentus & GhostlyDark",
       "version": "0.6.0-beta",
-      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/hylianbox/main/catalog/covers/ocarina_of_time_dx.png",
+      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/SwtFrontend/master/modules/hylianbox/catalog/covers/ocarina_of_time_dx.png",
       "baseRom": {
         "name": "The Legend of Zelda: Ocarina of Time (NTSC-U 1.0)",
         "gameCode": "CZLE",
@@ -108,7 +108,7 @@
       "description": "Quality-of-life improvement hack built on the Majora's Mask Randomizer ASM patches: D-Pad masks, underwater ocarina, text restorations from Japanese and PAL versions and much more.",
       "author": "Maroc",
       "version": "2.0",
-      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/hylianbox/main/catalog/covers/majoras_mask_redux.png",
+      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/SwtFrontend/master/modules/hylianbox/catalog/covers/majoras_mask_redux.png",
       "baseRom": {
         "name": "The Legend of Zelda: Majora's Mask (NTSC-U 1.0)",
         "gameCode": "NSME",
@@ -284,7 +284,7 @@
       "description": "Brand-new fan-made sequel to Ocarina of Time featuring custom cutscenes, songs and dungeons, plus 100 Skulltula tokens and 20 hearts to collect.",
       "author": "Jinnosuke9",
       "version": "1.3",
-      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/hylianbox/main/catalog/covers/sealed_palace.jpeg",
+      "coverImageUrl": "https://raw.githubusercontent.com/zonaro/SwtFrontend/master/modules/hylianbox/catalog/covers/sealed_palace.jpeg",
       "baseRom": {
         "name": "The Legend of Zelda: Ocarina of Time (NTSC-U 1.0)",
         "gameCode": "CZLE",

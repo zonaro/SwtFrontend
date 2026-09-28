@@ -18,6 +18,8 @@ dependencyResolutionManagement {
 rootProject.name = "SwtFrontend"
 include(":app")
 include(":libretrodroid")
+include(":module-api")
+include(":module-sdk")
 
 // Módulos vendored do Lemuroid — Fase 1
 include(":retrograde-util")

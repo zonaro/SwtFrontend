@@ -46,6 +46,8 @@ android {
 }
 
 dependencies {
+    implementation(project(":module-api"))
+    implementation(project(":module-sdk"))
     implementation(project(":libretrodroid"))
 
     // Fase 1: módulos vendored do Lemuroid

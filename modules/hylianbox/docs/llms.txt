@@ -4,7 +4,7 @@
 **HylianBox** is a native Android (Kotlin) emulator frontend for fan-made Nintendo 64 Zelda ROM hacks (Ocarina of Time, Majora's Mask). Users provide their own legally-owned base ROMs; the app applies BPS/IPS patches on-the-fly and plays them via the Libretro core mupen64plus-next GLES3. No ROMs are embedded or distributed.
 
 **Website:** https://zonaro.github.io/hylianbox/
-**Repository:** https://github.com/zonaro/hylianbox
+**Repository:** https://github.com/zonaro/SwtFrontend
 **License:** GPL-3.0 (derivative of Ludere)
 
 ---
@@ -185,8 +185,8 @@ review the issue and curate approved entries into the catalog.
 ## Build Instructions
 
 ```bash
-git clone https://github.com/zonaro/hylianbox.git
-cd hylianbox
+git clone https://github.com/zonaro/SwtFrontend.git
+cd SwtFrontend/modules/hylianbox
 ./gradlew assembleDebug
 ```
 

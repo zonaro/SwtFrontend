@@ -45,7 +45,7 @@
       "name": "Baixar APK",
       "short_name": "Download",
       "description": "Baixar a versão mais recente",
-      "url": "https://github.com/zonaro/hylianbox/releases",
+      "url": "https://github.com/zonaro/SwtFrontend/releases",
       "icons": [
         {
           "src": "./assets/app-icon.png",
