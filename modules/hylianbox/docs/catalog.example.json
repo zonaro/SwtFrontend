@@ -1,0 +1,86 @@
+{
+  "catalogVersion": 3,
+  "lastUpdated": "2026-08-23T00:00:00Z",
+  "hacks": [
+    {
+      "id": "ocarina_of_time_dx",
+      "name": "Ocarina of Time DX",
+      "description": "Quality-of-life overhaul of Ocarina of Time: widescreen support, restored content, difficulty options, alternative dungeon layouts and many gameplay enhancements.",
+      "author": "Admentus & GhostlyDark",
+      "version": "0.6.0-beta",
+      "baseRom": {
+        "name": "The Legend of Zelda: Ocarina of Time (NTSC-U 1.0)",
+        "gameCode": "CZLE",
+        "versionByte": 0,
+        "checksums": {
+          "crc32": "cd16c529",
+          "md5": "5bd1fe107bf8106b2ab6650abecd54d6",
+          "sha1": "ad69c91157f6705e8ab06c79fe08aad47bb57ba7"
+        }
+      },
+      "patch": null,
+      "downloadTarget": {
+        "type": "github",
+        "repoUrl": "https://github.com/N64DX/oot-dx/releases"
+      },
+      "coverImageUrl": "https://example.com/covers/oot_dx.png",
+      "tags": [
+        "quality-of-life",
+        "restoration",
+        "enhancement"
+      ],
+      "developerLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/N64DX/oot-dx"
+        }
+      ],
+      "videos": [],
+      "screenshots": []
+    },
+    {
+      "id": "ultimate_trial",
+      "name": "Ultimate Trial",
+      "description": "Extended-quest mod adding achievements, Spanish language support, widescreen HUD and optional Randologic trial randomization with three modes.",
+      "author": "RichieUltimate",
+      "version": "1.2.3",
+      "baseRom": {
+        "name": "The Legend of Zelda: Ocarina of Time (NTSC-U 1.0)",
+        "gameCode": "CZLE",
+        "versionByte": 0,
+        "checksums": {
+          "crc32": "cd16c529",
+          "md5": "5bd1fe107bf8106b2ab6650abecd54d6",
+          "sha1": "ad69c91157f6705e8ab06c79fe08aad47bb57ba7"
+        }
+      },
+      "patch": {
+        "url": "https://github.com/RichieUltimate/ultimate-trial/releases/download/v1.2.3/ultimate_trial_v1.2.3_n64.bps",
+        "filename": "ultimate_trial_v1.2.3_n64.bps",
+        "size": 30917075,
+        "checksums": {
+          "crc32": "2144df1c",
+          "md5": "db9a3c0d7fc56882e3bfa0a55cbf8617"
+        }
+      },
+      "tags": [
+        "new-content",
+        "achievements"
+      ],
+      "developerLinks": [
+        {
+          "label": "GitHub",
+          "url": "https://github.com/RichieUltimate/ultimate-trial"
+        }
+      ],
+      "videos": [
+        "https://www.youtube.com/watch?v=3t1mvYpJWn4"
+      ],
+      "screenshots": [
+        "https://example.com/screenshots/ut1.png",
+        "https://example.com/screenshots/ut2.png"
+      ],
+      "coverImageUrl": "https://example.com/covers/ultimate_trial.png"
+    }
+  ]
+}

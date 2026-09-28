@@ -1,0 +1,59 @@
+{
+  "name": "HylianBox",
+  "short_name": "HB",
+  "description": "Descubra e jogue aventuras de Zelda 64 no Android, com Auto-Ocarina, RetroAchievements, controles flexíveis e capturas locais.",
+  "start_url": "/hylianbox/",
+  "display": "standalone",
+  "background_color": "#2D2D2D",
+  "theme_color": "#02830C",
+  "orientation": "portrait-primary",
+  "scope": "/hylianbox/",
+  "lang": "pt-BR",
+  "icons": [
+    {
+      "src": "./assets/app-icon.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./assets/app-icon.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": [
+    "games",
+    "entertainment"
+  ],
+  "screenshots": [],
+  "shortcuts": [
+    {
+      "name": "Aventuras Zelda 64",
+      "short_name": "Aventuras",
+      "description": "Descubra aventuras para explorar",
+      "url": "/hylianbox/#catalog",
+      "icons": [
+        {
+          "src": "./assets/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    },
+    {
+      "name": "Baixar APK",
+      "short_name": "Download",
+      "description": "Baixar a versão mais recente",
+      "url": "https://github.com/zonaro/hylianbox/releases",
+      "icons": [
+        {
+          "src": "./assets/app-icon.png",
+          "sizes": "192x192"
+        }
+      ]
+    }
+  ],
+  "prefer_related_applications": false,
+  "related_applications": []
+}

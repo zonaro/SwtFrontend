@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="4dp"
+    android:focusable="true"
+    android:clickable="true"
+    android:foreground="@drawable/tile_focus">
+
+    <!-- Rounded 24dp card (surfaceContainer) wrapping the cover. The cover uses
+         CoverImageView, which derives its height from the CURRENT cover's native
+         aspect ratio (width / height of the drawable's intrinsic size), so every
+         card matches its artwork's proportion and centerCrop fills it with no
+         cropping. The ratio adapts as the drawable changes: while only the
+         portrait placeholder is shown the tile is taller, and it snaps to the
+         cover's true ratio once the image loads. Corners are clipped to the
+         card radius so the artwork never overflows the card. -->
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/shape_card"
+        android:elevation="@dimen/card_elevation">
+
+        <br.com.redclaw.hylianbox.views.CoverImageView
+            android:id="@+id/tile_cover"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scaleType="centerCrop"
+            android:background="@drawable/shape_cover"
+            android:clipToOutline="true"
+            android:contentDescription="@string/cover_content_description" />
+
+        <!-- Title overlays the bottom of the cover; a gradient scrim keeps it
+             legible over any artwork. -->
+        <TextView
+            android:id="@+id/tile_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:background="@drawable/tile_title_scrim"
+            android:ellipsize="end"
+            android:gravity="center"
+            android:maxLines="1"
+            android:paddingStart="8dp"
+            android:paddingTop="18dp"
+            android:paddingEnd="8dp"
+            android:paddingBottom="6dp"
+            android:textColor="@android:color/white"
+            android:textSize="13sp"
+            android:textStyle="bold" />
+
+        <!-- Overflow button (top-end corner): opens the per-game context menu.
+             It lives INSIDE the elevated card so it draws above the cover and
+             title scrim (a zero-elevation sibling of the root would be hidden
+             behind the card's 4dp elevation). It is intentionally NOT focusable
+             so D-pad grid navigation is undisturbed; gamepad users open the menu
+             via SELECT/X/Y instead. It consumes its own click so the tile's
+             click never fires. -->
+        <TextView
+            android:id="@+id/tile_overflow"
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="top|end"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_icon_button"
+            android:clickable="true"
+            android:focusable="false"
+            android:gravity="center"
+            android:text="@string/menu_overflow"
+            android:textColor="?attr/colorOnSurface"
+            android:textStyle="bold"
+            android:contentDescription="@string/menu_overflow_content_description" />
+
+        <!-- Badge (top-start corner): an icon chip distinguishing tile
+             categories (vanilla ROM / hack). Hidden unless the
+             entry provides a badge. Also inside the elevated card so it is never
+             occluded by the artwork. The icon is set in the adapter; the chip is a
+             28dp rounded background with a centered 18dp glyph. -->
+        <ImageView
+            android:id="@+id/tile_badge"
+            android:layout_width="28dp"
+            android:layout_height="28dp"
+            android:layout_gravity="top|start"
+            android:layout_margin="4dp"
+            android:background="@drawable/bg_badge"
+            android:padding="5dp"
+            android:scaleType="centerInside"
+            android:visibility="gone"
+            android:contentDescription="@null" />
+
+    </FrameLayout>
+
+</FrameLayout>

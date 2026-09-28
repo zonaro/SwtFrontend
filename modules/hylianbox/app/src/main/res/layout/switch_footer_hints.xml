@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Switch footer hints bar: shows the connected-gamepad indicator. -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:id="@+id/footer_left"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="start|center_vertical"
+        android:paddingStart="@dimen/switch_screen_margin"
+        android:paddingEnd="@dimen/switch_screen_margin">
+
+        <ImageView
+            android:id="@+id/footer_gamepad_icon"
+            android:layout_width="16dp"
+            android:layout_height="16dp"
+            android:src="@drawable/ic_gamepad"
+            android:tint="@color/switch_text_secondary"
+            android:contentDescription="@null" />
+
+        <TextView
+            android:id="@+id/footer_gamepad_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:text="@string/footer_gamepad_disconnected"
+            android:textColor="@color/switch_text_secondary"
+            android:textSize="@dimen/switch_hint_text" />
+    </LinearLayout>
+
+</merge>

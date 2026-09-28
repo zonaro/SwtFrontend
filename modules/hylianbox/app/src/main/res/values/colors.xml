@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Frozen gamepad colors (DO NOT retheme) -->
+    <color name="gamepad_icon_color">#ff000000</color>
+    <color name="gamepad_button_color">#88ffffff</color>
+    <color name="gamepad_pressed_color">#66ffffff</color>
+
+    <!-- ===== Nintendo Switch UI design tokens ===== -->
+    <!-- Explicit dark/light variants (constant across configs). -->
+    <color name="switch_bg_dark">#2D2D2D</color>
+    <color name="switch_bg_light">#F0F0F0</color>
+    <color name="switch_panel_dark">#1E1E1E</color>
+    <color name="switch_panel_dark_alt">#2A2A2A</color>
+    <color name="switch_panel_light">#FFFFFF</color>
+    <color name="switch_dialog_bg_dark">#3A3A3C</color>
+    <color name="switch_dialog_bg_light">#FFFFFF</color>
+    <!-- Accent color options (constant across configs, used by AccentManager).
+         Keys match AccentOption enum values. -->
+    <color name="accent_cyan">#00BCD4</color>
+    <color name="accent_green_light">#4CAF50</color>
+    <color name="accent_green_dark">#2E7D32</color>
+    <color name="accent_blue">#2196F3</color>
+    <color name="accent_yellow">#FFEB3B</color>
+    <color name="accent_pink">#E91E63</color>
+    <color name="accent_red">#F44336</color>
+    <color name="accent_violet">#9C27B0</color>
+    <color name="accent_teal">#009688</color>
+    <color name="accent_orange">#FF9800</color>
+    <color name="accent_purple">#673AB7</color>
+    <color name="accent_indigo">#3F51B5</color>
+    <color name="switch_text_primary_dark">#FFFFFF</color>
+    <color name="switch_text_primary_light">#333333</color>
+    <color name="switch_text_secondary_dark">#9E9E9E</color>
+    <color name="switch_text_secondary_light">#666666</color>
+    <color name="switch_scrim_dark">#99000000</color>
+    <color name="switch_scrim_light">#66000000</color>
+    <color name="switch_dock_circle_dark">#555555</color>
+    <color name="switch_dock_circle_light">#FFFFFF</color>
+    <color name="switch_card_dim">#1A000000</color>
+
+    <!-- Active (mode-resolved) Switch tokens. values/ = light appearance. -->
+    <color name="switch_bg">#F0F0F0</color>
+    <color name="switch_panel">#FFFFFF</color>
+    <color name="switch_dialog_bg">#FFFFFF</color>
+    <color name="switch_text_primary">#333333</color>
+    <color name="switch_text_secondary">#666666</color>
+    <color name="switch_scrim">#66000000</color>
+    <color name="switch_dock_circle">#FFFFFF</color>
+    <color name="switch_dock_icon">#FFFFFF</color>
+    <!-- Home dock glyphs are the sole fixed-color exception to the user-selected accent. -->
+    <color name="switch_dock_store">#E53935</color>
+    <color name="switch_dock_gallery">#00BCD4</color>
+    <color name="switch_dock_achievements">#FFA000</color>
+    <color name="switch_dock_control">#43A047</color>
+    <color name="switch_dock_settings">#FFFFFF</color>
+    <!-- Charcoal fill for the circular "Todos os Jogos" card (NS Launcher style). -->
+    <color name="switch_all_games_bg">#BDBDBD</color>
+
+    <!-- Splash wordmark text (warm white/gold). Constant across night mode
+         because the splash artwork is a fixed drawable in both themes. -->
+    <color name="splash_text">#F5E9C8</color>
+
+    <!-- Legacy Material 3 token names remapped to Switch equivalents so
+         existing layouts/themes keep compiling (full visual restyle continues
+         in later Switch UI phases). Mapping: background->switch_bg,
+         surface->panel; primary and secondary default to cyan only until the runtime-selected
+         accent overlay is applied. -->
+    <color name="color_background">#F0F0F0</color>
+    <color name="color_surface">#FFFFFF</color>
+    <color name="color_surface_container">#FFFFFF</color>
+    <color name="color_surface_container_high">#F0F0F0</color>
+    <color name="color_surface_variant">#FFFFFF</color>
+    <color name="color_primary">#00BCD4</color>
+    <color name="color_on_primary">#FFFFFF</color>
+    <color name="color_primary_container">#00BCD4</color>
+    <color name="color_on_primary_container">#FFFFFF</color>
+    <color name="color_on_surface">#333333</color>
+    <color name="color_on_surface_variant">#666666</color>
+    <color name="color_secondary">#00BCD4</color>
+    <color name="color_on_secondary">#FFFFFF</color>
+    <color name="color_error">#B3261E</color>
+    <color name="color_on_error">#FFFFFF</color>
+
+    <!-- Pill input background: panel at ~50% alpha -->
+    <color name="color_input_background">#80FFFFFF</color>
+
+    <!-- Neutral cover backdrop (blends with the card surface) -->
+    <color name="color_cover_background">#FFFFFF</color>
+
+</resources>

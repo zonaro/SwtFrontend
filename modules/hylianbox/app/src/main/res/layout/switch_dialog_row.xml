@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- A single selectable row inside a SwitchDialog single-choice list. Shows a
+     full-width accent focus border while focused, and a check mark on the row that
+     is currently selected (the active option). -->
+<merge xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <View
+        android:id="@+id/dialog_row_border"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/switch_focus_border"
+        android:visibility="gone" />
+
+    <TextView
+        android:id="@+id/dialog_row_text"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:minHeight="@dimen/switch_side_panel_row_height"
+        android:gravity="center_vertical"
+        android:paddingStart="18dp"
+        android:paddingEnd="48dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp"
+        android:textColor="@color/switch_text_primary"
+        android:textSize="@dimen/switch_row_text" />
+
+    <ImageView
+        android:id="@+id/dialog_row_check"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginEnd="14dp"
+        android:src="@drawable/ic_check"
+        android:tint="?attr/colorPrimary"
+        android:contentDescription="@null"
+        android:visibility="gone" />
+</merge>

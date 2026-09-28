@@ -1,0 +1,404 @@
+package br.com.redclaw.hylianbox.views
+
+import android.app.Service
+import android.hardware.input.InputManager
+import android.os.Bundle
+import android.util.Log
+import android.view.Display
+import android.view.Gravity
+import android.view.KeyEvent
+import android.view.MotionEvent
+import android.view.ViewGroup
+import android.widget.FrameLayout
+import android.widget.RelativeLayout
+import androidx.activity.viewModels
+import br.com.redclaw.hylianbox.capture.RecordingIndicatorView
+import br.com.redclaw.hylianbox.databinding.ActivityGameBinding
+import br.com.redclaw.hylianbox.display.DisplayRouter
+import br.com.redclaw.hylianbox.display.DualScreenTrackerPolicy
+import br.com.redclaw.hylianbox.display.GamePresentation
+import br.com.redclaw.hylianbox.display.RemoteGameDisplayState
+import br.com.redclaw.hylianbox.input.InputDeviceUtils
+import br.com.redclaw.hylianbox.ocarina.ui.OcarinaHudView
+import br.com.redclaw.hylianbox.retroachievements.ui.RaOverlayView
+import br.com.redclaw.hylianbox.shortcuts.GamePlayHistoryStore
+import br.com.redclaw.hylianbox.shortcuts.GameShortcutsManager
+import br.com.redclaw.hylianbox.tracker.equipment.TrackerEquipCommand
+import br.com.redclaw.hylianbox.tracker.equipment.TrackerEquipmentHost
+import br.com.redclaw.hylianbox.tracker.ui.TrackerDialogFragment
+import br.com.redclaw.hylianbox.ui.switchui.GameplayDialogHost
+import br.com.redclaw.hylianbox.utils.CorePrefs
+import br.com.redclaw.hylianbox.utils.ScaledAppCompatActivity
+import br.com.redclaw.hylianbox.viewmodels.GameActivityViewModel
+import java.io.File
+
+class GameActivity : ScaledAppCompatActivity(), TrackerEquipmentHost, GameplayDialogHost {
+    private lateinit var binding: ActivityGameBinding
+    private val viewModel: GameActivityViewModel by viewModels()
+
+    private var displayRouter: DisplayRouter? = null
+    private var gamePresentation: GamePresentation? = null
+    private val remoteDisplayListener: (Boolean) -> Unit = {
+        runOnUiThread { syncDualScreenTracker() }
+    }
+
+    private val displayListener =
+            object : DisplayRouter.DisplayListener {
+                override fun onSecondaryDisplayAvailable(display: Display) {
+                    Log.d(TAG, "Secondary display available: ${display.displayId}")
+                    maybeUpdatePresentation()
+                }
+
+                override fun onSecondaryDisplayDisconnected(displayId: Int) {
+                    Log.d(TAG, "Secondary display disconnected: $displayId")
+                    if (gamePresentation?.display?.displayId == displayId) {
+                        dismissPresentationAndReattach()
+                    } else {
+                        maybeUpdatePresentation()
+                    }
+                }
+
+                override fun onGameDisplayChanged(display: Display?) {
+                    Log.d(TAG, "Game display changed: ${display?.displayId}")
+                    maybeUpdatePresentation()
+                }
+            }
+
+    companion object {
+        private const val TAG = "GameActivityDisplay"
+    }
+
+    override fun enqueueTrackerEquip(command: TrackerEquipCommand): Boolean =
+            viewModel.enqueueTrackerEquip(command)
+    override fun getEquippedSnapshot() = viewModel.equippedSnapshot
+    override fun getEquippedGame() = viewModel.equippedGame
+    override fun getEquippedAssetCrc() = viewModel.equippedAssetCrc
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        binding = ActivityGameBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        window.decorView.setOnApplyWindowInsetsListener { view, windowInsets ->
+            view.post { viewModel.immersive(window) }
+            return@setOnApplyWindowInsetsListener windowInsets
+        }
+
+        registerInputListener()
+        viewModel.setConfigOrientation(this)
+        viewModel.updateGamePadVisibility(this, binding.gamepadOverlay)
+
+        val hackId =
+                intent.getStringExtra("hack_id")
+                        ?: throw IllegalStateException("No hack_id provided to launch")
+
+        // Bump recency and re-rank dynamic shortcuts so the most recently played
+        // game surfaces first in the launcher's long-press menu.
+        val history = GamePlayHistoryStore(File(filesDir, "game_play_history.json"))
+        GameShortcutsManager(this, history).apply {
+            markPlayed(hackId)
+            sync(InstalledLibrary.entries(this@GameActivity))
+        }
+
+        // Detect Ocarina support BEFORE building the menu so the Auto-Ocarina
+        // item can be shown conditionally (hidden for unsupported base ROMs).
+        viewModel.prepareOcarinaDetection(hackId)
+        viewModel.prepareMenu(this)
+
+        // Build and attach the Auto-Ocarina HUD (hidden until a song is played).
+        // Added last so it sits above the gamepad overlay in z-order; it is
+        // non-interactive so touches fall through to the controls beneath.
+        val hud = OcarinaHudView(this)
+        val hudParams =
+                RelativeLayout.LayoutParams(
+                                RelativeLayout.LayoutParams.WRAP_CONTENT,
+                                RelativeLayout.LayoutParams.WRAP_CONTENT
+                        )
+                        .apply {
+                            addRule(RelativeLayout.ALIGN_PARENT_BOTTOM)
+                            addRule(RelativeLayout.CENTER_HORIZONTAL)
+                            val margin = (16 * resources.displayMetrics.density).toInt()
+                            bottomMargin = margin
+                        }
+        binding.root.addView(hud, hudParams)
+        viewModel.attachOcarinaHud(hud)
+
+        // Build and attach the RetroAchievements overlay (unlock popups,
+        // challenge/progress indicators). Added after the Ocarina HUD so it
+        // sits above everything; non-interactive like the HUD.
+        val raOverlay = RaOverlayView(this)
+        val raParams =
+                RelativeLayout.LayoutParams(
+                        RelativeLayout.LayoutParams.MATCH_PARENT,
+                        RelativeLayout.LayoutParams.MATCH_PARENT
+                )
+        binding.root.addView(raOverlay, raParams)
+        viewModel.attachRaOverlay(raOverlay)
+
+        // Recording indicator (Switch-style), shown while a capture is active.
+        setupRecordingIndicator()
+
+        viewModel.launchHack(
+                this,
+                binding.retroviewContainer,
+                binding.gamepadOverlay,
+                binding.patchingProgress,
+                hackId
+        )
+
+        // Multi-monitor: route game to external display when available and allowed by prefs.
+        displayRouter =
+                DisplayRouter(this).apply {
+                    addListener(displayListener)
+                    register()
+                }
+        // Try immediately (retroView already created by launchHack) and also after first frame.
+        maybeUpdatePresentation()
+        viewModel.frameRenderedForDisplay.observe(this) { maybeUpdatePresentation() }
+        RemoteGameDisplayState.addListener(remoteDisplayListener)
+        syncDualScreenTracker()
+    }
+
+    /** Add the [RecordingIndicatorView] to the root and observe recording state. */
+    private fun setupRecordingIndicator() {
+        val indicator = RecordingIndicatorView(this)
+        val size = RelativeLayout.LayoutParams.WRAP_CONTENT
+        val params =
+                RelativeLayout.LayoutParams(size, size).apply {
+                    addRule(RelativeLayout.ALIGN_PARENT_TOP)
+                    addRule(RelativeLayout.ALIGN_PARENT_END)
+                    val margin = (12 * resources.displayMetrics.density).toInt()
+                    topMargin = margin
+                    marginEnd = margin
+                }
+        binding.root.addView(indicator, params)
+        viewModel.isRecording.observe(this) { recording ->
+            if (recording) indicator.show() else indicator.hide()
+        }
+    }
+
+    private fun registerInputListener() {
+        val inputManager = getSystemService(Service.INPUT_SERVICE) as InputManager
+        inputManager.registerInputDeviceListener(
+                object : InputManager.InputDeviceListener {
+                    override fun onInputDeviceAdded(deviceId: Int) {
+                        viewModel.updateGamePadVisibility(this@GameActivity, binding.gamepadOverlay)
+                        viewModel.refreshMenuBadges()
+                        syncDualScreenTracker()
+                    }
+                    override fun onInputDeviceRemoved(deviceId: Int) {
+                        viewModel.updateGamePadVisibility(this@GameActivity, binding.gamepadOverlay)
+                        viewModel.refreshMenuBadges()
+                        syncDualScreenTracker()
+                    }
+                    override fun onInputDeviceChanged(deviceId: Int) {
+                        viewModel.updateGamePadVisibility(this@GameActivity, binding.gamepadOverlay)
+                        viewModel.refreshMenuBadges()
+                        syncDualScreenTracker()
+                    }
+                },
+                null
+        )
+    }
+
+    override fun onBackPressed() = viewModel.showMenu()
+
+    override fun onStart() {
+        super.onStart()
+    }
+
+    override fun onDestroy() {
+        // Tear down secondary display presentation first so the GL view is detached cleanly.
+        displayRouter?.let {
+            it.removeListener(displayListener)
+            it.unregister()
+        }
+        displayRouter = null
+        RemoteGameDisplayState.removeListener(remoteDisplayListener)
+        dismissPresentationAndReattach()
+
+        /* Cancel any Auto-Ocarina playback (releases the held button) before the
+        native core is torn down by super.onDestroy(). */
+        viewModel.cancelOcarina()
+        /* Stop the RetroAchievements session before the core dies: the RA
+        client aliases the emulated memory region, which becomes invalid
+        once super.onDestroy() releases the native core. */
+        viewModel.stopRaSession()
+        /* Leaving the game (not a GL-context recreate) stops any active
+        recording so we never keep capturing a dead surface. */
+        if (isFinishing) viewModel.stopRecording()
+        /* super.onDestroy() dispatches ON_DESTROY to the still-registered
+        RetroView observer, releasing its native core (~90MB+). Cleaning up
+        the observer beforehand (as this used to) skips that dispatch
+        entirely, leaking native memory on every recreate(). */
+        super.onDestroy()
+        viewModel.dismissMenu()
+        viewModel.dispose()
+        viewModel.detachRetroView(this)
+    }
+
+    override fun onPause() {
+        viewModel.preserveState()
+        viewModel.cancelOcarina()
+        super.onPause()
+    }
+
+    override fun onResume() {
+        super.onResume()
+        // Preference may have changed in Settings while paused; re-evaluate projection.
+        maybeUpdatePresentation()
+        // Control mode may have changed via the web dashboard while paused; hot-swap the
+        // overlay without touching the running core.
+        viewModel.refreshControlOverlayIfChanged()
+    }
+
+    override fun onKeyDown(keyCode: Int, event: KeyEvent): Boolean {
+        return viewModel.processKeyEvent(keyCode, event) ?: super.onKeyDown(keyCode, event)
+    }
+
+    override fun onKeyUp(keyCode: Int, event: KeyEvent): Boolean {
+        return viewModel.processKeyEvent(keyCode, event) ?: super.onKeyUp(keyCode, event)
+    }
+
+    override fun onGenericMotionEvent(event: MotionEvent): Boolean {
+        return viewModel.processMotionEvent(event) ?: super.onGenericMotionEvent(event)
+    }
+
+    // ---- Secondary display projection ----
+
+    private fun maybeUpdatePresentation() {
+        if (isFinishing || isDestroyed) return
+        val retroView = viewModel.retroView ?: return
+        val router = displayRouter ?: return
+
+        val mode = CorePrefs.getDisplayOutput(this)
+        val targetDisplay = router.getGameDisplay()
+        val shouldProject =
+                targetDisplay != null &&
+                        targetDisplay.displayId != Display.DEFAULT_DISPLAY &&
+                        mode != CorePrefs.DISPLAY_PRIMARY
+
+        if (shouldProject && targetDisplay != null) {
+            // Already showing on the correct display?
+            if (gamePresentation?.display?.displayId == targetDisplay.displayId &&
+                            gamePresentation?.isPresentationShowing() == true
+            )
+                    return
+            // Move to secondary: dismiss old presentation if on different display.
+            if (gamePresentation != null) {
+                dismissPresentationAndReattach(suppressReattach = true)
+            }
+            try {
+                val presentation = GamePresentation(this, targetDisplay, retroView)
+                presentation.show()
+                gamePresentation = presentation
+                // Hide the primary container's GL view (it's now in the presentation).
+                // Keep the container visible as black letterbox so layout doesn't collapse.
+                binding.retroviewContainer.visibility = android.view.View.INVISIBLE
+                applyTouchControlsPlacement()
+                syncDualScreenTracker()
+                Log.d(TAG, "Game projected to secondary display ${targetDisplay.displayId}")
+            } catch (e: Exception) {
+                Log.e(TAG, "Failed to show GamePresentation", e)
+                gamePresentation = null
+                reattachToPrimary()
+                syncDualScreenTracker()
+            }
+        } else {
+            // Should be on primary.
+            if (gamePresentation != null) {
+                dismissPresentationAndReattach()
+            } else {
+                // Ensure primary container is visible.
+                binding.retroviewContainer.visibility = android.view.View.VISIBLE
+                applyTouchControlsPlacement()
+                syncDualScreenTracker()
+            }
+        }
+    }
+
+    private fun dismissPresentationAndReattach(suppressReattach: Boolean = false) {
+        val presentation = gamePresentation ?: return
+        gamePresentation = null
+        try {
+            presentation.dismiss()
+        } catch (_: Exception) {}
+        if (!suppressReattach) reattachToPrimary()
+    }
+
+    private fun reattachToPrimary() {
+        val retroView = viewModel.retroView ?: return
+        val glView = retroView.view
+        // Remove from any previous parent (presentation container).
+        (glView.parent as? ViewGroup)?.removeView(glView)
+        if (glView.parent == null) {
+            val params =
+                    FrameLayout.LayoutParams(
+                                    FrameLayout.LayoutParams.MATCH_PARENT,
+                                    FrameLayout.LayoutParams.MATCH_PARENT
+                            )
+                            .apply { gravity = Gravity.CENTER }
+            binding.retroviewContainer.removeAllViews()
+            binding.retroviewContainer.addView(glView, params)
+            try {
+                glView.onResume()
+            } catch (_: Exception) {}
+        }
+        binding.retroviewContainer.visibility = android.view.View.VISIBLE
+        applyTouchControlsPlacement()
+        syncDualScreenTracker()
+        Log.d(TAG, "Game reattached to primary display")
+    }
+
+    /**
+     * Keeps the non-game screen occupied by the tracker while dual-screen controller play lasts.
+     */
+    private fun syncDualScreenTracker() {
+        if (isFinishing || isDestroyed || supportFragmentManager.isStateSaved) return
+        val trackerGame = viewModel.currentTrackerGame()
+        val shouldPin =
+                DualScreenTrackerPolicy.shouldPinTracker(
+                        gameIsOnAnotherDisplay =
+                                gamePresentation?.isPresentationShowing() == true ||
+                                        RemoteGameDisplayState.isStreaming,
+                        physicalControllerConnected = InputDeviceUtils.hasConnectedController(),
+                        trackerSupported = trackerGame != null
+                )
+        val current =
+                supportFragmentManager.findFragmentByTag(TrackerDialogFragment.TAG) as?
+                        TrackerDialogFragment
+        if (shouldPin && trackerGame != null) {
+            if (current != null) {
+                current.setPinnedByDualScreen(true)
+            } else {
+                TrackerDialogFragment.newInstance(
+                                trackerGame,
+                                viewModel.currentTrackerHackId(),
+                                dualScreenPinned = true
+                        )
+                        .show(supportFragmentManager, TrackerDialogFragment.TAG)
+            }
+        } else {
+            current?.setPinnedByDualScreen(false)
+        }
+    }
+
+    private fun applyTouchControlsPlacement() {
+        val mode = CorePrefs.getDisplayTouchControls(this)
+        val isProjecting = gamePresentation?.isPresentationShowing() == true
+        // When projecting, "primary" means controls stay on phone; "secondary" would mean
+        // controls on external (not useful for touch) — we hide them; "both" shows on primary.
+        binding.gamepadOverlay.visibility =
+                when {
+                    !isProjecting -> {
+                        // Single-display: respect physical gamepad visibility.
+                        if (br.com.redclaw.hylianbox.gamepad.GamePad.shouldShowGamePads(this))
+                                android.view.View.VISIBLE
+                        else android.view.View.INVISIBLE
+                    }
+                    mode == CorePrefs.TOUCH_CONTROLS_SECONDARY -> android.view.View.GONE
+                    mode == CorePrefs.TOUCH_CONTROLS_BOTH -> android.view.View.VISIBLE
+                    else -> android.view.View.VISIBLE // primary (default)
+                }
+    }
+}

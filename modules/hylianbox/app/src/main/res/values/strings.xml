@@ -1,0 +1,1162 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Internal preference keys (not user-facing) -->
+    <string name="pref_frame_speed">frame_speed</string>
+    <string name="pref_audio_enabled">audio_enabled</string>
+
+    <!-- In-game menu -->
+    <string name="menu_title">Menu</string>
+    <string name="menu_reset">Reiniciar</string>
+    <string name="menu_save_state">Salvar Estado</string>
+    <string name="menu_load_state">Carregar Estado</string>
+    <string name="toast_state_saved">Estado salvo</string>
+    <string name="toast_state_loaded">Estado carregado</string>
+    <string name="toast_state_none">Nenhum estado salvo encontrado</string>
+    <string name="menu_mute">Silenciar</string>
+    <string name="menu_fast_forward">Acelerar</string>
+    <string name="menu_aspect_ratio">Proporção</string>
+    <string name="aspect_ratio_4_3">4:3</string>
+    <string name="aspect_ratio_16_9">16:9</string>
+    <string name="aspect_ratio_fullscreen">Tela Cheia</string>
+    <string name="menu_core">Core</string>
+    <string name="menu_button_stick">Button Stick</string>
+    <string name="menu_hide_hud_buttons">Esconder Botões C/B</string>
+    <string name="menu_auto_z">Auto-Z</string>
+    <string name="menu_show_equipped_icons">Ícones de Itens</string>
+    <string name="menu_sensitivity">Sensibilidade</string>
+    <string name="menu_control_overlay">Modo de controle</string>
+    <string name="control_overlay_standard">Standard — Controles</string>
+    <string name="control_overlay_area">Pro — Área de Toque</string>
+    <string name="control_overlay_restart_hint">O novo modo será aplicado ao reiniciar o jogo.</string>
+    <string name="menu_exit">Sair</string>
+    <string name="msg_game_still_loading">Aguarde, o jogo ainda está carregando…</string>
+    <string name="sensitivity_n64_stick">Analógico N64</string>
+    <string name="sensitivity_button_stick">Button Stick</string>
+
+    <!-- In-game menu categories -->
+    <string name="menu_category_game">Jogo</string>
+    <string name="menu_category_audio_video">Áudio e Vídeo</string>
+    <string name="menu_category_controls">Controles</string>
+
+    <!-- Physical controller key badges (button names, not translated) -->
+    <string name="badge_select">SELECT</string>
+    <string name="badge_start">START</string>
+    <string name="badge_lb">LB</string>
+    <string name="badge_rb">RB</string>
+    <string name="badge_l3">L3</string>
+    <string name="badge_r3">R3</string>
+    <string name="badge_lt">LT</string>
+    <string name="badge_rt">RT</string>
+    <string name="badge_x">X</string>
+    <string name="badge_y">Y</string>
+
+    <!-- Library per-game context menu -->
+    <string name="menu_start">Iniciar</string>
+    <string name="menu_achievements">Conquistas</string>
+    <string name="menu_pin_shortcut">Fixar Atalho</string>
+    <string name="menu_category_saves">Saves</string>
+    <string name="menu_category_management">Gerenciamento</string>
+    <string name="menu_export_saves">Exportar Saves</string>
+    <string name="menu_import_saves">Importar Saves</string>
+    <string name="menu_uninstall">Desinstalar</string>
+    <string name="menu_uninstall_title">Desinstalar %1$s</string>
+    <string name="menu_uninstall_message">Isso excluirá permanentemente TODOS os saves (SRAM e estados de jogo) de %1$s. Recomendamos exportar um backup antes de desinstalar.</string>
+    <string name="menu_uninstall_button">Desinstalar</string>
+    <string name="menu_uninstall_done">Desinstalado</string>
+    <string name="menu_export_nothing">Nada para exportar</string>
+    <string name="menu_export_success">Saves exportados</string>
+    <string name="menu_export_failure">Falha ao exportar saves</string>
+    <string name="menu_import_success">Saves importados</string>
+    <string name="menu_import_failure">Falha ao importar saves</string>
+    <string name="menu_import_not_installed">O jogo não está instalado</string>
+    <string name="menu_overflow">…</string>
+    <string name="menu_overflow_content_description">Abrir menu do jogo</string>
+    <string name="menu_export_filename_suffix">_saves.zip</string>
+
+    <!-- Generic dialog buttons -->
+    <string name="dialog_ok">OK</string>
+    <string name="dialog_cancel">Cancelar</string>
+
+    <!-- Library -->
+    <string name="library_settings_title">Configurações</string>
+    <string name="library_settings_description">Abrir configurações</string>
+    <string name="library_menu_store">Loja de Hacks</string>
+    <string name="toast_core_updated">Core atualizado</string>
+    <string name="library_empty">Nenhum hack instalado</string>
+    <string name="library_subtitle">Hacks de Zelda 64 para Nintendo 64</string>
+
+    <!-- Hack Store -->
+    <string name="store_title">Loja de Hacks</string>
+    <string name="store_empty">Nenhum hack no catálogo</string>
+    <string name="store_refresh">Atualizar</string>
+    <string name="store_version_format">Versão %1$s</string>
+    <string name="store_status_installed">Instalado v%1$s</string>
+    <string name="store_status_update">Atualização disponível</string>
+    <string name="store_status_not_installed">Não instalado</string>
+    <string name="store_badge_installed">Instalado</string>
+    <string name="store_note_installed_as_other">Instalado como "%1$s" (versão %2$s)</string>
+    <string name="library_duplicate_note">Mesmo hack de outra loja</string>
+
+    <!-- Hack Store: sidebar categories -->
+    <string name="store_cat_all">Todos</string>
+    <string name="store_cat_installed">Instalados</string>
+    <string name="store_cat_updates">Atualizações</string>
+    <string name="store_cat_not_installed">Não Instalados</string>
+    <string name="store_cat_oot">Ocarina of Time</string>
+    <string name="store_cat_mm">Majora\'s Mask</string>
+    <string name="store_search_icon_desc">Buscar</string>
+    <string name="detail_close_desc">Fechar</string>
+
+    <!-- Hack Store: search + pagination -->
+    <string name="store_search_hint">Buscar na loja...</string>
+    <string name="store_no_results">Nenhum resultado para a busca</string>
+    <string name="store_page_indicator">Página %1$d de %2$d</string>
+    <string name="store_page_previous">Página anterior</string>
+    <string name="store_page_next">Próxima página</string>
+
+    <!-- Hack detail sheet -->
+    <string name="detail_author">Autor: %1$s</string>
+    <string name="detail_version">Versão: %1$s</string>
+    <string name="detail_required_base">ROM base necessária</string>
+    <string name="detail_base_info">%1$s (Código: %2$s, Versão: %3$s)</string>
+    <string name="detail_base_match">Você possui uma ROM base compatível.</string>
+    <string name="detail_base_no_match">Nenhuma ROM base compatível importada.</string>
+    <string name="detail_tags">Tags: %1$s</string>
+    <string name="detail_download">Baixar</string>
+    <string name="detail_update">Atualizar</string>
+    <string name="detail_installing">Instalando… %1$d%%</string>
+    <string name="detail_error_network">Erro de rede. Tente novamente.</string>
+    <string name="detail_error_checksum">Falha na verificação do patch (checksum incompatível).</string>
+    <string name="detail_error_patch_invalid">Patch inválido ou corrompido.</string>
+    <string name="detail_error_base_rom_missing">ROM base necessária não encontrada (CRC32 %1$s). Importe a ROM base nas configurações.</string>
+    <string name="detail_error_generic">Falha ao baixar o patch.</string>
+    <string name="detail_patching">Aplicando patch…</string>
+    <string name="detail_installed_toast">Patch instalado. Disponível na Biblioteca.</string>
+
+    <!-- Store: multi-store + detail enhancements -->
+    <string name="store_source_error">Não foi possível carregar esta loja.</string>
+    <string name="detail_screenshots">Capturas de tela</string>
+    <string name="detail_videos">Vídeos</string>
+    <string name="detail_developer_links">Links do criador</string>
+    <string name="detail_open_browser">Abrir no navegador</string>
+    <string name="detail_resolving">Resolvendo download...</string>
+    <string name="detail_supported_game">Jogo suportado</string>
+    <string name="detail_completion">Status</string>
+    <string name="detail_changelog">Registro de alterações</string>
+    <string name="detail_external_notice">Este mod deve ser baixado de sua fonte.</string>
+
+    <!-- Embedded WebView downloader (ExternalLink hacks) -->
+    <string name="webview_title">Baixar hack</string>
+    <string name="webview_back_desc">Voltar</string>
+    <string name="webview_downloading">Baixando %1$s…</string>
+    <string name="webview_download_queued">Download iniciado. A instalação continuará em segundo plano.</string>
+    <string name="webview_download_already_queued">Este download já está na fila.</string>
+    <string name="webview_install_success">Instalado: %1$s</string>
+    <string name="webview_install_error_title">Falha na instalação</string>
+    <string name="webview_install_failed">Falha ao instalar o arquivo.</string>
+    <string name="webview_download_failed">Falha no download: %1$s</string>
+    <string name="webview_unsupported_file">Arquivo não suportado: %1$s</string>
+    <string name="webview_no_patch_in_zip">Nenhum patch ou ROM encontrado dentro de %1$s.</string>
+    <string name="webview_no_base_rom">ROM base não encontrada (CRC32 %1$s). Importe a ROM %2$s nas configurações.</string>
+    <string name="webview_badge">Navegador</string>
+    <string name="webview_badge_desc">Download via navegador embutido</string>
+    <string name="detail_webview_notice">Este hack requer download manual via navegador embutido.</string>
+
+    <!-- Download queue (Hack Store) -->
+    <string name="store_downloads">Downloads</string>
+    <string name="download_queue_title">Downloads</string>
+    <string name="download_queue_empty">Nenhum download na fila</string>
+    <string name="download_clear_finished">Limpar concluídos</string>
+    <string name="download_cancel">Cancelar</string>
+    <string name="download_remove">Remover</string>
+    <string name="download_channel">Downloads da Loja</string>
+    <string name="download_channel_description">Progresso de download e patch de hacks</string>
+    <string name="download_notif_downloading">Baixando… %1$d%%</string>
+    <string name="download_notif_patching">Aplicando patch…</string>
+    <string name="download_notif_completed">Instalado: %1$s</string>
+    <string name="download_notif_error">Falha: %1$s</string>
+    <string name="download_notif_cancelled">Cancelado: %1$s</string>
+    <string name="store_status_queued">Na fila</string>
+    <string name="store_status_downloading">Baixando…</string>
+    <string name="store_status_patching">Aplicando patch…</string>
+
+    <!-- Patching / launch flow -->
+    <string name="patching_message">Preparando ROM…</string>
+    <string name="error_patch_missing">Patch não encontrado para este hack.</string>
+    <string name="error_patch_invalid">O patch está corrompido ou inválido.</string>
+    <string name="error_rom_not_installed">ROM não encontrada. Instale o hack na Loja.</string>
+    <string name="dialog_base_rom_title">ROM base incompatível</string>
+    <string name="dialog_base_rom_none">Nenhuma ROM base importada.</string>
+    <string name="dialog_base_rom_message">Este hack requer uma ROM base com CRC32 %1$s. Nenhuma ROM importada corresponde (encontradas: %2$s).</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Configurações</string>
+    <string name="settings_navigation_title">CATEGORIAS</string>
+    <string name="settings_open_navigation">Abrir categorias de configurações</string>
+    <string name="settings_close_navigation">Fechar categorias de configurações</string>
+    <string name="cover_content_description">Capa do hack</string>
+
+    <!-- Settings: import base ROM -->
+    <string name="settings_import_title">Importar ROM Base</string>
+    <string name="settings_import_description">Selecione um arquivo de ROM N64 (.z64, .n64 ou .v64) para importar. Arquivos grandes (32–64 MB) podem levar alguns segundos.</string>
+    <string name="settings_import_button">Selecionar ROM…</string>
+    <string name="settings_import_result_title">Resultado da importação</string>
+    <string name="settings_import_success">Importada: %1$s (Código: %2$s, Versão: %3$s, CRC32: %4$s)</string>
+    <string name="settings_import_duplicate">Já importada: %1$s (CRC32: %2$s)</string>
+    <string name="settings_import_invalid">Falha: %1$s</string>
+    <string name="settings_import_summary">Importadas: %1$d | Já existentes: %2$d | Falhas: %3$d</string>
+
+    <!-- Settings: imported base ROMs -->
+    <string name="settings_baseroms_title">ROMs Base importadas</string>
+    <string name="settings_baseroms_empty">Nenhuma ROM base importada. Use a seção acima para importar.</string>
+    <string name="settings_baserom_details">Código: %1$s | Versão: %2$s | CRC32: %3$s | %4$s | Arquivo: %5$s</string>
+    <string name="settings_baserom_delete_desc">Remover ROM base</string>
+    <string name="settings_baserom_delete_confirm_title">Remover ROM base?</string>
+    <string name="settings_baserom_delete_confirm_message">Remover "%1$s" (CRC32: %2$s)? O arquivo será apagado e hacks que dependem dela podem parar de funcionar.</string>
+
+    <!-- Settings: custom catalog URLs -->
+    <string name="settings_catalog_title">URLs de catálogo customizadas</string>
+    <string name="settings_catalog_description">Adicione catálogos de hacks adicionais (além do padrão). O catálogo padrão sempre é incluído.</string>
+    <string name="settings_catalog_hint">https://exemplo.com/catalog.json</string>
+    <string name="settings_catalog_add">Adicionar</string>
+    <string name="settings_catalog_empty">Nenhuma URL customizada. Apenas o catálogo padrão será usado.</string>
+    <string name="settings_catalog_invalid">URL inválida. Use http(s):// com um endereço válido.</string>
+    <string name="settings_catalog_delete_desc">Remover URL de catálogo</string>
+    <string name="settings_catalog_remove_confirm_title">Remover URL de catálogo?</string>
+
+
+    <!-- Settings: RetroAchievements -->
+    <string name="settings_ra_title">RetroAchievements</string>
+    <string name="settings_ra_description">Entre com sua conta da RetroAchievements.org para desbloquear conquistas ao jogar. Sua senha é usada apenas uma vez; guardamos somente o token, de forma criptografada.</string>
+    <string name="settings_ra_enabled">Ativar RetroAchievements</string>
+    <string name="settings_ra_enabled_subtitle">Conectado como %1$s</string>
+    <string name="settings_ra_username_hint">Usuário</string>
+    <string name="settings_ra_password_hint">Senha</string>
+    <string name="settings_ra_login">Entrar</string>
+    <string name="settings_ra_logout">Sair</string>
+    <string name="settings_ra_logging_in">Entrando…</string>
+    <string name="settings_ra_error_missing">Preencha usuário e senha.</string>
+    <string name="settings_ra_status_logged_in">Conectado. As conquistas serão rastreadas nos jogos.</string>
+    <string name="settings_ra_status_logged_out">Desconectado. Entre para rastrear conquistas.</string>
+    <string name="settings_ra_status_disabled">RetroAchievements desativado.</string>
+    <string name="settings_ra_status_failed">Falha no login. Verifique usuário e senha.</string>
+    <string name="settings_ra_status_failed_detail">Falha no login: %1$s</string>
+    <string name="settings_ra_api_key_hint">Chave da Web API</string>
+    <string name="settings_ra_api_key_help">Buscamos a chave sozinhos após o login (retroachievements.org > Configurações > Aplicações). Se falhar, use a captura automática ou cole a chave aqui. Necessária para buscar seu perfil público.</string>
+    <string name="settings_ra_save_api_key">Salvar chave da API</string>
+    <string name="settings_ra_capture_api_key">Capturar chave no navegador</string>
+    <string name="settings_ra_fetching_api_key">Entrado. Buscando chave da Web API…</string>
+    <string name="settings_ra_api_key_auto_saved">Chave da Web API obtida automaticamente!</string>
+    <string name="settings_ra_key_capture_title">Capturar chave da API</string>
+    <string name="settings_ra_key_capture_loading">Carregando…</string>
+    <string name="settings_ra_key_capture_logging_in">Entrando…</string>
+    <string name="settings_ra_key_capture_scanning">Procurando a chave…</string>
+    <string name="settings_ra_key_capture_needs_verification">Verifique seu e-mail no site RetroAchievements para liberar a chave da API.</string>
+    <string name="settings_ra_api_key_saved">Chave salva!</string>
+    <string name="settings_ra_api_key_error_missing">Digite a chave antes de salvar.</string>
+    <string name="settings_ra_status_logged_in_no_key">Conectado. Adicione a chave da Web API acima para ver o perfil.</string>
+    <string name="settings_ra_credentials_title">Credenciais RetroAchievements</string>
+    <string name="settings_ra_credentials_desc">Esta tela é protegida contra captura de tela. Sua senha é usada apenas uma vez; guardamos somente o token, de forma criptografada.</string>
+
+    <!-- Achievements screen -->
+    <string name="achievements_title">Conquistas</string>
+    <string name="achievements_title_all">Todas as Conquistas</string>
+    <string name="ra_achievement_points">%d pts</string>
+    <string name="ra_progress_summary">%1$d/%2$d conquistas · %3$d/%4$d pontos</string>
+    <string name="ra_loading">Carregando conquistas…</string>
+    <string name="ra_empty">Este jogo ainda não tem conquistas registradas.</string>
+    <string name="ra_all_empty">Nenhum jogo instalado foi identificado na RetroAchievements.</string>
+    <string name="ra_error_untracked">Não foi possível identificar este jogo na RetroAchievements.</string>
+    <string name="ra_error_network">Não foi possível conectar à RetroAchievements. Verifique sua conexão e tente de novo.</string>
+    <string name="ra_search_hint">Buscar conquistas…</string>
+    <string name="ra_no_results">Nenhuma conquista encontrada.</string>
+    <string name="ra_sort_button">Ordenar</string>
+    <string name="ra_sort_default">Padrão (desbloqueadas primeiro)</string>
+    <string name="ra_sort_name_az">Nome (A–Z)</string>
+    <string name="ra_sort_name_za">Nome (Z–A)</string>
+    <string name="ra_sort_points_desc">Pontos (maior primeiro)</string>
+    <string name="ra_sort_points_asc">Pontos (menor primeiro)</string>
+    <string name="ra_sort_rarity_rare">Raridade (mais rara primeiro)</string>
+    <string name="ra_sort_rarity_common">Raridade (mais comum primeiro)</string>
+    <string name="ra_missable">Perdível</string>
+    <string name="ra_rarity">%1$.1f%% dos jogadores</string>
+    <string name="ra_view_list">Lista</string>
+    <string name="ra_view_grid">Grade</string>
+    <string name="ra_view_mode">Modo de visualização</string>
+    <string name="ra_view_mode_dialog_title">Visualização</string>
+    <string name="ra_grid_cell_desc">Conquista: %1$s · %2$d pts</string>
+
+    <!-- RetroAchievements player profile -->
+    <string name="ra_profile_title">Perfil RetroAchievements</string>
+    <string name="ra_profile_avatar_description">Avatar do jogador RetroAchievements</string>
+    <string name="ra_profile_loading">Carregando perfil…</string>
+    <string name="ra_profile_signed_out">Entre na sua conta RetroAchievements nas configurações para ver o perfil.</string>
+    <string name="ra_profile_error">Não foi possível carregar o perfil RetroAchievements.</string>
+    <string name="ra_profile_retry">Tentar novamente</string>
+    <string name="ra_profile_details">Informações do perfil</string>
+    <string name="ra_profile_not_available">Não informado</string>
+    <string name="ra_profile_field_user">Usuário</string>
+    <string name="ra_profile_field_display_name">Nome de exibição</string>
+    <string name="ra_profile_field_id">ID</string>
+    <string name="ra_profile_field_ulid">ID permanente</string>
+    <string name="ra_profile_field_avatar">Avatar</string>
+    <string name="ra_profile_field_motto">Mensagem pessoal</string>
+    <string name="ra_profile_field_rich_presence">Status atual</string>
+    <string name="ra_profile_field_last_game_id">ID do último jogo</string>
+    <string name="ra_profile_field_contribution_count">Contribuições</string>
+    <string name="ra_profile_field_contribution_yield">Pontuação de contribuições</string>
+    <string name="ra_profile_field_total_points">Pontos</string>
+    <string name="ra_profile_field_softcore_points">Pontos softcore</string>
+    <string name="ra_profile_field_true_points">Pontos reais</string>
+    <string name="ra_profile_field_permissions">Permissões</string>
+    <string name="ra_profile_field_untracked">Conta não rastreada</string>
+    <string name="ra_profile_field_user_wall_active">Mural do usuário ativo</string>
+    <string name="ra_profile_needs_api_key">Você entrou, mas ainda falta a chave da Web API. Abra Configurações > RetroAchievements e use a captura automática ou cole a chave.</string>
+    <string name="ra_profile_member_since">Na comunidade desde %1$s</string>
+    <string name="ra_profile_last_game">Último jogo</string>
+    <string name="ra_profile_last_game_image_description">Ícone do último jogo</string>
+    <string name="ra_profile_recent_games">Jogados recentemente</string>
+    <string name="ra_profile_recent_achievements">Conquistas recentes</string>
+    <string name="ra_profile_open_web">Abrir perfil no navegador</string>
+    <string name="ra_profile_game_image_description">Ícone do jogo</string>
+    <string name="ra_profile_achievement_badge_description">Emblema da conquista</string>
+    <string name="ra_profile_unknown_game">Jogo desconhecido</string>
+    <string name="ra_profile_unknown_achievement">Conquista desconhecida</string>
+    <string name="ra_profile_game_progress">%1$d/%2$d conquistas</string>
+    <string name="ra_profile_game_points">%1$s pts</string>
+    <string name="ra_profile_achievement_points">%1$d pts</string>
+    <string name="ra_profile_achievement_hardcore">Modo difícil</string>
+    <string name="ra_profile_achievement_softcore">Casual</string>
+    <string name="ra_profile_metric_hardcore_points">Pontos difíceis</string>
+    <string name="ra_profile_metric_true_points">Pontos verdadeiros</string>
+    <string name="ra_profile_metric_mastery">Maestrias</string>
+    <string name="ra_profile_metric_beaten">Finalizados</string>
+    <string name="ra_profile_metric_rank_sub">Posição nº %1$s de %2$s</string>
+    <string name="ra_profile_metric_softcore_sub">%1$s casuais</string>
+    <string name="ra_profile_metric_completion_sub">%1$s conclusões</string>
+    <string name="ra_profile_metric_beaten_softcore_sub">%1$s casuais</string>
+
+    <!-- RetroAchievements in-game overlay and notifications -->
+    <string name="ra_unlocked_points">Desbloqueada · %d pts</string>
+    <string name="ra_leaderboard_started">Leaderboard ativo!</string>
+    <string name="ra_leaderboard_failed">Leaderboard falhou.</string>
+    <string name="ra_leaderboard_submitted">Enviado ao leaderboard!</string>
+    <string name="ra_game_completed">Jogo completo! Todas as conquistas desbloqueadas!</string>
+    <string name="ra_subset_completed">Conjunto completo!</string>
+    <string name="ra_disconnected">RetroAchievements desconectado — progresso pendente.</string>
+    <string name="ra_reconnected">RetroAchievements reconectado!</string>
+    <string name="ra_notification_channel">Conquistas RetroAchievements</string>
+    <string name="ra_notification_channel_description">Notifica quando uma conquista é desbloqueada durante o jogo.</string>
+    <string name="ra_notification_title">Conquista desbloqueada!</string>
+    <string name="ra_notification_text">Continue jogando para conquistar mais.</string>
+    <string name="ra_notification_text_game">Em %1$s. Continue jogando para conquistar mais.</string>
+
+    <!-- RetroAchievements leaderboards (in-game menu only) -->
+    <string name="menu_category_ra">RetroAchievements</string>
+    <string name="menu_ra_leaderboards">Leaderboards</string>
+    <string name="ra_leaderboards_empty">Este jogo não tem leaderboards visíveis.</string>
+    <string name="ra_leaderboards_title">Placar</string>
+
+    <!-- RetroAchievements game-start announcement -->
+    <string name="ra_toast_disabled">RetroAchievements desativado. Ative nas configurações.</string>
+    <string name="ra_toast_not_logged_in">Entre com sua conta RetroAchievements nas configurações para acompanhar conquistas.</string>
+    <string name="ra_toast_progress">RetroAchievements: %1$d de %2$d conquistas desbloqueadas</string>
+    <string name="ra_toast_progress_mode">RetroAchievements: %1$d de %2$d conquistas desbloqueadas · %3$s</string>
+    <string name="ra_toast_untracked">Este jogo não tem conquistas no RetroAchievements.</string>
+    <string name="ra_toast_connect_failed">Não foi possível conectar ao RetroAchievements.</string>
+    <string name="ra_mode_hardcore">Hardcore</string>
+    <string name="ra_mode_casual">Casual</string>
+    <string name="ra_hardcore_state_blocked">Estados salvos bloqueados no modo Hardcore.</string>
+    <string name="ra_hardcore_pause_disabled">Pausa bloqueada no Hardcore — mudando para Casual.</string>
+    <string name="ra_hardcore_macro_blocked">Ocarina automática bloqueada no modo Hardcore.</string>
+    <string name="ra_award_sync_failed">Falha ao sincronizar conquista.</string>
+    <string name="ra_award_sync_rejected">Conquista rejeitada pelo servidor.</string>
+    <string name="toast_state_load_failed">Falha ao carregar estado.</string>
+    <string name="toast_state_save_failed">Falha ao salvar estado.</string>
+    <string name="toast_fast_forward_blocked_ra">Avanço rápido bloqueado no modo Hardcore do RetroAchievements.</string>
+
+    <!-- Settings: about / licenses -->
+    <string name="settings_about_licenses">Este app usa rcheevos (MIT) para a integração RetroAchievements, xdelta3 (Apache-2.0) para decodificação de patches VCDIFF, além de LibretroDroid e RadialGamePad (GPL-3.0). Licenças completas no repositório do projeto.</string>
+
+    <!-- Settings: about -->
+    <string name="settings_about_title">Sobre</string>
+    <string name="settings_about_version">Versão: %1$s</string>
+    <string name="settings_about_repo">Repositório</string>
+    <string name="settings_about_catalog">Catálogo</string>
+
+    <!-- Settings: backups (local save export/import) -->
+    <string name="backup_title">Backups</string>
+    <string name="backup_description">Proteja seus saves em um arquivo ZIP local ou sincronize saves e capturas com sua conta do Google Drive.</string>
+    <string name="backup_export">Exportar saves</string>
+    <string name="backup_import">Restaurar saves</string>
+    <string name="backup_export_empty">Nenhum hack instalado para fazer backup.</string>
+    <string name="backup_export_summary">Backup concluído: %1$d hacks, %2$d arquivos.</string>
+    <string name="backup_import_summary">Restaurado: %1$d hacks, %2$d arquivos. Ignorados: %3$d.</string>
+    <string name="backup_error_stream">Não foi possível abrir o arquivo.</string>
+
+    <!-- Settings: Google Drive cloud backup -->
+    <string name="gdrive_subtitle">Backup na nuvem (Google Drive)</string>
+    <string name="gdrive_description">Um único fluxo para backup e restauração no Google Drive. Os backups automáticos usam o mesmo fluxo do backup manual.</string>
+    <string name="gdrive_enable">Ativar backup no Google Drive</string>
+    <string name="gdrive_connect">Conectar conta Google</string>
+    <string name="gdrive_connected">Conta: %1$s</string>
+    <string name="gdrive_not_connected">Nenhuma conta conectada</string>
+    <string name="gdrive_backup_saves">Saves (SRAM e estados)</string>
+    <string name="gdrive_backup_images">Imagens (capturas de tela)</string>
+    <string name="gdrive_backup_videos">Vídeos (gravações)</string>
+    <string name="gdrive_auto">Backup automático</string>
+    <string name="gdrive_frequency">Frequência</string>
+    <string name="gdrive_frequency_daily">Diário</string>
+    <string name="gdrive_frequency_weekly">Semanal</string>
+    <string name="gdrive_frequency_manual">Manual</string>
+    <string name="gdrive_backup_now">Fazer backup agora</string>
+    <string name="gdrive_restore">Restaurar do Google Drive</string>
+    <string name="gdrive_restore_confirm">Os saves encontrados no Google Drive substituirão os saves locais correspondentes. Deseja continuar?</string>
+    <string name="gdrive_restore_confirm_action">Restaurar</string>
+    <string name="gdrive_restore_summary">Restauração concluída: %1$d arquivo(s). Ignorados: %2$d.</string>
+    <string name="gdrive_restore_summary_errors">Restauração parcial: %1$d arquivo(s). Ignorados: %2$d. Erros: %3$d.</string>
+    <string name="gdrive_restore_failed">Falha na restauração: %1$s</string>
+    <string name="gdrive_view">Ver backups no Drive</string>
+    <string name="gdrive_last_backup">Último backup: %1$s</string>
+    <string name="gdrive_last_backup_never">Nunca</string>
+    <string name="gdrive_backup_summary">Backup concluído: %1$d arquivo(s) enviado(s).</string>
+    <string name="gdrive_backup_none">Nenhum arquivo novo para fazer backup.</string>
+    <string name="gdrive_backup_failed">Falha no backup: %1$s</string>
+    <string name="gdrive_need_account">Conecte uma conta Google primeiro.</string>
+    <string name="gdrive_need_enable">Ative o backup no Google Drive primeiro.</string>
+    <string name="gdrive_consent_required">É necessário autorizar o acesso ao Google Drive.</string>
+    <string name="gdrive_open_failed">Não foi possível abrir o Google Drive.</string>
+
+    <!-- Cloud Sync (automatic, per-save) -->
+    <string name="cloudsync_title">Sync na Nuvem</string>
+    <string name="cloudsync_description">Sincroniza SRAM e estados de save automaticamente a cada alteração local, via Google Drive.</string>
+    <string name="cloudsync_enable">Sincronizar saves automaticamente</string>
+    <string name="cloudsync_wifi_only">Apenas no Wi-Fi</string>
+    <string name="cloudsync_notify">Notificar conflitos</string>
+    <string name="cloudsync_status_in_progress">Sync em andamento...</string>
+    <string name="cloudsync_status_last">Último sync: %1$s</string>
+    <string name="cloudsync_status_never">Nunca sincronizado</string>
+    <string name="cloudsync_status_no_account">Conecte uma conta Google para sincronizar</string>
+    <string name="cloudsync_status_disabled">Sync na nuvem desativado</string>
+    <string name="cloudsync_view_conflicts">Ver conflitos pendentes</string>
+    <string name="cloudsync_conflicts_count">Conflitos pendentes: %1$d</string>
+    <string name="cloudsync_conflict_title">Conflito de save</string>
+    <string name="cloudsync_conflict_notify">Conflito de save detectado em %1$s. Toque para resolver.</string>
+    <string name="cloudsync_conflict_message">Conflito em %1$s (%2$s). Escolha qual versão manter:</string>
+    <string name="cloudsync_conflict_preview">Local: %1$s | %2$d bytes | CRC %3$s\nNuvem: %4$s | %5$d bytes | CRC %6$s</string>
+    <string name="cloudsync_conflict_item">%1$s — %2$s</string>
+    <string name="cloudsync_keep_local">Manter LOCAL (meu save atual)</string>
+    <string name="cloudsync_keep_cloud">Manter NUVEM (save de outro dispositivo)</string>
+    <string name="cloudsync_keep_both">Manter AMBOS (renomear local)</string>
+    <string name="cloudsync_pending_title">Conflitos pendentes</string>
+    <string name="cloudsync_no_conflicts">Nenhum conflito pendente.</string>
+    <string name="cloudsync_resolved">Conflito resolvido.</string>
+    <string name="cloudsync_resolve_failed">Falha ao resolver conflito.</string>
+    <string name="cloudsync_unknown_time">desconhecido</string>
+    <string name="cloudsync_channel_name">Sync de Saves</string>
+    <string name="cloudsync_channel_desc">Notificações de conflito de sincronização de saves</string>
+
+    <!-- App shortcuts (installed games as launcher shortcuts) -->
+    <string name="shortcut_add_to_home">Adicionar à tela inicial</string>
+    <string name="shortcut_long_label_play">Jogar %1$s</string>
+    <string name="shortcut_disabled_not_installed">Jogo não instalado</string>
+    <string name="shortcut_pin_unsupported">Adicionar à tela inicial não é suportado nesta versão do Android.</string>
+
+
+    <!-- Plandomizer editor -->
+    <string name="plandomizer_title">Editor de Plandomizer</string>
+    <string name="plandomizer_tab_text">Texto</string>
+    <string name="plandomizer_tab_builder">Construtor</string>
+    <string name="plandomizer_import">Importar arquivo .json</string>
+    <string name="plandomizer_validate">Validar</string>
+    <string name="plandomizer_clear">Limpar</string>
+    <string name="plandomizer_generate_json">Gerar JSON</string>
+    <string name="plandomizer_apply">Aplicar</string>
+    <string name="plandomizer_generated">JSON gerado a partir do construtor.</string>
+    <string name="plandomizer_text_hint">Cole ou edite o JSON de placement do Plandomizer aqui…</string>
+    <string name="plandomizer_valid">JSON válido.</string>
+    <string name="plandomizer_invalid">JSON inválido: %1$s</string>
+    <string name="plandomizer_warnings">Avisos: %1$s</string>
+    <string name="plandomizer_parse_error">Erro de análise: %1$s</string>
+    <string name="plandomizer_empty">O editor está vazio.</string>
+    <string name="plandomizer_section_locations">Locais</string>
+    <string name="plandomizer_section_entrances">Entradas</string>
+    <string name="plandomizer_section_dungeons">Masmorras</string>
+    <string name="plandomizer_section_trials">Provas</string>
+    <string name="plandomizer_section_starting_items">Itens iniciais</string>
+    <string name="plandomizer_section_item_pool">Pool de itens</string>
+    <string name="plandomizer_section_settings">Sobrescrever configurações</string>
+    <string name="plandomizer_section_file_hash">File hash (até 5 ícones)</string>
+    <string name="plandomizer_add_row">Adicionar</string>
+    <string name="plandomizer_name_hint">Nome</string>
+    <string name="plandomizer_value_hint">Valor</string>
+    <string name="plandomizer_item_hint">Item</string>
+    <string name="plandomizer_count_hint">Quantidade</string>
+    <string name="plandomizer_from_hint">De</string>
+    <string name="plandomizer_to_hint">Para</string>
+    <string name="plandomizer_mode_hint">Modo</string>
+    <string name="plandomizer_type_hint">Tipo</string>
+    <string name="plandomizer_file_hash_hint">Ícone (opcional)</string>
+    <string name="plandomizer_remove_row">Remover linha</string>
+    <string name="plandomizer_import_error">Não foi possível ler o arquivo: %1$s</string>
+    <string name="plandomizer_import_success">Arquivo importado.</string>
+
+    <string name="hack_badge_content_description">Hack de ROM</string>
+
+
+    <!-- Auto-Ocarina -->
+    <string name="menu_category_ocarina">Ocarina</string>
+    <string name="menu_category_tools">Ferramentas</string>
+    <string name="menu_auto_ocarina">Auto-Ocarina</string>
+    <string name="ocarina_now_playing">Tocando</string>
+    <!-- Auto-Ocarina auto-open setting -->
+    <!-- Ocarina of Time songs -->
+    <string name="ocarina_zeldas_lullaby">Canção de Zelda</string>
+    <string name="ocarina_eponas_song">Canção da Epona</string>
+    <string name="ocarina_sarias_song">Canção da Saria</string>
+    <string name="ocarina_suns_song">Canção do Sol</string>
+    <string name="ocarina_song_of_time">Canção do Tempo</string>
+    <string name="ocarina_song_of_storms">Canção da Tempestade</string>
+    <string name="ocarina_minuet_of_forest">Minueto da Floresta</string>
+    <string name="ocarina_bolero_of_fire">Bolero do Fogo</string>
+    <string name="ocarina_serenade_of_water">Serenata da Água</string>
+    <string name="ocarina_requiem_of_spirit">Réquiem do Espírito</string>
+    <string name="ocarina_nocturne_of_shadow">Noturno das Sombras</string>
+    <string name="ocarina_prelude_of_light">Prelúdio da Luz</string>
+    <!-- Majora\'s Mask songs -->
+    <string name="ocarina_song_of_healing">Canção da Cura</string>
+    <string name="ocarina_song_of_soaring">Canção de Planar</string>
+    <string name="ocarina_sonata_of_awakening">Sonata do Despertar</string>
+    <string name="ocarina_goron_lullaby">Canção de Ninar Goron</string>
+    <string name="ocarina_new_wave_bossa_nova">Bossa Nova da Nova Onda</string>
+    <string name="ocarina_elegy_of_emptiness">Elegia do Vazio</string>
+    <string name="ocarina_oath_to_order">Juramento da Ordem</string>
+    <string name="ocarina_inverted_song_of_time">Canção do Tempo Invertida</string>
+    <string name="ocarina_song_of_double_time">Canção do Tempo Duplo</string>
+
+    <!-- ===== Nintendo Switch UI - Library Home (Phase B) ===== -->
+    <string name="all_games">Todos os Jogos</string>
+    <string name="dock_store">Loja</string>
+    <string name="dock_achievements">RetroAchievements</string>
+    <string name="dock_settings">Configurações</string>
+    <string name="dock_control">Controle</string>
+    <string name="footer_gamepad_disconnected">Controle desconectado</string>
+    <string name="footer_gamepad_connected">Controle: %1$s</string>
+    <string name="footer_gamepad_connected_multiple">Controle: %1$s (+%2$d)</string>
+    <string name="back_button">Voltar</string>
+
+    <!-- ===== Gamepad Tester ===== -->
+    <string name="gamepad_tester_title">Teste de Controle</string>
+    <string name="gamepad_tester_back">Voltar</string>
+    <string name="gamepad_tester_disconnected">Nenhum controle conectado</string>
+    <string name="gamepad_tester_connect_controller">Conecte um controle</string>
+    <string name="gamepad_tester_controller_disconnected">Controle desconectado</string>
+    <string name="gamepad_tester_connected">Controle: %1$s</string>
+    <string name="gamepad_tester_mode_physical">Controle físico</string>
+    <string name="gamepad_tester_mode_n64">Mapeamento Nintendo 64</string>
+    <string name="gamepad_tester_hint">Pressione botões ou mova os analógicos. O modo Nintendo 64 mostra exatamente o mapeamento usado nos jogos.</string>
+    <string name="gamepad_tester_surface_description">Visualização ao vivo do controle</string>
+    <string name="tester_lb" translatable="false">LB</string>
+    <string name="tester_rb" translatable="false">RB</string>
+    <string name="tester_lt" translatable="false">LT</string>
+    <string name="tester_rt" translatable="false">RT</string>
+    <string name="tester_l3" translatable="false">L3</string>
+    <string name="tester_r3" translatable="false">R3</string>
+    <string name="tester_select" translatable="false">SELECT</string>
+    <string name="tester_start" translatable="false">START</string>
+    <string name="tester_a" translatable="false">A</string>
+    <string name="tester_b" translatable="false">B</string>
+    <string name="tester_x" translatable="false">X</string>
+    <string name="tester_y" translatable="false">Y</string>
+    <string name="tester_dpad_up" translatable="false">↑</string>
+    <string name="tester_dpad_down" translatable="false">↓</string>
+    <string name="tester_dpad_left" translatable="false">←</string>
+    <string name="tester_dpad_right" translatable="false">→</string>
+    <string name="tester_n64_l" translatable="false">L</string>
+    <string name="tester_n64_r" translatable="false">R</string>
+    <string name="tester_n64_z" translatable="false">Z</string>
+    <string name="tester_n64_stick">ANALÓGICO</string>
+    <string name="tester_n64_start" translatable="false">START</string>
+    <string name="tester_n64_a" translatable="false">A</string>
+    <string name="tester_n64_b" translatable="false">B</string>
+    <string name="tester_n64_c_up" translatable="false">C↑</string>
+    <string name="tester_n64_c_down" translatable="false">C↓</string>
+    <string name="tester_n64_c_left" translatable="false">C←</string>
+    <string name="tester_n64_c_right" translatable="false">C→</string>
+
+    <!-- Accent color options -->
+    <string name="accent_cyan">Ciano</string>
+    <string name="accent_green_light">Verde Claro</string>
+    <string name="accent_green_dark">Verde Escuro</string>
+    <string name="accent_blue">Azul</string>
+    <string name="accent_yellow">Amarelo</string>
+    <string name="accent_pink">Rosa</string>
+    <string name="accent_red">Vermelho</string>
+    <string name="accent_violet">Violeta</string>
+    <string name="accent_teal">Turquesa</string>
+    <string name="accent_orange">Laranja</string>
+    <string name="accent_purple">Roxo</string>
+    <string name="accent_indigo">Índigo</string>
+
+    <!-- ===== Nintendo Switch UI - Todos os Jogos grid (Phase C) ===== -->
+    <string name="grid_search_hint">Buscar...</string>
+    <string name="grid_no_results">Nenhum resultado encontrado</string>
+    <string name="grid_sort_button">Ordenar</string>
+    <string name="grid_sort_last_played">Última vez Jogado</string>
+    <string name="grid_sort_download_date">Data de Download</string>
+    <string name="grid_sort_alpha">Alfabético</string>
+
+    <!-- ===== Splash screen wordmark (brand name, NOT translated) ===== -->
+    <string name="brand_hylianbox" translatable="false">Hylian</string>
+    <string name="brand_player" translatable="false">BOX</string>
+
+    <!-- ===== Store: Import manual game or patch ===== -->
+    <string name="store_import_bps">Importar jogo ou patch</string>
+    <string name="import_patch_progress">Aplicando patch…</string>
+    <string name="import_success_title">Patch instalado</string>
+    <string name="import_success_message">O hack \"%1$s\" foi aplicado na ROM %2$s e já está disponível na Biblioteca.</string>
+    <string name="import_no_rom_title">ROM compatível não encontrada</string>
+    <string name="import_no_rom_message">Este patch requer %1$s (CRC32 %2$s). Nenhuma ROM base compatível foi importada. Importe a ROM base em Configurações > Importar ROM Base.</string>
+    <string name="import_no_rom_unknown_message">Este patch requer uma ROM base Nintendo 64 (CRC32 %1$s). Nenhuma ROM base compatível foi importada. Importe a ROM base em Configurações > Importar ROM Base.</string>
+    <string name="import_invalid_title">Patch inválido</string>
+    <string name="import_invalid_message">Não foi possível aplicar o patch: %1$s</string>
+    <string name="import_invalid_generic">Patch inválido</string>
+    <string name="import_unsupported_message">Formato não suportado. Use um arquivo BPS, IPS, N64 ou Z64.</string>
+    <string name="import_author_user">Importado pelo usuário</string>
+    <string name="import_description_auto">Hack importado manualmente pelo usuário.</string>
+    <string name="import_unknown_base">Desconhecida</string>
+    <string name="import_rom_progress">Importando ROM…</string>
+    <string name="import_rom_success_title">Jogo importado</string>
+    <string name="import_rom_success_message">O jogo "%1$s" já está disponível na Biblioteca.</string>
+    <string name="import_invalid_rom_title">ROM inválida</string>
+    <string name="import_invalid_rom_message">Não foi possível importar a ROM: %1$s</string>
+    <string name="import_file_picker_title">Selecionar jogo ou patch</string>
+
+    <!-- ===== Manual game cover ===== -->
+    <string name="manual_cover_change">Alterar capa</string>
+    <string name="manual_cover_remove">Remover capa personalizada</string>
+    <string name="manual_cover_picker_title">Selecionar capa</string>
+    <string name="manual_cover_content_description">Capa personalizada do jogo</string>
+    <string name="manual_cover_success">Capa personalizada atualizada.</string>
+    <string name="manual_cover_remove_success">Capa personalizada removida.</string>
+    <string name="manual_cover_invalid">Não foi possível usar esta imagem como capa.</string>
+    <string name="game_oot">Ocarina of Time</string>
+    <string name="game_mm">Majora\'s Mask</string>
+    <string name="game_unknown">desconhecida</string>
+
+    <!-- Settings: language -->
+    <string name="settings_language_title">Idioma</string>
+    <string name="language_auto">Automático (padrão do sistema)</string>
+    <string name="language_portuguese">Português (Brasil)</string>
+    <string name="language_english">Inglês</string>
+    <string name="language_spanish">Espanhol</string>
+    <string name="language_select">Selecionar idioma</string>
+
+    <!-- Captura de Tela, Gravação e Galeria -->
+    <string name="menu_category_capture">Captura</string>
+    <string name="menu_screenshot">Capturar Tela</string>
+    <string name="menu_record_start">Iniciar Gravação</string>
+    <string name="menu_record_stop">Parar Gravação</string>
+    <string name="dock_gallery">Galeria</string>
+    <string name="gallery_title">Galeria</string>
+    <string name="gallery_empty">Nenhuma captura ainda. Use o menu do emulador para capturar.</string>
+    <string name="gallery_share">Compartilhar</string>
+    <string name="gallery_delete">Excluir</string>
+    <string name="gallery_delete_confirm">Excluir esta captura? Esta ação não pode ser desfeita.</string>
+    <string name="gallery_view">Visualizar</string>
+    <string name="gallery_image_viewer_title">Visualizador de imagem</string>
+    <string name="gallery_video_player_title">Player de vídeo</string>
+    <string name="gallery_image_content_description">Imagem capturada</string>
+    <string name="gallery_video_loading">Carregando vídeo</string>
+    <string name="gallery_play_video">Reproduzir vídeo</string>
+    <string name="gallery_pause_video">Pausar vídeo</string>
+    <string name="gallery_view_error">Não foi possível abrir esta captura.</string>
+    <string name="gallery_record_badge">Vídeo</string>
+    <string name="gallery_screenshot_badge">Imagem</string>
+    <string name="gallery_overlay_badge">Com Controles</string>
+    <string name="settings_capture_category">Captura</string>
+    <string name="settings_capture_description">Capturas de tela e gravação de gameplay ficam apenas no dispositivo.</string>
+    <string name="settings_capture_include_microphone">Incluir microfone</string>
+    <string name="settings_capture_include_microphone_description">Mistura sua voz ao som do emulador nas novas gravações.</string>
+    <string name="capture_microphone_permission_required">Permita o uso do microfone para gravar com sua voz.</string>
+    <string name="capture_saved">Captura salva</string>
+    <string name="capture_failed">Falha ao capturar</string>
+    <string name="recording_started">Gravação iniciada</string>
+    <string name="recording_stopped">Gravação parada</string>
+    <string name="recording_label">REC</string>
+    <!-- ===== Item Tracker (manual) ===== -->
+    <string name="menu_category_tracker">Rastreador</string>
+    <string name="menu_item_tracker">Rastreador de Itens</string>
+    <string name="tracker_title_oot">Rastreador OoT</string>
+    <string name="tracker_title_mm">Rastreador MM</string>
+    <string name="tracker_tab_items">Itens</string>
+    <string name="tracker_tab_locations">Locais</string>
+    <string name="tracker_tab_songs">Músicas</string>
+    <string name="tracker_tab_hints">Dicas</string>
+    <string name="tracker_tab_upgrades">Evoluções</string>
+    <string name="tracker_start">Iniciar</string>
+    <string name="tracker_pause">Pausar</string>
+    <string name="tracker_reset">Zerar</string>
+    <string name="tracker_edit_time_title">Editar tempo (HH:MM:SS)</string>
+    <string name="tracker_clear">Limpar</string>
+    <string name="tracker_export">Exportar</string>
+    <string name="tracker_import">Importar</string>
+    <string name="tracker_found">Encontrado</string>
+    <string name="tracker_not_found">Não</string>
+    <string name="tracker_not_found_badge">Faltando</string>
+    <string name="tracker_gossip_stones">Pedras Proféticas</string>
+    <string name="tracker_songs">Músicas</string>
+    <string name="tracker_stone">Pedra</string>
+    <string name="tracker_hint_woth">Caminho do Herói</string>
+    <string name="tracker_hint_barren">Estéril</string>
+    <string name="tracker_hint_stone">Pedra Fofoqueira</string>
+
+    <!-- OoT items -->
+    <string name="oot_item_kokiri_sword">Kokiri Sword</string>
+    <string name="oot_item_master_sword">Master Sword</string>
+    <string name="oot_item_biggoron_sword">Biggoron\'s Sword</string>
+    <string name="oot_item_deku_shield">Deku Shield</string>
+    <string name="oot_item_hylian_shield">Hylian Shield</string>
+    <string name="oot_item_mirror_shield">Mirror Shield</string>
+    <string name="oot_item_iron_boots">Iron Boots</string>
+    <string name="oot_item_hover_boots">Hover Boots</string>
+    <string name="oot_item_hookshot">Hookshot</string>
+    <string name="oot_item_longshot">Longshot</string>
+    <string name="oot_item_hookshot_longshot">Hookshot / Longshot</string>
+    <string name="oot_item_boomerang">Boomerang</string>
+    <string name="oot_item_bow">Bow</string>
+    <string name="oot_item_bomb_bag">Bomb Bag</string>
+    <string name="oot_item_slingshot">Slingshot</string>
+    <string name="oot_item_lens_of_truth">Lens of Truth</string>
+    <string name="oot_item_megaton_hammer">Megaton Hammer</string>
+    <string name="oot_item_ocarina_of_time">Ocarina of Time</string>
+    <string name="oot_item_fairy_ocarina">Fairy Ocarina</string>
+    <string name="oot_item_ocarina_cycle">Ocarina</string>
+    <string name="oot_item_fire_arrows">Fire Arrows</string>
+    <string name="oot_item_ice_arrows">Ice Arrows</string>
+    <string name="oot_item_light_arrows">Light Arrows</string>
+    <string name="oot_item_din_fire">Din\'s Fire</string>
+    <string name="oot_item_farore_wind">Farore\'s Wind</string>
+    <string name="oot_item_nayru_love">Nayru\'s Love</string>
+    <string name="oot_item_goron_bracelet">Goron\'s Bracelet</string>
+    <string name="oot_item_silver_gauntlets">Silver Gauntlets</string>
+    <string name="oot_item_golden_gauntlets">Golden Gauntlets</string>
+    <string name="oot_item_kokiri_tunic">Kokiri Tunic</string>
+    <string name="oot_item_goron_tunic">Goron Tunic</string>
+    <string name="oot_item_zora_tunic">Zora Tunic</string>
+    <string name="oot_item_rupees">Rupees</string>
+
+    <!-- OoT regions -->
+    <string name="region_kokiri_forest">Kokiri Forest</string>
+    <string name="region_lost_woods">Lost Woods</string>
+    <string name="region_sacred_meadow">Sacred Forest Meadow</string>
+    <string name="region_hyrule_field">Hyrule Field</string>
+    <string name="region_lon_lon">Lon Lon Ranch</string>
+    <string name="region_kakariko">Kakariko Village</string>
+    <string name="region_graveyard">Graveyard</string>
+    <string name="region_goron_city">Goron City</string>
+    <string name="region_death_mountain">Death Mountain</string>
+    <string name="region_zora_river">Zora\'s River</string>
+    <string name="region_zora_domain">Zora\'s Domain</string>
+    <string name="region_zora_fountain">Zora\'s Fountain</string>
+    <string name="region_lake_hylia">Lake Hylia</string>
+    <string name="region_gerudo_valley">Gerudo Valley</string>
+    <string name="region_gerudo_fortress">Gerudo Fortress</string>
+    <string name="region_wasteland">Haunted Wasteland</string>
+    <string name="region_colossus">Desert Colossus</string>
+    <string name="region_market">Market</string>
+    <string name="region_hyrule_castle">Hyrule Castle</string>
+    <string name="region_temple_time">Temple of Time</string>
+    <string name="region_ganon_castle">Ganon\'s Castle</string>
+    <string name="region_deku_tree">Deku Tree</string>
+    <string name="region_dodongos_cavern">Dodongo\'s Cavern</string>
+    <string name="region_jabu_jabu">Jabu-Jabu\'s Belly</string>
+    <string name="region_forest_temple">Forest Temple</string>
+    <string name="region_fire_temple">Fire Temple</string>
+    <string name="region_water_temple">Water Temple</string>
+    <string name="region_spirit_temple">Spirit Temple</string>
+    <string name="region_shadow_temple">Shadow Temple</string>
+    <string name="region_bottom_well">Bottom of the Well</string>
+    <string name="region_ice_cavern">Ice Cavern</string>
+
+    <!-- OoT locations -->
+    <string name="loc_kf_shop">Kokiri Shop</string>
+    <string name="loc_kf_saria">Saria</string>
+    <string name="loc_kf_stump">Know-It-All Brothers</string>
+    <string name="loc_kf_sword_chest">Kokiri Sword Chest</string>
+    <string name="loc_kf_storms_grotto">Storms Grotto</string>
+    <string name="loc_kf_links_house">Link\'s House Cow</string>
+    <string name="loc_kf_gs_house">GS House of Twins</string>
+    <string name="loc_kf_gs_bean">GS Bean Patch</string>
+    <string name="loc_lw_skull_kid">Skull Kid</string>
+    <string name="loc_lw_ocarina_game">Ocarina Memory Game</string>
+    <string name="loc_lw_target">Target in Woods</string>
+    <string name="loc_lw_deku_theater">Deku Theater</string>
+    <string name="loc_lw_grog">Grog</string>
+    <string name="loc_lw_scrub_bridge">Deku Scrub Near Bridge</string>
+    <string name="loc_lw_grotto_scrubs">Scrubs Grotto</string>
+    <string name="loc_sfm_saria">Saria Song</string>
+    <string name="loc_sfm_sheik">Sheik in Forest</string>
+    <string name="loc_sfm_maze">Forest Maze</string>
+    <string name="loc_sfm_wolfos_grotto">Wolfos Grotto</string>
+    <string name="loc_hf_ocarina">Ocarina of Time</string>
+    <string name="loc_hf_tektite_grotto">Tektite Grotto</string>
+    <string name="loc_hf_cow_grotto">Cow Grotto</string>
+    <string name="loc_hf_grotto_open">Open Grotto</string>
+    <string name="loc_hf_lon_lon">Lon Lon Ranch</string>
+    <string name="loc_hf_cow">Field Cow</string>
+    <string name="loc_hf_ocarina_game">Ocarina Game</string>
+    <string name="loc_hf_running_man">Running Man</string>
+    <string name="loc_lh_underwater">Underwater Item</string>
+    <string name="loc_lh_fishing_child">Child Fishing</string>
+    <string name="loc_lh_fishing_adult">Adult Fishing</string>
+    <string name="loc_lh_sun">Sun</string>
+    <string name="loc_lh_lab">Lab Dive</string>
+    <string name="loc_lh_scarecrow">Scarecrow Song</string>
+    <string name="loc_lh_grotto">Grotto</string>
+    <string name="loc_llr_talons">Talon\'s House</string>
+    <string name="loc_llr_stables">Stables Cow</string>
+    <string name="loc_llr_tower">Tower</string>
+    <string name="loc_kak_roof">Man on Roof</string>
+    <string name="loc_kak_anju_child">Anju as Child</string>
+    <string name="loc_kak_anju_adult">Anju as Adult</string>
+    <string name="loc_kak_impas_back">Impa\'s House Back</string>
+    <string name="loc_kak_windmill">Windmill</string>
+    <string name="loc_kak_shooting">Shooting Gallery</string>
+    <string name="loc_kak_potion_shop">Potion Shop</string>
+    <string name="loc_kak_bazaar">Bazaar</string>
+    <string name="loc_kak_skulltula_house">House of Skulltula</string>
+    <string name="loc_kak_gs">GS Above Impa\'s House</string>
+    <string name="loc_grav_dampe_race">Dampe Race</string>
+    <string name="loc_grav_royal_tomb">Royal Family Tomb</string>
+    <string name="loc_grav_shield_grave">Shield Grave</string>
+    <string name="loc_grav_heart_grave">Heart Piece Grave</string>
+    <string name="loc_gc_maze">Maze Chest</string>
+    <string name="loc_gc_maze_left">Maze Left Chest</string>
+    <string name="loc_gc_maze_center">Maze Center Chest</string>
+    <string name="loc_gc_rolling_goron">Rolling Goron</string>
+    <string name="loc_gc_medigoron">Medigoron</string>
+    <string name="loc_gc_darunia">Darunia\'s Joy</string>
+    <string name="loc_gc_shop">Goron Shop</string>
+    <string name="loc_dmt_chest">Chest Above DC</string>
+    <string name="loc_dmt_great_fairy">Great Fairy</string>
+    <string name="loc_dmt_biggoron">Biggoron</string>
+    <string name="loc_dmt_cow_grotto">Cow Grotto</string>
+    <string name="loc_dmc_volcano">Volcano Chest</string>
+    <string name="loc_dmc_great_fairy">Great Fairy</string>
+    <string name="loc_dmc_deku_scrub">Deku Scrub</string>
+    <string name="loc_market_dog_lady">Dog Lady</string>
+    <string name="loc_market_shooting">Shooting Gallery</string>
+    <string name="loc_market_mask_shop">Mask Shop</string>
+    <string name="loc_market_bombchu_bowling">Bombchu Bowling</string>
+    <string name="loc_market_treasure_game">Treasure Chest Game</string>
+    <string name="loc_market_bombchu_shop">Bombchu Shop</string>
+    <string name="loc_market_potion_shop">Potion Shop</string>
+    <string name="loc_market_bazaar">Bazaar</string>
+    <string name="loc_market_temple_time">Temple of Time</string>
+    <string name="loc_hc_garden">Garden (Zelda\'s Letter)</string>
+    <string name="loc_hc_great_fairy">Great Fairy</string>
+    <string name="loc_ogc_great_fairy">Great Fairy (OGC)</string>
+    <string name="loc_zr_frogs">Frogs in the Rain</string>
+    <string name="loc_zr_magic_bean">Magic Bean Salesman</string>
+    <string name="loc_zr_open_grotto">Open Grotto</string>
+    <string name="loc_zd_chest">Chest</string>
+    <string name="loc_zd_diving">Diving Minigame</string>
+    <string name="loc_zd_king_zora">King Zora</string>
+    <string name="loc_zf_great_fairy">Great Fairy</string>
+    <string name="loc_zf_iceberg">Iceberg</string>
+    <string name="loc_zf_hidden_cave">Hidden Cave</string>
+    <string name="loc_gv_crate">Crate</string>
+    <string name="loc_gv_waterfall">Waterfall</string>
+    <string name="loc_gv_cow">Valley Cow</string>
+    <string name="loc_gv_small_bridge">Small Bridge Chest</string>
+    <string name="loc_gv_chest">Chest Behind Tent</string>
+    <string name="loc_gf_chest">Chest</string>
+    <string name="loc_gf_hba">Horseback Archery</string>
+    <string name="loc_gf_carpenter">Carpenter Rescue</string>
+    <string name="loc_gf_archery">Archery Range</string>
+    <string name="loc_wasteland_structure">Structure Chest</string>
+    <string name="loc_colossus_great_fairy">Great Fairy</string>
+    <string name="loc_colossus_arch">Arch</string>
+    <string name="loc_colossus_spirit">Spirit Temple Entry</string>
+    <string name="loc_dc_entrance">Dodongo Entrance</string>
+    <string name="loc_dc_compass">Dodongo Compass</string>
+    <string name="loc_dc_boss">Dodongo Boss</string>
+    <string name="loc_dc_map">Map Chest</string>
+    <string name="loc_dc_slingshot">Slingshot Room</string>
+    <string name="loc_dc_bomb_bag">Bomb Bag Chest</string>
+    <string name="loc_dc_gs_side">GS Side Room</string>
+    <string name="loc_jj_compass">Jabu Compass</string>
+    <string name="loc_jj_map">Jabu Map</string>
+    <string name="loc_jj_boss">Jabu Boss</string>
+    <string name="loc_jj_boomerang">Boomerang Chest</string>
+    <string name="loc_jj_gs_water">GS Water Switch Room</string>
+    <string name="loc_deku_map">Map Chest</string>
+    <string name="loc_deku_slingshot">Slingshot Chest</string>
+    <string name="loc_deku_compass">Compass Chest</string>
+    <string name="loc_deku_basement">Basement Chest</string>
+    <string name="loc_deku_gs_compass">GS Compass Room</string>
+    <string name="loc_deku_gs_basement">GS Basement</string>
+    <string name="loc_deku_boss">Queen Gohma</string>
+    <string name="loc_forest_first">First Room Chest</string>
+    <string name="loc_forest_bow">Bow Chest</string>
+    <string name="loc_forest_outdoors">Outdoors Chest</string>
+    <string name="loc_forest_boss">Phantom Ganon</string>
+    <string name="loc_fire_boss">Volvagia</string>
+    <string name="loc_fire_maze">Maze Chest</string>
+    <string name="loc_water_morpha">Morpha</string>
+    <string name="loc_water_dark_link">Dark Link</string>
+    <string name="loc_spirit_silver_gauntlets">Silver Gauntlets Chest</string>
+    <string name="loc_spirit_mirror_shield">Mirror Shield Chest</string>
+    <string name="loc_spirit_boss">Twinrova</string>
+    <string name="loc_shadow_bongo">Bongo Bongo</string>
+    <string name="loc_shadow_invisible_maze">Invisible Maze</string>
+    <string name="loc_well_map">Map Chest</string>
+    <string name="loc_well_compass">Compass Chest</string>
+    <string name="loc_well_dead_hand">Dead Hand</string>
+    <string name="loc_ice_compass">Compass Chest</string>
+    <string name="loc_ice_serenade">Serenade Chest</string>
+    <string name="loc_ganon_trials">Trials</string>
+    <string name="loc_ganon_boss">Ganondorf</string>
+
+    <!-- OoT songs -->
+    <string name="oot_song_zeldas_lullaby">Zelda\'s Lullaby</string>
+    <string name="oot_song_eponas_song">Epona\'s Song</string>
+    <string name="oot_song_sarias_song">Saria\'s Song</string>
+    <string name="oot_song_song_of_time">Song of Time</string>
+    <string name="oot_song_song_of_storms">Song of Storms</string>
+    <string name="oot_song_sun_song">Sun\'s Song</string>
+    <string name="oot_song_minuet_of_forest">Minuet of Forest</string>
+    <string name="oot_song_bolero_of_fire">Bolero of Fire</string>
+    <string name="oot_song_serenade_of_water">Serenade of Water</string>
+    <string name="oot_song_nocturne_of_shadow">Nocturne of Shadow</string>
+    <string name="oot_song_requiem_of_spirit">Requiem of Spirit</string>
+    <string name="oot_song_prelude_of_light">Prelude of Light</string>
+
+    <!-- OoT upgrades -->
+    <string name="oot_upg_strength">Strength</string>
+    <string name="oot_upg_bombs">Bomb Bag</string>
+    <string name="oot_upg_bow">Quiver</string>
+    <string name="oot_upg_wallet">Wallet</string>
+    <string name="oot_upg_scale">Scale</string>
+    <string name="oot_upg_magic">Magic Meter</string>
+
+    <!-- MM items -->
+    <string name="mm_item_kokiri_sword">Kokiri Sword</string>
+    <string name="mm_item_razor_sword">Razor Sword</string>
+    <string name="mm_item_gilded_sword">Gilded Sword</string>
+    <string name="mm_item_hero_shield">Hero\'s Shield</string>
+    <string name="mm_item_mirror_shield">Mirror Shield</string>
+    <string name="mm_item_iron_boots">Iron Boots</string>
+    <string name="mm_item_hover_boots">Hover Boots</string>
+    <string name="mm_item_hookshot">Hookshot</string>
+    <string name="mm_item_great_fairy_sword">Great Fairy\'s Sword</string>
+    <string name="mm_item_bow">Bow</string>
+    <string name="mm_item_bomb_bag">Bomb Bag</string>
+    <string name="mm_item_magic_bean">Magic Bean</string>
+    <string name="mm_item_lens_of_truth">Lens of Truth</string>
+    <string name="mm_item_pictobox">Pictobox</string>
+    <string name="mm_item_bombers_notebook">Bomber\'s Notebook</string>
+    <string name="mm_item_ocarina_of_time">Ocarina of Time</string>
+    <string name="mm_item_fire_arrows">Fire Arrows</string>
+    <string name="mm_item_ice_arrows">Ice Arrows</string>
+    <string name="mm_item_light_arrows">Light Arrows</string>
+    <string name="mm_item_magic_power">Magic Power</string>
+    <string name="mm_item_rupees">Rupees</string>
+
+    <!-- MM regions -->
+    <string name="region_clock_town">Clock Town</string>
+    <string name="region_woodfall">Woodfall</string>
+    <string name="region_snowhead">Snowhead</string>
+    <string name="region_great_bay">Great Bay</string>
+    <string name="region_ikana">Ikana</string>
+    <string name="region_stone_tower">Stone Tower</string>
+    <string name="region_other">Other</string>
+
+    <!-- MM locations -->
+    <string name="loc_ct_east">East Clock Town</string>
+    <string name="loc_ct_north">North Clock Town</string>
+    <string name="loc_ct_west">West Clock Town</string>
+    <string name="loc_wf_temple">Woodfall Temple</string>
+    <string name="loc_wf_swamp">Woodfall Swamp</string>
+    <string name="loc_sh_temple">Snowhead Temple</string>
+    <string name="loc_sh_goron">Goron Shrine</string>
+    <string name="loc_gb_temple">Great Bay Temple</string>
+    <string name="loc_gb_fisher">Fisherman</string>
+    <string name="loc_ik_castle">Ikana Castle</string>
+    <string name="loc_ik_well">Ikana Well</string>
+    <string name="loc_st_tower">Stone Tower</string>
+    <string name="loc_st_inverted">Inverted Stone Tower</string>
+    <string name="loc_other_fairy">Fairy Fountain</string>
+    <string name="loc_other_bank">Bank</string>
+
+    <!-- MM songs -->
+    <string name="mm_song_song_of_time">Song of Time</string>
+    <string name="mm_song_song_of_healing">Song of Healing</string>
+    <string name="mm_song_eponas_song">Epona\'s Song</string>
+    <string name="mm_song_song_of_soaring">Song of Soaring</string>
+    <string name="mm_song_song_of_storms">Song of Storms</string>
+    <string name="mm_song_sonata_of_awakening">Sonata of Awakening</string>
+    <string name="mm_song_goron_lullaby">Goron Lullaby</string>
+    <string name="mm_song_new_wave_bossa_nova">New Wave Bossa Nova</string>
+    <string name="mm_song_elegy_of_emptiness">Elegy of Emptiness</string>
+    <string name="mm_song_oath_to_order">Oath to Order</string>
+    <string name="mm_song_song_of_double_time">Song of Double Time</string>
+
+    <!-- MM upgrades -->
+    <string name="mm_upg_bombs">Bomb Bag</string>
+    <string name="mm_upg_bow">Quiver</string>
+    <string name="mm_upg_wallet">Wallet</string>
+    <string name="mm_upg_magic">Magic Meter</string>
+    <string name="mm_upg_strength">Strength</string>
+    <string name="mm_upg_spin">Spin Attack</string>
+
+    <!-- ===== Dashboard (Self-Hosted Server) ===== -->
+    <string name="settings_dashboard_title">Dashboard</string>
+    <string name="settings_dashboard_description">Servidor local para gerenciar jogos e sincronizar saves pelo navegador.</string>
+    <string name="settings_dashboard_enabled">Servidor ativo</string>
+    <string name="settings_dashboard_port">Porta</string>
+    <string name="settings_dashboard_password">Senha de acesso</string>
+    <string name="settings_dashboard_password_hint">Opcional</string>
+    <string name="settings_dashboard_status">Status</string>
+    <string name="dashboard_status_running">Rodando na porta %1$d</string>
+    <string name="dashboard_status_starting">Iniciando servidor…</string>
+    <string name="dashboard_status_stopped">Parado</string>
+    <string name="dashboard_url_hint">Acesse pelo navegador em %1$s</string>
+
+    <!-- ===== Display (Multi-Monitor) ===== -->
+    <string name="settings_appearance_title">Aparência</string>
+    <string name="settings_appearance_description">Tema, sons da interface e cor de destaque.</string>
+    <string name="settings_appearance_theme_label">Tema</string>
+    <string name="settings_appearance_theme_to_light">Alternar para Tema Claro</string>
+    <string name="settings_appearance_theme_to_dark">Alternar para Tema Escuro</string>
+    <string name="settings_appearance_sfx_label">Sons da Interface</string>
+    <string name="settings_appearance_accent_label">Cor de Destaque</string>
+    <string name="settings_appearance_accent_description">Altera a cor de foco e destaque da interface.</string>
+    <string name="settings_appearance_accent_choose">Escolher…</string>
+    <string name="settings_appearance_scale_label">Escala da Interface</string>
+    <string name="settings_appearance_scale_description">Ajusta o tamanho de todos os elementos do app (1 a 5, padrão 3). Não afeta os controles do emulador.</string>
+    <string name="settings_appearance_scale_value">%1$d</string>
+    <string name="settings_display_title">Tela</string>
+    <string name="settings_display_description">Configurações de tela para telas externas e monitores secundários.</string>
+    <string name="settings_display_output_label">Saída do jogo</string>
+    <string name="settings_display_auto">Automático (tela externa disponível)</string>
+    <string name="settings_display_primary">Tela principal (sempre)</string>
+    <string name="settings_display_secondary">Tela externa (sempre)</string>
+    <string name="settings_display_touch_label">Controles na tela</string>
+    <string name="settings_display_touch_primary">Tela principal</string>
+    <string name="settings_display_touch_secondary">Tela externa</string>
+    <string name="settings_display_touch_both">Ambas as telas</string>
+    <string name="settings_display_displays_found">%1$d tela(s) externa(s) conectada(s)</string>
+    <string name="settings_display_no_external">Nenhuma tela externa detectada</string>
+
+    <!-- ===== WebRTC Streaming ===== -->
+    <string name="streaming_title">Streaming</string>
+    <string name="streaming_description">Transmita o jogo pelo navegador via WebRTC.</string>
+    <!-- Item Tracker catalog extensions -->
+    <string name="oot_item_strength">Força</string>
+    <string name="oot_item_bow_level_1">Arco (1)</string>
+    <string name="oot_item_bow_level_2">Arco (2)</string>
+    <string name="oot_item_bow_level_3">Arco (3)</string>
+    <string name="oot_item_deku_stick">Graveto Deku</string>
+    <string name="oot_item_deku_stick_level_1">Graveto Deku (1)</string>
+    <string name="oot_item_deku_stick_level_2">Graveto Deku (2)</string>
+    <string name="oot_item_deku_nut">Noz Deku</string>
+    <string name="oot_item_deku_nut_level_1">Noz Deku (1)</string>
+    <string name="oot_item_deku_nut_level_2">Noz Deku (2)</string>
+    <string name="oot_item_bombchu">Bombchu</string>
+    <string name="oot_item_magic">Magia</string>
+    <string name="oot_item_magic_level_1">Medidor de Magia</string>
+    <string name="oot_item_magic_level_2">Medidor de Magia Duplo</string>
+    <string name="oot_item_scale">Escama</string>
+    <string name="oot_item_scale_silver">Escama de Prata</string>
+    <string name="oot_item_scale_golden">Escama de Ouro</string>
+    <string name="oot_item_wallet_adult">Carteira de Adulto</string>
+    <string name="oot_item_wallet_giant">Carteira de Gigante</string>
+    <string name="oot_item_forest_medallion">Medalhão da Floresta</string>
+    <string name="oot_item_fire_medallion">Medalhão do Fogo</string>
+    <string name="oot_item_water_medallion">Medalhão da Água</string>
+    <string name="oot_item_spirit_medallion">Medalhão do Espírito</string>
+    <string name="oot_item_shadow_medallion">Medalhão da Sombra</string>
+    <string name="oot_item_light_medallion">Medalhão da Luz</string>
+    <string name="oot_item_kokiri_emerald">Esmeralda Kokiri</string>
+    <string name="oot_item_goron_ruby">Rubi Goron</string>
+    <string name="oot_item_zora_sapphire">Safira Zora</string>
+    <string name="oot_item_keaton_mask">Máscara Keaton</string>
+    <string name="oot_item_skull_mask">Máscara da Caveira</string>
+    <string name="oot_item_spooky_mask">Máscara Assustadora</string>
+    <string name="oot_item_bunny_hood">Capuz de Coelho</string>
+    <string name="oot_item_goron_mask">Máscara Goron</string>
+    <string name="oot_item_zora_mask">Máscara Zora</string>
+    <string name="oot_item_gerudo_mask">Máscara Gerudo</string>
+    <string name="oot_item_mask_of_truth">Máscara da Verdade</string>
+
+    <string name="mm_item_sword">Espada</string>
+    <string name="mm_item_shield">Escudo</string>
+    <string name="mm_item_bow_level_1">Arco (1)</string>
+    <string name="mm_item_bow_level_2">Arco (2)</string>
+    <string name="mm_item_bow_level_3">Arco (3)</string>
+    <string name="mm_item_deku_stick">Graveto Deku</string>
+    <string name="mm_item_deku_stick_level_1">Graveto Deku (1)</string>
+    <string name="mm_item_deku_nut">Noz Deku</string>
+    <string name="mm_item_deku_nut_level_1">Noz Deku (1)</string>
+    <string name="mm_item_bombchu">Bombchu</string>
+    <string name="mm_item_magic_level_1">Medidor de Magia</string>
+    <string name="mm_item_magic_level_2">Medidor de Magia Duplo</string>
+    <string name="mm_item_wallet_adult">Carteira de Adulto</string>
+    <string name="mm_item_wallet_giant">Carteira de Gigante</string>
+    <string name="mm_item_odolwa_remains">Restos de Odolwa</string>
+    <string name="mm_item_goht_remains">Restos de Goht</string>
+    <string name="mm_item_gyorg_remains">Restos de Gyorg</string>
+    <string name="mm_item_twinmold_remains">Restos de Twinmold</string>
+    <string name="mm_item_deku_mask">Máscara Deku</string>
+    <string name="mm_item_goron_mask">Máscara Goron</string>
+    <string name="mm_item_zora_mask">Máscara Zora</string>
+    <string name="mm_item_fierce_deity_mask">Máscara da Divindade Feroz</string>
+    <string name="mm_item_great_fairy_mask">Máscara da Grande Fada</string>
+    <string name="mm_item_romani_mask">Máscara da Romani</string>
+    <string name="mm_item_circus_leader_mask">Máscara do Líder da Trupe</string>
+    <string name="mm_item_kafei_mask">Máscara de Kafei</string>
+    <string name="mm_item_couples_mask">Máscara dos Noivos</string>
+    <string name="mm_item_postman_hat">Chapéu do Carteiro</string>
+    <string name="mm_item_all_night_mask">Máscara da Noite Inteira</string>
+    <string name="mm_item_blast_mask">Máscara da Explosão</string>
+    <string name="mm_item_stone_mask">Máscara de Pedra</string>
+    <string name="mm_item_bremen_mask">Máscara de Bremen</string>
+    <string name="mm_item_bunny_hood">Capuz de Coelho</string>
+    <string name="mm_item_don_gero_mask">Máscara de Don Gero</string>
+    <string name="mm_item_kamaro_mask">Máscara de Kamaro</string>
+    <string name="mm_item_gibdo_mask">Máscara Gibdo</string>
+    <string name="mm_item_garo_mask">Máscara Garo</string>
+    <string name="mm_item_captains_hat">Chapéu do Capitão</string>
+    <string name="mm_item_giants_mask">Máscara do Gigante</string>
+    <string name="mm_item_mask_of_truth">Máscara da Verdade</string>
+    <string name="mm_item_mask_of_scents">Máscara dos Aromas</string>
+    <string name="mm_item_keaton_mask">Máscara Keaton</string>
+    <!-- Change Name (in-game save slot rename) -->
+    <string name="menu_change_name">Alterar Nome</string>
+    <string name="change_name_title">Alterar Nome</string>
+    <string name="change_name_slot_label">Arquivo %1$d — %2$s</string>
+    <string name="change_name_slot_empty">Arquivo %1$d — vazio</string>
+    <string name="change_name_slot_invalid">Arquivo %1$d — inválido</string>
+    <string name="change_name_pick_slot">Escolha o arquivo</string>
+    <string name="change_name_enter_name">Novo nome (até 8 letras)</string>
+    <string name="change_name_hint">Ex.: LINK</string>
+    <string name="change_name_confirm_title">Confirmar alteração</string>
+    <string name="change_name_confirm_message">Alterar o nome do Arquivo %1$d de “%2$s” para “%3$s”? O jogo será reiniciado e o estado salvo será apagado.</string>
+    <string name="change_name_success">Nome alterado para “%1$s”. Reiniciando…</string>
+    <string name="change_name_no_sram">Nenhum save encontrado para este jogo.</string>
+    <string name="change_name_no_valid_slot">Nenhum arquivo válido encontrado.</string>
+    <string name="change_name_invalid_name">Nome inválido. Use até 8 letras (A–Z), números, espaço, traço ou ponto.</string>
+    <string name="change_name_hardcore_blocked">Alterar nome bloqueado no modo Hardcore.</string>
+    <string name="change_name_failed">Falha ao alterar nome.</string>
+    <string name="change_name_state_cleared">Estado salvo apagado após alterar nome.</string>
+
+    <string name="tracker_auto_tracking">Rastreamento automático</string>
+    <string name="tracker_auto_tracking_desc">Global: adiciona itens e músicas de jogos compatíveis com NTSC 1.0. Nunca remove progresso; a edição manual continua disponível.</string>
+    <string name="tracker_equip_title">Equipar %1$s</string>
+    <string name="tracker_c_right">C-direita</string>
+    <string name="tracker_c_down">C-baixo</string>
+    <string name="tracker_c_left">C-esquerda</string>
+    <string name="tracker_equip_unavailable">Não foi possível equipar neste jogo.</string>
+</resources>

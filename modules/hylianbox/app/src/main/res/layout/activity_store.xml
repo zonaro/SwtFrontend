@@ -1,0 +1,231 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/switch_bg">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/store_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/switch_panel"
+            app:titleTextColor="@color/switch_text_primary"
+            app:navigationIconTint="?attr/colorPrimary">
+
+            <include
+                android:id="@+id/store_back"
+                layout="@layout/switch_back_button"
+                android:layout_width="@dimen/icon_button_size"
+                android:layout_height="@dimen/icon_button_size"
+                android:layout_gravity="start|center_vertical" />
+
+            <TextView
+                android:id="@+id/store_toolbar_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="start|center_vertical"
+                android:layout_marginStart="12dp"
+                android:text="@string/store_title"
+                android:textColor="@color/switch_text_primary"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+        </androidx.appcompat.widget.Toolbar>
+
+        <!-- Two-panel split: fixed left sidebar + flexible main content. -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+
+            <!-- Left sidebar: search icon + vertical category list. -->
+            <LinearLayout
+                android:id="@+id/store_sidebar"
+                android:layout_width="@dimen/store_sidebar_width"
+                android:layout_height="match_parent"
+                android:background="@color/switch_panel"
+                android:orientation="vertical"
+                android:paddingTop="8dp">
+
+                <ImageButton
+                    android:id="@+id/store_search_icon"
+                    android:layout_width="48dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginBottom="8dp"
+                    android:background="?attr/selectableItemBackgroundBorderless"
+                    android:contentDescription="@string/store_search_icon_desc"
+                    android:src="@android:drawable/ic_menu_search"
+                    app:tint="?attr/colorPrimary" />
+
+                <ScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1"
+                    android:fillViewport="true"
+                    android:scrollbars="vertical">
+
+                    <LinearLayout
+                        android:id="@+id/store_category_list"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:paddingBottom="16dp" />
+                </ScrollView>
+            </LinearLayout>
+
+            <!-- Main content: section header + 3-column grid + pagination. -->
+            <LinearLayout
+                android:id="@+id/store_content"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:background="@color/switch_bg"
+                android:orientation="vertical">
+
+                <!-- Search field (toggled by the sidebar search icon). -->
+                <EditText
+                    android:id="@+id/store_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/switch_screen_margin"
+                    android:layout_marginEnd="@dimen/switch_screen_margin"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="6dp"
+                    android:background="@drawable/bg_search_field"
+                    android:paddingStart="14dp"
+                    android:paddingTop="10dp"
+                    android:paddingEnd="14dp"
+                    android:paddingBottom="10dp"
+                    android:hint="@string/store_search_hint"
+                    android:textColor="@color/switch_text_primary"
+                    android:textColorHint="@color/switch_text_secondary"
+                    android:textSize="@dimen/switch_row_text"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:importantForAutofill="no"
+                    android:singleLine="true"
+                    android:drawableStart="@android:drawable/ic_menu_search"
+                    android:drawableTint="@color/switch_text_secondary"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/store_section_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/switch_screen_margin"
+                    android:layout_marginEnd="@dimen/switch_screen_margin"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textColor="@color/switch_text_primary"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/store_source_error"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/switch_screen_margin"
+                    android:layout_marginEnd="@dimen/switch_screen_margin"
+                    android:layout_marginBottom="6dp"
+                    android:textColor="@color/switch_text_secondary"
+                    android:textSize="13sp"
+                    android:visibility="gone" />
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_weight="1">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:id="@+id/store_grid"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:clipToPadding="false"
+                        android:padding="8dp"
+                        android:scrollbars="vertical" />
+
+                    <ProgressBar
+                        android:id="@+id/store_progress"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/store_empty"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="24dp"
+                        android:text="@string/store_empty"
+                        android:textColor="@color/color_on_surface"
+                        android:textSize="16sp"
+                        android:visibility="gone" />
+
+                    <TextView
+                        android:id="@+id/store_status"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:padding="24dp"
+                        android:textColor="@color/color_error"
+                        android:textSize="14sp"
+                        android:visibility="gone" />
+                </FrameLayout>
+
+                <!-- Pagination bar (hidden when total pages <= 1 or no results). -->
+                <LinearLayout
+                    android:id="@+id/store_pagination"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:gravity="center"
+                    android:paddingTop="8dp"
+                    android:paddingBottom="12dp"
+                    android:visibility="gone">
+
+                    <Button
+                        android:id="@+id/store_prev"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="‹"
+                        android:textSize="22sp"
+                        android:textColor="@color/switch_text_primary"
+                        android:contentDescription="@string/store_page_previous" />
+
+                    <TextView
+                        android:id="@+id/store_page_indicator"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:textColor="@color/switch_text_primary"
+                        android:textSize="@dimen/switch_row_text" />
+
+                    <Button
+                        android:id="@+id/store_next"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:minWidth="48dp"
+                        android:background="?attr/selectableItemBackground"
+                        android:text="›"
+                        android:textSize="22sp"
+                        android:textColor="@color/switch_text_primary"
+                        android:contentDescription="@string/store_page_next" />
+                </LinearLayout>
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
